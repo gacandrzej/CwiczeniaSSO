@@ -7,3 +7,24 @@ out/
 *.odt
 *.docx
 generate*
+*.sh
+
+# Skrypty konwersji (nie udostępniamy publicznie)
+generate_*.sh
+convert_*.sh
+cleanup_*.sh
+fix_*.sh
+
+# Tymczasowe pliki
+*.tmp
+*.temp
+*.backup
+
+# Pliki źródłowe ćwiczeń (ODT/DOCX)
+cwiczenia/*.odt
+cwiczenia/*.docx
+
+# Inne prywatne rzeczy
+secrets.txt
+config.ini
+.env
