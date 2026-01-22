@@ -103,6 +103,7 @@ nslookup -type=txt nazwa_rekordu
 dig -t txt nazwa_rekordu
 ```
  ![](media/image24.png)
+
 28) Dodaj 2 rekord poczty z priorytetami 5 i 10 o nazwach poczta i mail
 
  ![](media/image25.png)
