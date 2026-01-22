@@ -21,6 +21,7 @@
 - [Ćwiczenia_18_DHCPv6_podzial_na_podsieci_ubuntu-server_virtualbox_v7](cwiczenia/Ćwiczenia_18_DHCPv6_podzial_na_podsieci_ubuntu-server_virtualbox_v7/README.md)
 - [Ćwiczenia_19_ubuntu_CUPS_virtualbox_v2](cwiczenia/Ćwiczenia_19_ubuntu_CUPS_virtualbox_v2/README.md)
 - [Ćwiczenia_20_server_ubuntu_DNS_virtualbox_v8](cwiczenia/Ćwiczenia_20_server_ubuntu_DNS_virtualbox_v8/README.md)
+- [Ćwiczenia_21_ubuntu_vsftpd_virtualbox_v12](cwiczenia/Ćwiczenia_21_ubuntu_vsftpd_virtualbox_v12/README.md)
 - [Ćwiczenia_22_ubuntu_server_serwer_Apache_instalacja_ze_źródeł_v7](cwiczenia/Ćwiczenia_22_ubuntu_server_serwer_Apache_instalacja_ze_źródeł_v7/README.md)
 - [Ćwiczenia_23_AD_mapowanie_virtualbox_v3](cwiczenia/Ćwiczenia_23_AD_mapowanie_virtualbox_v3/README.md)
 - [Ćwiczenia_24_profil_mobilny_virtualbox_v4](cwiczenia/Ćwiczenia_24_profil_mobilny_virtualbox_v4/README.md)
