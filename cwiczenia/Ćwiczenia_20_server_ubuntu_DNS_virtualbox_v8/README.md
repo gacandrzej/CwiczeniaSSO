@@ -77,7 +77,7 @@ sudo apt list --installed | grep bind
 ![](media/image18.png)
 21) Sprawdź działanie serwera narzędziem dig:
 ```bash 
-dig sala70.zsmeie.torun.pl
+dig sala70.zsmeie.torun.pl any
 ```
 22) Sprawdź działanie serwera narzędziem host ze stacji ubuntu
  ![](media/image19.png)
