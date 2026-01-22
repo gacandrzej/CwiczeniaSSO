@@ -121,9 +121,19 @@ dig -t txt nazwa_rekordu
 ![](media/image29.png)
     
 33) Dodaj rekord AAAA i przetestuj na stacji jego działanie.
-
+```text
+pc2.sala70.zsmeie.torun.pl IN AAAA fe80::9246:2275:658d:b53d
+```
+```bash
+dig -t AAAA pc2.sala70.zsmeie.torun.pl 
+```
 34) Dodaj rekord SPF i przetestuj na stacji jego działanie, np.:
-
+```text
+spf.sala70.zsmeie.torun.pl IN TXT "v=spf1 ipv4:10.20.30.177 mx -all"
+```
+```bash
+dig -t txt spf.sala70.zsmeie.torun.pl 
+```
 34) Dodaj rekord SRV i przetestuj na stacji jego działanie, np.:
 ```text
 _ftp._tcp.sala70.zsmeie.torun.pl IN SRV 10 5 21 ftp-server.sala70.zsmeie.torun.pl
