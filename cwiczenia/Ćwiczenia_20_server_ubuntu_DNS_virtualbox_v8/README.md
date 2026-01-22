@@ -1,11 +1,15 @@
-Ćwiczenia 20 -- instalacja i konfiguracja serwera DNS (BIND)
-Uruchomić: ubuntu server → ubuntu desktop
+# Ćwiczenia 20 -- instalacja i konfiguracja serwera DNS (BIND)
+
+💡 Uruchomić: ubuntu server → ubuntu desktop
+
 1)  Zaloguj się na konto administrator i dodaj swoje konto do grupy
     sudo:
-> *sudo usermod nazwa_konta -G sudo*
+```bash
+sudo usermod nazwa_konta -G sudo
+```
 2)  Odłącz stacje od internetu.
-3)  Zaloguj się na swoje konto na minimum pięciu terminalach. (Alt+F2,
-    Alt+F3, ...
+3)  Zaloguj się na swoje konto na minimum pięciu terminalach. (<kbd>Alt</kbd>+<kbd>F2</kbd>,
+    <kbd>Alt</kbd>+<kbd>F3</kbd>, ...
 na logi, na edycję pliku ,na komendy, , na restart usługi, na
 dokumentację )
 4)  Przed przystąpieniem do pracy trzeba odinstalować serwer dns i
