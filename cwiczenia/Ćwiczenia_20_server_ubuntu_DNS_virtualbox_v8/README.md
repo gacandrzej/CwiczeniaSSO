@@ -26,6 +26,7 @@ dokumentację )
 sudo apt list --installed | grep bind
 ```
  ![](media/image3.png)
+
 7)  Ustaw kartę dolną **enp3s0** na adres 10.20.30.177 z pomocą netplanu
     <p align="center"> <img src="media/image4.png" width="45%" /> </p>
     <p align="center"> <img src="media/image5.png" width="45%" /> </p>
@@ -85,11 +86,13 @@ dig sala70.zsmeie.torun.pl
     dig -t txt nazwa_rekordu 
     ``` 
  ![](media/image20.png)
+
 24) Sprawdź działanie serwera narzędziem nslookup ze stacji windows, np.: 
 ```bash
 nslookup -type=txt nazwa_rekordu
 ```
  ![](media/image21.png)
+
 25) Dodaj alias na adres serwera o nazwie www lub ftp
 
  ![](media/image22.png)
@@ -107,6 +110,7 @@ dig -t txt nazwa_rekordu
 28) Dodaj 2 rekord poczty z priorytetami 5 i 10 o nazwach poczta i mail
 
  ![](media/image25.png)
+
 29) Sprawdzenie:
 
   ![](media/image26.png)
