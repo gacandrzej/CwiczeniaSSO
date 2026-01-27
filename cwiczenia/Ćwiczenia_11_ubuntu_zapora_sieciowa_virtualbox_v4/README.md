@@ -94,55 +94,89 @@ Sprawdzenie:
 
 ![](media/image20.png)
 
-22. Otworzyć port dla pracy serwera ftp-data, ftp, tftp, mysql,
-    postfix(4 porty), dhcp i dhcpv6, http, https
-> ![](media/image21.png)
-23. Zapisz ustawienia w pliku
-    /home/twoje_konto/iptables_rules_ddmmrrrr_hh:mm
+22. Otworzyć port dla pracy serwera:
+ - ftp-data, 
+ - ftp, 
+ - tftp, 
+ - mysql, 
+ - postfix(4 porty), 
+ - dhcp 
+ - dhcpv6, 
+ - http, 
+ - https
+
+ ![](media/image21.png)
+
+23. Zapisz ustawienia w pliku _*/home/twoje_konto/iptables_rules_ddmmrrrr_hh:mm*_
+
 24. Zbuduj nat źródłowy dla sieci 10.11.12.0/24
-> ![](media/image22.png)
->
-> ![](media/image23.png)
-25. ![](media/image24.png)
-    Włącz forwardowanie pakietów tak, aby
-    działało tylko do najbliższego restartu.
+
+ ![](media/image22.png)
+
+ ![](media/image23.png)
+
+25. Włącz forwardowanie pakietów tak, aby działało tylko do najbliższego restartu.
+
+![](media/image24.png)
+
 26. Wyczyścić wszystkie reguły w tablicy filter
-> ![](media/image25.png)
-27. ![](media/image26.png)
-    Przywróć reguły z pliku:
-28. ![](media/image27.png)
-    Sprawdzenie:
+
+ ![](media/image25.png)
+
+27. Przywróć reguły z pliku:
+
+![](media/image26.png)
+
+28. Sprawdzenie:
+
+![](media/image27.png)
+
 29. Zablokować ruch do Rosji i Chin. Zainstaluj pakiet dla whois.
-> Sprawdź działanie:
->
-> ![](media/image28.png)
->
-> ![](media/image29.png)
+
+ Sprawdź działanie:
+
+ ![](media/image28.png)  
+
+ ![](media/image29.png) 
+
 30. Monitorować ruch narzędziem tcpdump. ( W drugim terminalu uruchomić
     ping do dowolnej strony)
+
 ![](media/image30.png)
+
 31. Monitorować ruch narzędziem wireshark na stacji ubuntu-desktop dla
     karty dolnej.
-> Instalacja:
-> ![](media/image31.png)
->
-> Uruchomienie na stacji:
-> ![](media/image32.png)
->
-> Niebieska płetwa:
->
-> ![](media/image33.png)
->
-> Zapisz ruchu do pliku o nazwie test.pcapng.
->
-> ![](media/image34.png)
-32. Monitorować ruch narzędziem zen-map z poziomu stacji windows.
-> ![](media/image35.png)
-33. ![](media/image36.png)
-    Sprawdzić otwarte porty na maszynie z
+
+ Instalacja:
+
+ ![](media/image31.png)  
+
+ Uruchomienie na stacji:  
+
+ ![](media/image32.png)  
+
+ Niebieska płetwa:  
+
+ ![](media/image33.png)  
+
+ Zapisz ruchu do pliku o nazwie test.pcapng.  
+
+ ![](media/image34.png)
+
+32. Monitorować ruch narzędziem zen-map z poziomu stacji windows.  
+
+![](media/image35.png)
+
+33. Sprawdzić otwarte porty na maszynie z
     pomocą narzędzia nmap np. port 22 dla ssh.
+
+![](media/image36.png)
+
 34. Sprawdzić otwarte porty na maszynie z pomocą narzędzia netcat.
 Na stacji ubuntu:
+
 ![](media/image37.png)
+
 35. Sprawdź pozostałe otwarte porty na swoim serwerze.
-36. KONIEC.
+
+36. KONIEC. 🔚
