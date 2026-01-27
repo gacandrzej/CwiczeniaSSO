@@ -89,8 +89,7 @@ Sprawdzenie:
 
 ![](media/image19.png)
 
-21. Zapisz ustawienia w pliku
-    /home/twoje_konto/iptables_rules_ddmmrrrr_hh:mm
+21. Zapisz ustawienia w pliku  _*/home/twoje_konto/iptables_rules_ddmmrrrr_hh:mm*_
 
 ![](media/image20.png)
 
@@ -109,7 +108,7 @@ Sprawdzenie:
 
 23. Zapisz ustawienia w pliku _*/home/twoje_konto/iptables_rules_ddmmrrrr_hh:mm*_
 
-24. Zbuduj nat źródłowy dla sieci 10.11.12.0/24
+24. Zbuduj nat źródłowy dla sieci **10.11.12.0/24**
 
  ![](media/image22.png)
 
