@@ -50,12 +50,16 @@ Sprawdzenie:
 
 12. Na serwerze musi być zainstalowany
     pakiet openssh-server. Sprawdź działanie usługi ssh:
-
+ ```bash
+ sudo apt install openssh-server -y
+ ```
 ![](media/image12.png)
 
-13. Otwórz port 22, na którym ma słuchać
-    serwer ssh.
+13. Otwórz port 22, na którym ma słuchać serwer ssh.
 
+ ```bash
+ sudo iptables -A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
+ ```
 ![](media/image13.png)
 
 14. Sprawdź połączenie na tym porcie z komputera sąsiada.
