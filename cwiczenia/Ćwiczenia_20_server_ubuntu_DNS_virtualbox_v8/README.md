@@ -67,7 +67,7 @@ cp /etc/bind/db.local /etc/bind/sala70.zsmeie.torun.pl
 ```bash
 cp /etc/bind/db.127 /etc/bind/10.20.30
 ```
-    ![](media/image10.png)
+![](media/image10.png)
 
 14) Zrestartuj usługę i sprawdź logi:
  ```bash
