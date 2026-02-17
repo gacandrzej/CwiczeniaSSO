@@ -54,9 +54,18 @@ b)  Utwórz co 1 minutę podając dzień i miesiąc plik o nazwie
 ![](media/image2.png)
 
 c)  Uruchom skrypt co 1 minutę w każdy dzień roboczy pobierający wycenę
-    bitcoina ze strony: https://api.coinbase.com
+    bitcoina ze strony:
 
+https://docs.cdp.coinbase.com/coinbase-app/track-apis/prices
+
+```bash
+curl https://api.coinbase.com/v2/prices/spot?currency=USD
+```
  ![](media/image3.png)
+```bash
+jason=$(curl https://api.coinbase.com/v2/prices/spot\?currency\=USD)
+jq -r '.data.amount' <<< $jason
+```
 
  ![](media/image4.png)
 
