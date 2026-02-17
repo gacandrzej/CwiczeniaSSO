@@ -50,9 +50,12 @@ a)  Archiwizuj swój katalog domowy co 1
 
 b)  Utwórz co 1 minutę podając dzień i miesiąc plik o nazwie
     plikcrontabtest w \~
+
 ![](media/image2.png)
+
 c)  Uruchom skrypt co 1 minutę w każdy dzień roboczy pobierający wycenę
-    bitcoina ze strony: <https://api.coinbase.com>
+    bitcoina ze strony: https://api.coinbase.com
+
  ![](media/image3.png)
 
  ![](media/image4.png)
