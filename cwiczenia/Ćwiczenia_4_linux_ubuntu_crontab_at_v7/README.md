@@ -1,12 +1,35 @@
-Ćwiczenia 4 -- Ubuntu serwer -- crontab, at
-Zaloguj się na swoje konto imienXYZ, gdzie XYZ oznacza kod klasy i
+# Ćwiczenia 4 -- Ubuntu serwer -- crontab, at
+
+Zaloguj się na swoje konto `imienXYZ`, gdzie `XYZ` oznacza kod klasy i
 grupy, np. jank3t1
-Jeśli nie masz konta, sudo adduser imienXYZ
-1.  Dodaj swoje konto do grupy sudo: *sudo usermod twoje_konto -G sudo*
+Jeśli nie masz konta, 
+```bash
+sudo adduser imienXYZ
+```
+
+1.  Dodaj swoje konto do grupy sudo: 
+```bash
+sudo usermod twoje_konto -G sudo
+```
+lub
+```bash
+sudo adduser imienXYZ sudo
+```
 2.  Sprawdzenie czy jesteśmy w grupie sudo: *id konto*
-3.  Wydaj komendę na piątym terminal: man at
-4.  Wydaj komendę na szóstym terminalu: info crontab
-5.  Otwórz pomocniczo na czwartym terminal: cat /etc/crontab
+3.  Wydaj komendę na piątym terminal: 
+```bash
+man at
+```
+4.  Wydaj komendę na szóstym terminalu: 
+```bash
+info crontab
+````
+5.  Otwórz pomocniczo na czwartym terminal: 
+```bash
+cat /etc/crontab
+```
+![img.png](media/image5_1.png)
+
 6.  Otwórz stronę pomocy, np.: <https://crontab.guru/>
 7.  Zainstaluj obsługę poczty: sudo apt install mailutils podaj tylko
     lokanie
