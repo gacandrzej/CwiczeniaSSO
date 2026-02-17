@@ -43,7 +43,7 @@ mail
 9.  Z pomocą polecenia crontab zaplanuj:
 
 a)  Archiwizuj swój katalog domowy co 1
-    minutę do katalogu _*/var/backups*_ oraz _*/tmp*_ z użyciem narzędzia `tar` i `gzip`.  
+    minutę do katalogu _**/var/backups**_ oraz _**/tmp**_ z użyciem narzędzia `tar` i `gzip`.  
    Wybór edytora po `crontab -e` można powtórzyć poleceniem `select-editor`
 
 ![](media/image1.png)
@@ -81,95 +81,123 @@ d)  uruchomienie skryptu skrypt3.sh
 e)  uruchomienie skryptu skrypt4.sh zbierającego statystyki pracy karty
     sieciowej do pliku graficznego z ostatnich 5 minut o zadanej
     godzinie, ale tylko w środy i piątki oraz w dniu ćwiczeń
-> ![](media/image11.png)
->
-> ![](media/image12.png)
->
-> Sprawdzenie, ściągamy plik ze stacji windows programem winscp:
->
-> ![](media/image13.png)
->
-> Otworzyć plik w eksploratorze windows:
->
-> ![](media/image14.png)
-f)  ![](media/image15.png)
-    uruchomienie skryptu arch_mysql.sh o
+ ![](media/image11.png)
+
+ ![](media/image12.png)
+
+ Sprawdzenie, ściągamy plik ze stacji windows programem winscp:
+
+ ![](media/image13.png)
+
+ Otworzyć plik w eksploratorze windows:
+
+ ![](media/image14.png)
+
+f)  uruchomienie skryptu arch_mysql.sh o
     zadanej godzinie, każdego 28 i 14 dnia miesiąca oraz w każdą środę,
-    który wykona kopię zapasowa bazy mysql w katalogu /tmp.
-> ![](media/image16.png)
->
-> ![](media/image17.png)
->
-> ![](media/image18.png)
->
-> ![](media/image19.png)
->
-> ![](media/image20.png)
+    który wykona kopię zapasowa bazy mysql w katalogu _**/tmp**_.
+ ![](media/image15.png)
+
+ ![](media/image16.png)
+
+ ![](media/image17.png)
+
+ ![](media/image18.png)
+
+ ![](media/image19.png)
+
+ ![](media/image20.png)
+
 g)  uruchomienie skryptu restart.sh przy każdym restarcie serwera, który
-    wyśle maila z powiadomieniem
-h)  wyślij mail do siebie każdego dnia 5 minut po północy.
-<!-- -->
+    wyśle maila z powiadomieniem  
+
+h)  wyślij mail do siebie każdego dnia 5 minut po północy.  
+
 10. Sprawdź zadania crontab wszystkich użytkowników
+
 ![](media/image21.png)
+
 11. Z pomocą polecenia at zaplanuj zadania wykonane wcześniej dla crona.
-12. ![](media/image22.png)
-    Utwórz plik testat za 1 minutę:
+
+12. Utwórz plik testat za 1 minutę:
+
+    ![](media/image22.png)
+
 13. Utwórz skrypt o nazwie arch.sh, który kopiuje zawartość katalogu
-    \~/at_crontab/dane do katalogu \~/at_crontab/kopie.
-14. ![](media/image23.png)
-    Sprawdź zawartość katalogu
-    /var/spool/cron/atjobs/
+    _**\~/at_crontab/dane**_ do katalogu _**\~/at_crontab/kopie**_.
+
+14. Sprawdź zawartość katalogu _**/var/spool/cron/atjobs/**_
+
+    ![](media/image23.png)
+
 15. Utwórz skrypt o nazwie zmiana.sh, który zmieni nazwę pliku test2.txt
     na nowy.txt, przetestuj jego działanie, a następnie zaplanuj
     uruchomienie 22 i 23 grudnia, 5 minut po godzinie 12
+
 16. Zaplanuj uruchomienie skryptu kom1.sh tylko w lutym, marcu,kwietniu
-    i wrześniu o godzinie 11:30,
-ale tylko we wtorki i czwartki.
+    i wrześniu o godzinie 11:30, ale tylko we wtorki i czwartki.
+
 17. Z pomocą polecenia at zaplanuj:
-<!-- -->
-a)  ![](media/image24.png)
-    ![](media/image25.png)
-    ![](media/image26.png)
-    utwórz skrypt o nazwie
+
+a)  utwórz skrypt o nazwie
     zajetosc_dysku.sh, który tworzy plik na dysku z raportem o zajętości
     miejsca na dysku. Przetestuj jego działanie, a następnie zaplanuj
     jego uruchomienie podając godzinę, minuty i dzień tygodnia.
     Wykorzystaj narzędzie duf.
-> ![](media/image27.png)
->
-> Skrypt:
->
-> ![](media/image28.png)
->
-> ![](media/image29.png)
+![](media/image24.png)
+![](media/image25.png)
+![](media/image26.png)
+
+ ![](media/image27.png)
+
+ Skrypt:
+
+ ![](media/image28.png)
+
+ ![](media/image29.png)
+
 18. Sprawdź jakie prawa posiadają pliki at, crontab.
+
 19. Zezwól na używanie polecenia at sobie, a zabroń używania go
     użytkownikowi Blazej.
+
 ![](media/image30.png)
-20. ![](media/image31.png)
-    Zezwól na używanie polecenia crontab sobie, a
+
+20. Zezwól na używanie polecenia crontab sobie, a
     zabroń używania go użytkownikowi blazej.
-> ![](media/image32.png)
-21. Dodatkowe zadania:
-<!-- -->
-a)  Wykonaj kopię zapasową bazy postgresql z pomocą crontab
-> Instalacja: apt install postgresql -y
->
-> ![](media/image33.png)
->
-> ![](media/image34.png)
->
-> Utworzenie pliku .pgpass:
->
-> ![](media/image35.png)
->
-> Crontab:
->
-> ![](media/image36.png)
->
-> ![](media/image37.png)
+    ![](media/image31.png)
+ ![](media/image32.png)
+
+21. Dodatkowe zadania:  
+
+a)  Wykonaj kopię zapasową bazy postgresql z pomocą crontab  
+    Instalacja: 
+```bash
+ sudo apt install postgresql -y
+```
+
+ ![](media/image33.png)
+
+ ![](media/image34.png)
+
+ Utworzenie pliku .pgpass:
+
+ ![](media/image35.png)
+
+ Crontab:
+
+ ![](media/image36.png)
+
+ ![](media/image37.png)
+
 b)  Wykonaj kopię zapasową bazy MongoDB z pomocą at
+
 c)  przetestuj polecenie at w Windows Server.
+
 d)  inne podane przez nauczyciela
-<!-- -->
-22. *sudo poweroff* ( na koniec zajęć)
+
+
+22. Na koniec zajęć 😃
+```bash
+ sudo poweroff
+```
