@@ -31,41 +31,53 @@ cat /etc/crontab
 ![img.png](media/image5_1.png)
 
 6.  Otwórz stronę pomocy, np.: <https://crontab.guru/>
-7.  Zainstaluj obsługę poczty: sudo apt install mailutils podaj tylko
-    lokanie
-8.  Sprawdzić pocztę komendą mail
+7.  Zainstaluj obsługę poczty, podaj tylko lokanie: 
+```bash
+sudo apt install mailutils 
+```
+    
+8.  Sprawdzić pocztę komendą: 
+```bash
+mail
+```
 9.  Z pomocą polecenia crontab zaplanuj:
-<!-- -->
-a)  ![](media/image1.png)
-    Archiwizuj swój katalog domowy co 1
-    minutę do katalogu /var/backups oraz /tmp z użyciem tara i gzipa
+
+a)  Archiwizuj swój katalog domowy co 1
+    minutę do katalogu _*/var/backups*_ oraz _*/tmp*_ z użyciem narzędzia `tar` i `gzip`.  
+   Wybór edytora po `crontab -e` można powtórzyć poleceniem `select-editor`
+
+![](media/image1.png)
+
 b)  Utwórz co 1 minutę podając dzień i miesiąc plik o nazwie
     plikcrontabtest w \~
 ![](media/image2.png)
 c)  Uruchom skrypt co 1 minutę w każdy dzień roboczy pobierający wycenę
     bitcoina ze strony: <https://api.coinbase.com>
-> ![](media/image3.png)
->
-> ![](media/image4.png)
->
-> ![](media/image5.png)
->
-> Efekt działania:
->
-> ![](media/image6.png)
-d)  ![](media/image7.png)
-    uruchomienie skryptu skrypt3.sh
+ ![](media/image3.png)
+
+ ![](media/image4.png)
+
+ ![](media/image5.png)
+
+ Efekt działania:
+
+ ![](media/image6.png)
+d)  uruchomienie skryptu skrypt3.sh
     zbierającego statystyki pracy karty sieciowej z ostatnich 5 minut o
-    zadanej godzinie, ale tylko w środy i piątki oraz w dniu ćwiczeń
-> ![](media/image8.png)
->
-> Zadanie crona:
->
-> ![](media/image9.png)
->
-> Sprawdzenie:
->
-> ![](media/image10.png)
+    zadanej godzinie, ale tylko w środy i piątki oraz w dniu ćwiczeń.  
+    Najpierw zainstaluj potrzebne pakiety:
+ ![](media/image7.png)
+
+ ![](media/image8.png)
+
+ Zadanie crona:
+
+ ![](media/image9.png)
+
+ Sprawdzenie:
+
+ ![](media/image10.png)
+
 e)  uruchomienie skryptu skrypt4.sh zbierającego statystyki pracy karty
     sieciowej do pliku graficznego z ostatnich 5 minut o zadanej
     godzinie, ale tylko w środy i piątki oraz w dniu ćwiczeń
