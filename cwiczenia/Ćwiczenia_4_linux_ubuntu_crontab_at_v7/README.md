@@ -64,6 +64,8 @@ curl https://api.coinbase.com/v2/prices/spot?currency=USD
  ![](media/image3.png)
 ```bash
 jason=$(curl https://api.coinbase.com/v2/prices/spot\?currency\=USD)
+```
+```bash
 jq -r '.data.amount' <<< $jason
 ```
 
@@ -78,6 +80,9 @@ d)  uruchomienie skryptu skrypt3.sh
     zbierającego statystyki pracy karty sieciowej z ostatnich 5 minut o
     zadanej godzinie, ale tylko w środy i piątki oraz w dniu ćwiczeń.  
     Najpierw zainstaluj potrzebne pakiety:
+```bash
+ sudo apt install vnstat vnstati -y
+```
  ![](media/image7.png)
 
  ![](media/image8.png)
@@ -108,6 +113,9 @@ e)  uruchomienie skryptu skrypt4.sh zbierającego statystyki pracy karty
 f)  uruchomienie skryptu arch_mysql.sh o
     zadanej godzinie, każdego 28 i 14 dnia miesiąca oraz w każdą środę,
     który wykona kopię zapasowa bazy mysql w katalogu _**/tmp**_.
+```bash
+ sudo apt install mysql-server -y
+```
  ![](media/image15.png)
 
  ![](media/image16.png)
