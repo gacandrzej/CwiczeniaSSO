@@ -21,33 +21,47 @@ sudo usermod nazwa_konta -G sudo
     <kbd>Alt</kbd>+<kbd>F6</kbd>, na logi     
 
 4)  Przed przystąpieniem do pracy trzeba odinstalować serwer dhcp:
-sudo apt *remove isc-dhcp-server \--purge -y*
-5)  Zainstaluj serwer DHCP. ( *sudo apt install isc-dhcp-server* )
-6)  Sprawdź czy jest zainstalowana paczka w systemie: *sudo apt list
-    \--installed \| grep dhcp*
+```bash
+sudo apt *remove isc-dhcp-server --purge -y*
+```
+5)  Zainstaluj serwer DHCP. 
+```bash
+sudo apt install isc-dhcp-server
+```
+6)  Sprawdź czy jest zainstalowana paczka w systemie: 
+```bash
+sudo apt list --installed | grep dhcp
+```
 ![](media/image2.png)
-7)  Skopiuj plik /etc/dhcp/dhcpd.conf do swojego katalogu domowego
-    /home/twoje_konto/
-8)  Skonfiguruj plik /etc/dhcp/dhcpd.conf ( przykładowy plik znajduje
+
+7)  Skopiuj plik _**/etc/dhcp/dhcpd.conf**_ do swojego katalogu domowego
+    __/home/twoje_konto/__
+8)  Skonfiguruj plik __*/etc/dhcp/dhcpd.conf*__ . Przykładowy plik znajduje
     się w:
+
 ![](media/image3.png)
-/usr/share/doc/isc-dhcp-server/examples/dhcpd.conf.example
-otwórz go na 5 terminalu)
-9)  Otwórz plik dhcpd.conf w vi lub nano lub mcedit ( przykładowe
-    polecenie: *sudo vi /etc/dhcp/dhcpd.conf* )
+
+_/usr/share/doc/isc-dhcp-server/examples/dhcpd.conf.example_
+otwórz go na 4 terminalu)
+
+9)  Otwórz plik dhcpd.conf w vi lub nano lub mcedit, np.:
+```bash
+    sudo mcedit /etc/dhcp/dhcpd.conf
+```
 10) Skonfiguruj serwer tak, aby:
-<!-- -->
-a)  był serwerem podrzędny
-b)  automatyczne aktualizacje ddns ustaw na none
-c)  poziom logów ustaw na 7
-d)  określ domenę na „klasaXY.example.org"
-e)  ustaw DNSy: 8.8.8.8, 8.8.4.4
-f)  czas dzierżawy 1 minuta, maksymalny czas 3 minuty
-g)  pracował na podsieci:
-- złożonej z 8 adresów IP, którą wyznaczysz z sieci 172.21.194.128/25.
-> Klient powinien uzyskać adres ip z końcówką 179 lub 181.
->
-> ![](media/image4.png)
+
+*  był serwerem podrzędny
+*  automatyczne aktualizacje ddns ustaw na none
+*  poziom logów ustaw na 7
+*  określ domenę na „klasaXY.example.org"
+*  ustaw DNSy: 8.8.8.8, 8.8.4.4
+*  czas dzierżawy 1 minuta, maksymalny czas 3 minuty
+*  pracował na podsieci:
+   - złożonej z 8 adresów IP, którą wyznaczysz z sieci 172.21.194.128/25.  
+     Klient powinien uzyskać adres ip z końcówką 179 lub 181.
+
+ ![](media/image4.png)
+
 11) Ustaw kartę sieciową dolną **( w sali 70: eno1 lub enp3s0** ) tak,
     aby serwer DHCP mógł na niej pracować, użyj komendy ip, np.:
 ![](media/image5.png)
