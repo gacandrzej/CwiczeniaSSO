@@ -1,19 +1,25 @@
-![](media/image1.png)
-Instalacja i konfiguracja serwera DHCP +dhcpv6
-Założenia: praca w parach. Konfiguracja klient -- serwer. Ubuntu
-server + stacje:
-> windows i ubuntu desktop
-Zachowaj na koniec zajęć plik konfiguracyjny dhcpd.conf w swoim katalogu
-domowym!!!
-**Zadanie 1**
+# Ćwiczenia 18 - serwer DHCP + DHCPv6
+
+💡 Założenia: 
+- praca w parach. 
+- Konfiguracja klient -- serwer. 
+- Ubuntu server + stacje: windows i ubuntu desktop
+
 1)  Zaloguj się na konto administrator i dodaj swoje konto do grupy
     sudo:
-> *sudo usermod nazwa_konta -G sudo*
-2)  Odłącz stacje windows od internetu.
-3)  Zaloguj się na swoje konto na minimum pięciu terminalach. (Alt+F2,
-    Alt+F3, ...
-na logi, na edycję pliku ,na komendy, , na restart usługi, na
-dokumentację )
+```bash
+sudo usermod nazwa_konta -G sudo
+```
+2)  Na stacji windows od internetu.
+3)  Zaloguj się na swoje konto na minimum 6 terminalach:  
+
+    <kbd>Alt</kbd>+<kbd>F1</kbd>, na komendy lub edycję pliku 
+    <kbd>Alt</kbd>+<kbd>F2</kbd>, na komendy   
+    <kbd>Alt</kbd>+<kbd>F3</kbd>, na edycję pliku   
+    <kbd>Alt</kbd>+<kbd>F4</kbd>, na dokumentację  
+    <kbd>Alt</kbd>+<kbd>F5</kbd>, na restart usługi  
+    <kbd>Alt</kbd>+<kbd>F6</kbd>, na logi     
+
 4)  Przed przystąpieniem do pracy trzeba odinstalować serwer dhcp:
 sudo apt *remove isc-dhcp-server \--purge -y*
 5)  Zainstaluj serwer DHCP. ( *sudo apt install isc-dhcp-server* )
