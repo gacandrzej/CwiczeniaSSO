@@ -139,45 +139,103 @@ a **domyślny** czas dzierżawy ustaw na 2 minuty,
 
 ![](media/image15.png)
 
-oraz linux
+23) Zmień kolejność dnsów. Pobierz nowe ustawienia na stacji.
+
+24) Sprawdzenie trasy ze stacji windows i linux.
+
+25) Na kliencie ubuntu desktop wydaj komendę: 
+```bash
+ip -c a
+```
+, jeśli brakuje nowych ustawień wydaj komendę:
+```bash
+sudo dhclient 
+```
+w celu ich pobrania.
+
+26) Na kliencie ubuntu desktop wydaj komendy: 
+```bash   
+    ip a
+    ip r 
+    nmcli
+    route
+    resolvectl
+```
+
+  Efekt użycia polecenia nmcli:
+
+![](media/image16.png)
+
+27) Sprawdzenie dnsów:
+```bash
+systemd-resolve --status | grep 'DNS Servers' -A2
+```
+
+lub 
+```bash
+sudo resolvectl 
+```
+i 
+```bash
+ cat /etc/resolv.conf
+```
+
+28) Wykonaj w sekcji host rezerwację dla stacji ubuntu.  
+    Dodaj DNSy: `8.8.8.8`, `1.1.1.1`, `1.0.2.1` w sekcji host, 
+    a **domyślny** czas dzierżawy ustaw na 2 minuty,
+    **maksymalny** czas dzierżawy ustaw na 8 minut.
+
+29) Pobierz nowe ustawienia na stacji.
+
+30) Zmień kolejność dnsów. Pobierz nowe ustawienia na stacji.
+
+31) Sprawdź czas dzierżawy: 
+```bash
+ sudo cat /var/log/syslog | grep dhcp
+```
+
+![](media/image17.png)
+
+lub
+
+```bash
+sudo nmcli -f dhcp4 device show 
+```
+ poszukać frazy: _dhcp_lease_time_ wyrażone w sekundach:
+
+![img.png](media/image31_1.png)
+
+32) Sprawdzenie trasy ze stacji ubuntu:
+
 ```bash
  mtr wp.pl
 ```
 
 ![img.png](media/image22_1.png)
 
-23) Zmień kolejność dnsów. Pobierz nowe ustawienia na stacji.
-24) Sprawdzenie trasy ze stacji windows:
-25) Na kliencie ubuntu desktop wydaj komendę: *ip a*, jeśli brakuje
-    nowych ustawień wydaj komendę:
-*dhclient* w celu pobrania ustawień.
-26) Na kliencie ubuntu desktop wydaj komendy: *ip a, ip r, nmcli, route,
-    resolvectl* w celu sprawdzenia konfiguracji. Efekt użycia polecenia
-    nmcli:
-![](media/image16.png)
-27) Sprawdzenie dnsów:
-*systemd-resolve \--status \| grep \'DNS Servers\' -A2*
-*lub resolvectl i cat /etc/resolv.conf*
-28) Wykonaj w sekcji host rezerwację dla stacji ubuntu.
-Dodaj DNSy: 8.8.8.8, 1.1.1.1, 1.0.2.1 w sekcji host, a
-domyślny czas dzierżawy ustaw na 2 minuty,
-maksymalny czas dzierżawy ustaw na 8 minut.
-29) Pobierz nowe ustawienia na stacji.
-30) Zmień kolejność dnsów. Pobierz nowe ustawienia na stacji.
-31) Sprawdź czas dzierżawy: sudo cat /var/log/syslog \| grep dhcp
-![](media/image17.png)
-32) Sprawdzenie trasy ze stacji ubuntu: mtr strona
-![](media/image18.png)
-33) Włącz masquerade w celu przekazania internetu:
-*/etc/sysctl.conf ustaw(odkomentuj)* *net.ipv4.ip_forward=1*
-*net.ipv6.conf.default.forwarding=1 (dla wersji 6 , opcjonalnie)*
-*sudo sysctl -p , sprawdź cat /proc/sys/net/ipv4/ip_forward*
-*sudo iptables -t nat -A POSTROUTING -s 172.21.194.176/29 -j MASQUERADE*
+---
+
+33) Włącz masquerade w celu przekazania internetu na stację:
+
+_*/etc/sysctl.conf*_ ustaw, odkomentuj:
+`net.ipv4.ip_forward=1`  
+`net.ipv6.conf.default.forwarding=1` (dla wersji 6 , opcjonalnie)  
+
+```bash
+sudo sysctl -p 
+cat /proc/sys/net/ipv4/ip_forward
+```
+```bash
+sudo iptables -t nat -A POSTROUTING -s 172.21.194.176/29 -j MASQUERADE
+```
+
 Powyższe polecenia powinny wystarczyć!!! Jeżeli nie użyj dla iptables
 poniższego:
 ![](media/image19.png)
-W powyższym karta enp0s3 to karta górna z dostępem do internetu, enp0s8
-to karta dolna dla sieci lokalnej
+W powyższym:  
+`enp0s3` to karta górna z dostępem do internetu,  
+`enp0s8` to karta dolna dla sieci lokalnej
+
 34) Uruchom przeglądarkę na stacji roboczej w celu sprawdzenia dostępu
     do internetu.
 35) Sprawdź listę dzierżaw na serwerze:
