@@ -28,7 +28,9 @@
 9.  Pobrany plik Teams_windows_x64.msi zapisz na zmapowanym dysku R.
 10. Ściągnąć instalkę putty:
     https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.83-installer.msi
-11. Również zapisz plik msi na zmapowanym dysku R.
+11. Ściągnąć plik dla 7-zip:
+    https://7-zip.org/a/7z2600-x64.msi
+12. Również zapisz plik msi na zmapowanym dysku R.
 12. Możesz zaktualizować te pliki na nośnikach pendrive. 
 12. Otwórz przystawkę GPO Zarządzanie zasadami grupy.
 
