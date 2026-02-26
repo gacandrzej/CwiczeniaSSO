@@ -24,10 +24,10 @@
 7.  Na stacji wybierz: Ten komputer - \> Mapuj dysk sieciowy (
     [\\\\10.9.8.1\\apps\$](../../../../../../apps$) ) pod literę R:
 8.  Ściągnąć instalkę teams ze strony:
-    <https://learn.microsoft.com/en-us/microsoftteams/msi-deployment>
+    https://learn.microsoft.com/en-us/microsoftteams/msi-deployment
 9.  Pobrany plik Teams_windows_x64.msi zapisz na zmapowanym dysku R.
 10. Ściągnąć instalkę putty:
-    <https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.78-installer.msi>
+    https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.83-installer.msi
 11. Również zapisz plik msi na zmapowanym dysku R.
 12. Możesz zaktualizować te pliki na nośnikach pendrive. 
 12. Otwórz przystawkę GPO Zarządzanie zasadami grupy.
