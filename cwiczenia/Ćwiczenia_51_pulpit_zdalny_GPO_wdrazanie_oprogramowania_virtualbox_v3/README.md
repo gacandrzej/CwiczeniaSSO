@@ -102,7 +102,16 @@ Szablony administracyjne -> System -> Wyświetlaj bardzo szczegółowe komunikat
 
 ![](media/image14.png)
 
-28. Odłącz stację od domeny.
+28. Sprawdź poleceniem 
+```bash
+ gpresult /r
+```
+oraz 
+```bash
+ gpresult /h raport.html
+```
+
+29. Odłącz stację od domeny.
 29. Przenieś komputer w AD z jednostki organizacyjnej **addapp** do
     kontenera Computers.
 
