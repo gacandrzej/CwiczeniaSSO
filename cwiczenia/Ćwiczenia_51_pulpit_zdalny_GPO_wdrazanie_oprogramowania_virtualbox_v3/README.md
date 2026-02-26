@@ -34,7 +34,7 @@
 9.  Pobrane pliki installerów zapisz na zmapowanym dysku R.
 10. Utwórz skrypt bat o zawartości:
 ```bash
-    .\teamsbootstrapper.exe -p -o "\unc\path\to\teams.msix
+    \\10.9.8.1\apps$\teamsbootstrapper.exe -p -o "\\10.9.8.1\apps$\MSTeams-x64.msix"
 ```
 10. Skrypt dodać w 
 ```text
@@ -69,8 +69,7 @@ Konfiguracja komputera -> Zasady -> Ustawienia oprogramowania ->Instalacja oprog
 Nowy -> Pakiet.
 ```
 18. Nazwa pliku, podajemy
-    [\\\\nazwa_servera\\apps](../../../../../../apps) i wybieramy plik
-    teams \...msi .
+    `\\10.9.8.1\apps$` i wybieramy plik teams \...msi .
 
  ![](media/image5.png)
 
@@ -127,7 +126,14 @@ oraz
  gpresult /h raport.html
 ```
 
-29. Odłącz stację od domeny.
+29. Jeśli po restarcie stacji oprogramowanie nie pojawiło się w systemie, wykonaj poniższe kroki na stacji roboczej:
+    Naciśnij <kbd>Win</kbd> + <kbd>R</kbd>, wpisz `eventvwr.msc` i enter.
+
+    Rozwiń sekcję:   
+    Dzienniki systemu Windows (Windows Logs) -> Aplikacja (Application).  
+    Szukaj: `App Mgmt`
+
+30. Odłącz stację od domeny.
 29. Przenieś komputer w AD z jednostki organizacyjnej **addapp** do
     kontenera Computers.
 
