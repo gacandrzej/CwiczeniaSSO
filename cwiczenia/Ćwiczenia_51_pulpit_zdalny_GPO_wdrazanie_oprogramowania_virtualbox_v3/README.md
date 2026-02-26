@@ -24,9 +24,13 @@
 7.  Na stacji wybierz: Ten komputer - \> Mapuj dysk sieciowy (
     [\\\\10.9.8.1\\apps\$](../../../../../../apps$) ) pod literę R:
 8.  Ściągnąć instalkę teams ze strony:
-    https://learn.microsoft.com/en-us/microsoftteams/msi-deployment
+
+    https://learn.microsoft.com/en-us/microsoftteams/msi-deployment  
+
     https://go.microsoft.com/fwlink/?linkid=2243204&clcid=0x409
+
     https://go.microsoft.com/fwlink/?linkid=2196106
+
 9.  Pobrane pliki installerów zapisz na zmapowanym dysku R.
 10. Utwórz skrypt bat o zawartości:
 ```bash
