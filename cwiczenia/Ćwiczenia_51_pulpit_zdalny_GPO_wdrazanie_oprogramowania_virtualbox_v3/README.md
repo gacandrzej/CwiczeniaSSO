@@ -25,8 +25,20 @@
     [\\\\10.9.8.1\\apps\$](../../../../../../apps$) ) pod literę R:
 8.  Ściągnąć instalkę teams ze strony:
     https://learn.microsoft.com/en-us/microsoftteams/msi-deployment
-9.  Pobrany plik Teams_windows_x64.msi zapisz na zmapowanym dysku R.
-10. Ściągnąć instalkę putty:
+    https://go.microsoft.com/fwlink/?linkid=2243204&clcid=0x409
+    https://go.microsoft.com/fwlink/?linkid=2196106
+9.  Pobrane pliki installerów zapisz na zmapowanym dysku R.
+10. Utwórz skrypt bat o zawartości:
+```bash
+    .\teamsbootstrapper.exe -p -o "\unc\path\to\teams.msix
+```
+10. Skrypt dodać w 
+```text
+Computer configuration -> Policies -> Windows settings -> Scripts -> Startup.
+```
+i przycisk add
+
+11. Ściągnąć instalkę putty:
     https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.83-installer.msi
 11. Ściągnąć plik dla 7-zip:
     https://7-zip.org/a/7z2600-x64.msi
