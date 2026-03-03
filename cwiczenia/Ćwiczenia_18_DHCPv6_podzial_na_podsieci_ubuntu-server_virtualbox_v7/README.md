@@ -291,31 +291,31 @@ plik _**/etc/dhcp/dhcpd.conf**_, i zrestartuj usługę.
 
 1) Skonfiguruj serwer do pracy w ipv6
 2) Skopiowanie skryptu:
-![](media/image21.png)
+   ![image21](media/image21.png)
 3) Skopiowanie pliku:
-![](media/image22.png)
+   ![image22](media/image22.png)
 4) Konfiguracja /etc/default/isc-dhcp-server6:
-![](media/image23.png)
+   ![image23](media/image23.png)
 5) Plik konfiguracyjny
-![](media/image24.png)
+   ![image24](media/image24.png)
 6) Ustawienie karty:
-![](media/image25.png)
+   ![image25](media/image25.png)
 7) Uruchomienie
-![](media/image26.png)
+   ![image26](media/image26.png)
 8) Sprawdzenie procesów:
-![](media/image27.png)
+   ![image27](media/image27.png)
 9) Log:
-![](media/image28.png)
+   ![image28](media/image28.png)
 10) Ustawienia pobrane na stacji windows:
-![](media/image29.png)
+   ![image29](media/image29.png)
 11) Ustawienia pobrane na stacji ubuntu:
-![](media/image30.png)
+   ![image30](media/image30.png)
 12) Graficznie:
-![](media/image31.png)
+   ![image31](media/image31.png)
 13) Log dla stacji ubuntu z serwera:
-![](media/image32.png)
+   ![image32](media/image32.png)
 14) Sprawdzenie dzierżaw:
-![](media/image33.png)
+   ![image33](media/image33.png)
 15) Dzierżawy dla wersji 4:
-![](media/image34.png)
-16) Koniec
+   ![image34](media/image34.png)
+16) Koniec🔚
