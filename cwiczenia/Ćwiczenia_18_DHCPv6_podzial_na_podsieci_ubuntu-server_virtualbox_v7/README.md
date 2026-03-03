@@ -13,7 +13,7 @@ sudo usermod nazwa_konta -G sudo
 ```
 
 1) Na stacji windows od internetu.
-2) Zaloguj się na swoje konto na minimum 6 terminalach:  
+1) Zaloguj się na swoje konto na minimum 6 terminalach:  
 
     <kbd>Alt</kbd>+<kbd>F1</kbd>, na komendy lub edycję pliku
     <kbd>Alt</kbd>+<kbd>F2</kbd>, na komendy
@@ -22,7 +22,7 @@ sudo usermod nazwa_konta -G sudo
     <kbd>Alt</kbd>+<kbd>F5</kbd>, na restart usługi  
     <kbd>Alt</kbd>+<kbd>F6</kbd>, na logi
 
-3) Przed przystąpieniem do pracy trzeba odinstalować serwer dhcp:
+1) Przed przystąpieniem do pracy trzeba odinstalować serwer dhcp:
 
 ```bash
 sudo apt remove isc-dhcp-server --purge -y
@@ -44,7 +44,7 @@ sudo apt list --installed | grep dhcp
 
 1) Skopiuj plik _**/etc/dhcp/dhcpd.conf**_ do swojego katalogu domowego
     **/home/twoje_konto/**
-2) Skonfiguruj plik _**/etc/dhcp/dhcpd.conf**_ . Przykładowy plik znajduje
+1) Skonfiguruj plik _**/etc/dhcp/dhcpd.conf**_ . Przykładowy plik znajduje
     się w:
 
 ![image3](media/image3.png)
@@ -82,7 +82,7 @@ otwórz go na 4 terminalu)
 1) Podaj na jakim interfejsie pracuje usługa DHCP w pliku
     _**/etc/default/isc-dhcp-server**_:
 
-![](media/image6.png)
+![mage6](media/image6.png)
 
 1) Zrestartuj usługę dhcp poleceniem:
 
@@ -92,18 +92,18 @@ sudo systemctl restart isc-dhcp-server
 
 1) W logach nie może być błędów, szukamy wpisu:
 
-![](media/image7.png)
+![image7](media/image7.png)
 
 1) Jeśli wystąpią błędy podczas uruchamiania to popraw plik
     _**/etc/dhcp/dhcpd.conf**_, i zrestartuj usługę.
 
-2) Sprawdź czy istnieje proces dla serwera DHCP poleceniem:
+1) Sprawdź czy istnieje proces dla serwera DHCP poleceniem:
 
 ```bash
     sudo ps aux | grep isc-dhcp-server
 ```
 
-![](media/image8.png)
+![image8](media/image8.png)
 
 oraz
 
