@@ -6,35 +6,40 @@
 - Konfiguracja klient -- serwer.
 - Ubuntu server + stacje: windows i ubuntu desktop
 
-1) Zaloguj się na konto administrator i dodaj swoje konto do grupy sudo:
+1. Zaloguj się na konto administrator i dodaj swoje konto do grupy sudo:
 
 ```bash
 sudo usermod nazwa_konta -G sudo
 ```
 
-1) Na stacji windows od internetu.
-1) Zaloguj się na swoje konto na minimum 6 terminalach:  
+1. Na stacji windows od internetu.
+1. Zaloguj się na swoje konto na minimum 6 terminalach:  
 
     <kbd>Alt</kbd>+<kbd>F1</kbd>, na komendy lub edycję pliku
+
     <kbd>Alt</kbd>+<kbd>F2</kbd>, na komendy
+
     <kbd>Alt</kbd>+<kbd>F3</kbd>, na edycję pliku
+
     <kbd>Alt</kbd>+<kbd>F4</kbd>, na dokumentację  
+
     <kbd>Alt</kbd>+<kbd>F5</kbd>, na restart usługi  
+
     <kbd>Alt</kbd>+<kbd>F6</kbd>, na logi
 
-1) Przed przystąpieniem do pracy trzeba odinstalować serwer dhcp:
+1. Przed przystąpieniem do pracy trzeba odinstalować serwer dhcp:
 
 ```bash
 sudo apt remove isc-dhcp-server --purge -y
 ```
 
-1) Zainstaluj serwer DHCP.
+1. Zainstaluj serwer DHCP.
 
 ```bash
 sudo apt install isc-dhcp-server
 ```
 
-1) Sprawdź czy jest zainstalowana paczka w systemie:
+1. Sprawdź czy jest zainstalowana paczka w systemie:
 
 ```bash
 sudo apt list --installed | grep dhcp
@@ -42,9 +47,9 @@ sudo apt list --installed | grep dhcp
 
 ![image2](media/image2.png)
 
-1) Skopiuj plik _**/etc/dhcp/dhcpd.conf**_ do swojego katalogu domowego
+1. Skopiuj plik _**/etc/dhcp/dhcpd.conf**_ do swojego katalogu domowego
     **/home/twoje_konto/**
-1) Skonfiguruj plik _**/etc/dhcp/dhcpd.conf**_ . Przykładowy plik znajduje
+1. Skonfiguruj plik _**/etc/dhcp/dhcpd.conf**_ . Przykładowy plik znajduje
     się w:
 
 ![image3](media/image3.png)
@@ -52,13 +57,13 @@ sudo apt list --installed | grep dhcp
 _/usr/share/doc/isc-dhcp-server/examples/dhcpd.conf.example_
 otwórz go na 4 terminalu)
 
-1) Otwórz plik dhcpd.conf w vi lub nano lub mcedit, np.:
+1. Otwórz plik dhcpd.conf w vi lub nano lub mcedit, np.:
 
 ```bash
     sudo mcedit /etc/dhcp/dhcpd.conf
 ```
 
-1) Skonfiguruj serwer tak, aby:
+1. Skonfiguruj serwer tak, aby:
 
 - był serwerem podrzędny
 - automatyczne aktualizacje ddns ustaw na none
@@ -74,30 +79,30 @@ otwórz go na 4 terminalu)
 
  ![image4](media/image4.png)
 
-1) Ustaw kartę sieciową dolną **( w sali 70: eno1 lub enp3s0** ) tak,
+1. Ustaw kartę sieciową dolną **( w sali 70: eno1 lub enp3s0** ) tak,
     aby serwer DHCP mógł na niej pracować, użyj komendy ip, np.:
 
 ![image5](media/image5.png)
 
-1) Podaj na jakim interfejsie pracuje usługa DHCP w pliku
+1. Podaj na jakim interfejsie pracuje usługa DHCP w pliku
     _**/etc/default/isc-dhcp-server**_:
 
 ![mage6](media/image6.png)
 
-1) Zrestartuj usługę dhcp poleceniem:
+1. Zrestartuj usługę dhcp poleceniem:
 
 ```bash
 sudo systemctl restart isc-dhcp-server
 ```
 
-1) W logach nie może być błędów, szukamy wpisu:
+1. W logach nie może być błędów, szukamy wpisu:
 
 ![image7](media/image7.png)
 
-1) Jeśli wystąpią błędy podczas uruchamiania to popraw plik
+1. Jeśli wystąpią błędy podczas uruchamiania to popraw plik
     _**/etc/dhcp/dhcpd.conf**_, i zrestartuj usługę.
 
-1) Sprawdź czy istnieje proces dla serwera DHCP poleceniem:
+1. Sprawdź czy istnieje proces dla serwera DHCP poleceniem:
 
 ```bash
     sudo ps aux | grep isc-dhcp-server
@@ -111,9 +116,9 @@ oraz
 sudo htop -> F3 wpisać dhcp i enter, wyjście q
 ```
 
-![](media/image9.png)
+![image9](media/image9.png)
 
-1) Sprawdź zawartość logów poleceniem na 6 terminalu:
+1. Sprawdź zawartość logów poleceniem na 6 terminalu:
 
 ```bash
     sudo journalctl -f (preferowana metoda)
@@ -125,34 +130,35 @@ lub
 sudo journalctl -u isc-dhcp-server --since today (klawisz Page Down)
 ```
 
-1) Na kliencie windows pobierz ustawienia na dolną kartę z serwera
+1. Na kliencie windows pobierz ustawienia na dolną kartę z serwera
     dhcp.
 
-2) Na stacji windows spradź ustawienia:
+1. Na stacji windows spradź ustawienia:
 
     _route print,_  
     _ipconfig /all_
 
-![](media/image10.png)
+![image10](media/image10.png)
 
-![](media/image11.png)
+![image11](media/image11.png)
 
-_oraz graficznie_
+oraz graficznie
 
-![](media/image12.png)
+![mage12.png](media/image12.png)
 
-1) Sprawdź zawartość logów na serwerze:
+1. Sprawdź zawartość logów na serwerze:
 
 ![](media/image13.png)
 
-1) Wykonaj w sekcji host rezerwację dla stacji windows.  
-Dodaj DNS: `8.8.8.8` oraz `1.1.1.1` w sekcji host,
+1. Wykonaj w sekcji host rezerwację dla stacji windows.  
+
+dolną daj DNS: `8.8.8.8` oraz `1.1.1.1` w sekcji host,
 a **domyślny** czas dzierżawy ustaw na 2 minuty,  
 **maksymalny** czas dzierżawy ustaw na 6 minuty,  
 
-![](media/image14.png)
+![image14](media/image14.png)
 
-1) Pobierz nowe ustawienia na stacji, a następnie sprawdź trasę na windows
+1. Pobierz nowe ustawienia na stacji, a następnie sprawdź trasę na windows
 
 ![](media/image15.png)
 
