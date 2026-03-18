@@ -1,5 +1,7 @@
 # Ćwiczenia 19 -- CUPS
 
+💡Sprawdź najpierw, która drukarka jest do zainstalowania!!!
+
 1. Zaloguj się na swoje konto.
 1. Na pierwszym terminalu:
 
@@ -11,12 +13,58 @@
    sudo apt install cups -y
    ```
 
-1. Sprawdzić stan usługi: sudo systemctl status cups
+1. Sprawdzić stan usługi:
+
+   ```bash
+   sudo systemctl status cups
+   ```
+
+   ```text
+   ● cups.service - CUPS Scheduler
+     Loaded: loaded (/lib/systemd/system/cups.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2026-03-18 14:47:33 CET; 12min ago
+     TriggeredBy: ● cups.socket
+             ● cups.path
+       Docs: man:cupsd(8)
+   Main PID: 813 (cupsd)
+     Status: "Scheduler is running..."
+      Tasks: 3 (limit: 9228)
+     Memory: 11.4M
+        CPU: 47ms
+     CGroup: /system.slice/cups.service
+             ├─ 813 /usr/sbin/cupsd -l
+             ├─ 934 /usr/lib/cups/notifier/dbus dbus:// ""
+             └─1132 /usr/lib/cups/notifier/dbus dbus:// ""
+
+   Mar 18 14:47:32 servubu systemd[1]: Starting CUPS Scheduler...
+   Mar 18 14:47:33 servubu systemd[1]: Started CUPS Scheduler.
+   ```
+
 1. W virtualbox dodaj kartę mostkową:
 
    ![image2](media/image2.png)
 
-1. Na 5 terminalu : man cupsd.conf
+1. Na 5 terminalu :
+
+   ```bash
+   man cupsd.conf
+   ```
+
+   ```text
+   cupsd.conf(5)                                   OpenPrinting                                   cupsd.conf(5)
+
+   NAME
+       cupsd.conf - server configuration file for cups
+
+   DESCRIPTION
+       The cupsd.conf file configures the CUPS scheduler, cupsd(8).  It is normally located in the /etc/cups
+       directory.  Each line in the file can be a configuration directive, a blank line, or a comment.  Con‐
+       figuration  directives  typically  consist of a name and zero or more values separated by whitespace.
+       The configuration directive name and values are case-insensitive.  Comment lines  start  with  the  #
+       character.
+
+   ```
+
 1. Połącz się ze stacji windows do usługi cups.
 1. Serwer wpięty do sieci, natomiast stacja tylko do serwera.
 
@@ -24,11 +72,15 @@
 
 1. Ustaw na serwerze dostęp zdalny:
 
+   ```bash
+   sudo cupsctl --remote-admin
+   sudo cupsctl --remote-any
+   ```
+
    ![image4](media/image4.png)
 
-1. Dodaj drukarkę kyocerę FS-1320D na
-    serwerze, znajdź sterownik PPD tak jak na wykładzie
-   ![image5](media/image5.png)
+1. Dodaj drukarkę: Kyocera Ecosys PA4000x na serwerze.
+
 1. Skopiuj sterownik ze stacji na serwer
     z użyciem winscp:
 
@@ -38,16 +90,33 @@
 
 1. Wypakuj sterownik
 
-   ![image8](media/image8.png)
+   ![driver_tar_gz](../../media/2026-03-18-15-16-52.png)
 
-1. Zainstaluj drukarkę
-1. Krok 1: W lokalizacji podaj swoje imię
+   ![plik_deb](../../media/2026-03-18-15-29-37.png)
 
-   ![image9](media/image9.png)
-   
+   ```bash
+   sudo dpkg -i kyodialog_9.4-0_amd64.deb
+   ```
+
+1. Zainstaluj drukarkę:
+
+   ```bash
+
+   ```
+
+1. Po instalacji na serwerze otwórz na stacji stronę cupsa:
+
+   ![add_printer](../../media/2026-03-18-15-13-11.png)
+
+   ![share_printer](../../media/2026-03-18-15-42-22.png)
+
 1. Krok 2
 
-   ![image10](media/image10.png)
+   ![add_printer_krok3](../../media/2026-03-18-16-51-43.png)
+
+1. Widok drukarek zainstalowanych:
+
+   ![zainstalowane_drukarki](../../media/2026-03-18-16-54-03.png)
 
 1. Krok 3
 
@@ -56,13 +125,26 @@
 1. Zainstaluj na stacji windows z udostępnienia
     drukarki.
 
-   ![image12](media/image12.png)
+   ![win11](../../media/2026-03-18-17-00-10.png)
+
+1. Wydrukuj stronę testową:
+
+   ![strona_testowa_win11](../../media/2026-03-18-17-01-52.png)
+
+1. Lista zadań na serwerze:
+
+   ![lista_zadan](../../media/2026-03-18-17-04-29.png)
 
 1. Zainstaluj na stacji ubuntu z udostępnienia drukarki.
-1. Ze stacji wydrukuj stronę testową podając nazwę komputera stacjaX,
-    za X podaj numer stanowiska.
+
+   ![drukarka_ubuntu](../../media/2026-03-18-17-06-49.png)
+
+1. Ze stacji wydrukuj stronę testową:
+
+   ![str_test_ubuntu](../../media/2026-03-18-17-09-24.png)
+
 1. Sprawdź na swoim serwerze stan drukarek
 
-   ![image13](media/image13.png)
+   ![lpstat](../../media/2026-03-18-16-56-52.png)
 
-1. KONIEC.
+1. KONIEC.😀
