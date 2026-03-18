@@ -66,9 +66,30 @@
    ```
 
 1. Połącz się ze stacji windows do usługi cups.
-1. Serwer wpięty do sieci, natomiast stacja tylko do serwera.
+1. Serwer wpięty do sieci, posiada DHCP, natomiast stacja tylko do serwera.
 
-   ![image3](media/image3.png)
+   ```conf
+   ddns-update-style none;
+   authoritative;
+   log-facility local7;
+
+    subnet 198.51.100.224 netmask 255.255.255.248 {
+      range 198.51.100.226 198.51.100.228;
+      range 198.51.100.230 198.51.100.230;
+      option domain-name-servers 1.1.1.1, 1.0.0.1;
+      option domain-name "2k.example.org";
+      option routers 198.51.100.225;
+      default-lease-time 60;
+      max-lease-time 120;
+
+    host fantasia {
+      hardware ethernet 08:00:27:45:b7:83;
+      fixed-address 198.51.100.229;
+    }
+
+    }
+
+   ```
 
 1. Ustaw na serwerze dostęp zdalny:
 
@@ -82,9 +103,11 @@
 1. Dodaj drukarkę: Kyocera Ecosys PA4000x na serwerze.
 
 1. Skopiuj sterownik ze stacji na serwer
-    z użyciem winscp:
+    z użyciem winscp, uwzględnij adres ip serwera `198.51.100.225``:
 
    ![image6](media/image6.png)
+
+   oraz plik KyoceraLinuxPackages-20240521.tar.gz
 
    ![image7](media/image7.png)
 
@@ -94,13 +117,10 @@
 
    ![plik_deb](../../media/2026-03-18-15-29-37.png)
 
-   ```bash
-   sudo dpkg -i kyodialog_9.4-0_amd64.deb
-   ```
-
 1. Zainstaluj drukarkę:
 
    ```bash
+   sudo dpkg -i kyodialog_9.4-0_amd64.deb
 
    ```
 
