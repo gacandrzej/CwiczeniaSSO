@@ -147,4 +147,24 @@
 
    ![lpstat](../../media/2026-03-18-16-56-52.png)
 
+1. Ustaw na serwerze drukarkę domyślną, a następnie wydrukuj plik z pomocą polecenia:
+
+   ![polecenie_lp](../../media/2026-03-18-17-20-08.png)
+
+   lub
+
+   ```bash
+   echo "Test drukowania z serwera, stacji" | lp
+   ```
+
+1. Sprawdź zakończone zadania:
+
+   ![finished_jobs](../../media/2026-03-18-17-28-19.png)
+
+1. Sprawdzenie listy zadań z pomocą lpq:
+
+   ```bash
+   sudo apt install lpr
+   ```
+
 1. KONIEC.😀
