@@ -78,7 +78,7 @@
 
 1. Na Printers prawy przycisk myszy New → Shared Printer
 
-![image5](media/image5.png)
+   ![image5](media/image5.png)
 
 1. Na stacji wydaj polecenie
 
@@ -106,3 +106,5 @@
 1. Druga osoba realizuje ćwiczenia.
 
 1. Na serwerze przywrócić ustawienia górnej karty sieciowej.
+
+1. KONIEC.🔚
