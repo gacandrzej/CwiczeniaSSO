@@ -72,13 +72,13 @@
 
 1. Utwórz obiekt zasad grup o nazwie printer-ad
 
-1. Na Printers prawy przycisk myszy New → Shared Printer
-
-   ![image5](media/image5.png)
-
 1. Ustaw drukarkę do wdrożenia:
 
    ![image6](media/image6.png)
+
+1. Na Printers prawy przycisk myszy New → Shared Printer
+
+![image5](media/image5.png)
 
 1. Na stacji wydaj polecenie
 
