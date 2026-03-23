@@ -20,7 +20,7 @@
 1. Po instalacji usługi, zaloguj się na stacji i ściągnij sterownik dla
     drukarki:
 
-   **Kyocera FS - 1320D**
+   **Kyocera Ecosys PA4000x**
 
    **TOSHIBA e-STUDIO338CS**.
 
