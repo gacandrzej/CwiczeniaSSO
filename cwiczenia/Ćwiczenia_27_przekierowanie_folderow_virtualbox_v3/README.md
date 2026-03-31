@@ -5,18 +5,18 @@
 1. Zaloguj się na konto administrator na serwerze.
 
 1. Utwórz jednostkę organizacyjną w AD dla domeny zsmeie.abcd, o ile
-    nie istnieje, o nazwie: ***3x***, gdzie ***x*** oznacza
+    nie istnieje, o nazwie: ***2x***, gdzie ***x*** oznacza
     literę twojej klasy.
 
-1. Utwórz w jednostce ***3x*** podjednostkę o nazwie ***grx***, gdzie
+1. Utwórz w jednostce ***2x*** podjednostkę o nazwie ***grx***, gdzie
     ***x*** oznacza numer twojej grupy.
 
 1. Utwórz na dysku c: katalog do przechowywania twoich plików z pulpitu
-    o nazwie: pulpity_3x_grX, gdzie x
+    o nazwie: pulpity_2x_grX, gdzie x
    oznacza literę twojej klasy, a X numer twojej grupy.
 
 1. W przystawce zarządzanie komputerem ( compmgmt.msc ) udostępnij
-   folder pulpity_3x_grX jako ukryty,
+   folder pulpity_2x_grX jako ukryty,
    dodając na końcu znak dolara. Pamiętaj o kliknięciu w przycisk Dostosuj
    (Patrz punkt 8).
 
@@ -57,10 +57,15 @@
 
    ![image7](media/image7.png)
 
-1. , otworzy się okno \'Edytor zarządzania zasadami
-   grupy\', następnie \'konfiguracja użytkownika\' → zasady → ustawienia
-   systemu windows → przekierowania
-   folderów → Dokumenty ( prawym klawiszem myszy wybrać właściwości) i
+1. Otworzy się okno \'Edytor zarządzania zasadami
+   grupy\', następnie wybierz:
+
+   ```text
+   konfiguracja użytkownika → zasady → ustawienia
+   systemu windows → przekierowania folderów → Pulpit   
+   ```
+
+   ( prawym klawiszem myszy wybrać właściwości) i
    skonfigurować przekierowanie dla
    grupy zabezpieczeń i folderu udostępnionego.
 
@@ -75,7 +80,7 @@
    ścieżce,
    ścieżka katalogu głównego: np.
 
-   [\\\\serverx\\](file:///\\serverx\)pulpity\$ i OK.
+   \\\\serverx\\pulpity\$ i OK.
 
    ![image9](media/image9.png)
 
@@ -89,7 +94,7 @@
    pliki z pulpitu zostaną przeniesione na
    serwer do katalogu np.
 
-   c:\\pulpity_3k_gr2\\nazwa_twojego_konta\\Dokumenty.
+   c:\\pulpity_2k_gr2\\nazwa_twojego_konta\\Desktop
 
    Na serwerze:
 
