@@ -106,9 +106,19 @@
 
    ![image13](media/image13.png)
 
-1. Na wypadek, gdyby nie działało przelogowanie
+1. Na stacji wpisz polecenie
+
+   ```bash
+   gpupdate /force
+   ```
 
    ![image14](media/image14.png)
+
+   Możesz też wygenerować raport:
+
+   ```bash
+   gpresult /h rport.html
+   ```
 
 1. Wszystkie czynności powtórz dla katalogu dokumenty.
 
