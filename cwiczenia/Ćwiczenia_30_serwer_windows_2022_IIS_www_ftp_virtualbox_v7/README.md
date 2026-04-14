@@ -149,99 +149,121 @@
     ![image18](media/image18.png)
 
 1. Połącz się ze **stacji** i sprawdź działanie swoich witryn **ftp** w
-    przeglądarkach i wierszu poleceń.
-![](media/image20.png)
+   przeglądarkach i wierszu poleceń.
 
-> ![](media/image22.png)
->
-> ![](media/image23.png)
+   ![image20](media/image20.png)
+
+   ![image22](media/image22.png)
+
+   ![image23](media/image23.png)
 
 1. Dla wybranych dwóch witryn ftp
-    a)  zmodyfikuj „reguły autoryzacji"
-    b)  zmodyfikuj „uwierzytelnianie ftp"
-2. ![](media/image24.png)
-    Na stacji uruchom Wiresharka i
-    przechwyć komunikację do twojej witryny www i ftp.
 
-> ![](media/image25.png)
+   - zmodyfikuj „reguły autoryzacji"
+   - zmodyfikuj „uwierzytelnianie ftp"
+
+1. Na stacji uruchom Wiresharka i
+   przechwyć komunikację do twojej witryny www i ftp.
+
+    ![image24](media/image24.png)
+
+    ![image25](media/image25.png)
 
 1. Połącz się ze stacji za pomocą VPN, instrukcja na teams. (nie
-    podłączamy stacji do domeny!!!)
+   podłączamy stacji do domeny!!!)
 
-> ![](media/image26.png)
->
-> ![](media/image27.png)
+   ![image26](media/image26.png)
 
-1.
+   ![image27](media/image27.png)
 
-> ![](media/image28.png)
+1. Ustanowienie połączenia VPN.
 
-1. W katalogu
-    [c:\\Inetpub\\](../../../../../../c:/Inetpub/www_twojeimię) utworzyć
-    swoją *witrynę www* o następujących ustawieniach:
-    a)  ip: 10.11.12.1 port 8089 dla połączenia VPN, podkatalog
-        *www5_vpn_twojeimię*
-    b)  ip: 10.11.12.1 port 8099 dla połączenia VPN, podkatalog
+   ![image28](media/image28.png)
+
+1. W katalogu c:\\Inetpub\\www_twojeimię\ utworzyć
+   swoją *witrynę www* o następujących ustawieniach:
+
+   - ip: 10.11.12.1 port 8089 dla połączenia VPN, podkatalog
+     *www5_vpn_twojeimię*
+   - ip: 10.11.12.1 port 8099 dla połączenia VPN, podkatalog
         www6_vpn_twojeimię
-2. W katalogu
-    [c:\\Inetpub\\](../../../../../../c:/Inetpub/%20ftp_twojeimię)
-    utworzyć swoją *witrynę ftp* o następujących ustawieniach:
-    a)  ip: 10.11.12.1 port 2122 dla połączenia VPN, podkatalog
-        ***ftp5_vpn_twojeimię** (brak SSL),*
 
-> *logowanie anonimowe*
->
-> *do odczytu i zapisu*
->
-> ![](media/image29.png)
-b)  *ip: 10.11.12.1 port 2124 dla połączenia VPN, podkatalog
-    **ftp6_vpn_twojeimię** (zezwalaj na SSL),*
-> *logowanie podstawowe na twoje konto z AD, tryb do odczytu i zapisu*
-c)  *zmodyfikować „reguły autoryzacji" oraz „uwierzytelnianie ftp"*
-d)  *do obu witryn dodaj wybrany banner ( przywitalny, transparentny lub
+1. W katalogu c:\\Inetpub\\ftp_twojeimię
+   utworzyć swoją *witrynę ftp* o następujących ustawieniach:
+
+   - ip: 10.11.12.1 port 2122 dla połączenia VPN, podkatalog
+     ***ftp5_vpn_twojeimię** (brak SSL),*
+
+     *logowanie anonimowe*
+
+     *do odczytu i zapisu*
+
+     ![image29](media/image29.png)
+
+   - *ip: 10.11.12.1 port 2124 dla połączenia VPN,
+     podkatalog **ftp6_vpn_twojeimię** (zezwalaj na SSL),*
+     *logowanie podstawowe na twoje konto z AD,
+     tryb do odczytu i zapisu*
+
+   - *zmodyfikować „reguły autoryzacji" oraz „uwierzytelnianie ftp"*
+
+   - *do obu witryn dodaj wybrany banner ( przywitalny, transparentny lub
     końcowy **minimum 30 znaków**)*
-<!-- -->
+
 1. Połącz się ze stacji za pomocą VPN i sprawdź działanie swoich witryn
     www oraz ftp na oba adresy, jeżeli nie można się połączyć to włączyć
     regułę na firewallu serwera zezwalającą na połączenia.
 
-> ![](media/image30.png)
+   ![image30](media/image30.png)
 
 1. Na stacji uruchom Wiresharka i przechwyć komunikację do twojej
-    witryny www i ftp.
-2. Utwórz połączenie VPN ze stacji ubuntu desktop.
-![](media/image31.png)
-![](media/image32.png)
-![](media/image33.png)
-3. Sprawdź działanie swoich witryn www oraz ftp na oba adresy. (Ctrl+l)
-![](media/image34.png)
+   witryny www i ftp.
 
-> ![](media/image35.png)
+1. Utwórz połączenie VPN ze stacji ubuntu desktop.
+
+   ![image31](media/image31.png)
+
+   ![image32](media/image32.png)
+
+   ![image33](media/image33.png)
+
+1. Sprawdź działanie swoich witryn www oraz ftp na oba adresy. (Ctrl+l)
+
+   ![image34](media/image34.png)
+
+   ![image35](media/image35.png)
 
 1. Wykonaj dodatkowe zadanie podane przez nauczyciela:
-    a)  W DNS dodaj strefę przeszukiwania wstecz, następnie dodaj
-        odpowiednie rekordy tak, aby można było odczytaj stronę www
-        poprzez adres: [www.zsmeie.abcd](http://www.zsmeie.abcd/)
-    b)  przekieruj porty na routerze tak, aby po wpisaniu na stacji
-        adresu [http://50.50.50.1:8080](http://50.50.50.1:8080/)
 
-> wyświetliła się strona z serwera 10.9.8.1:80.
->
-> Wskazówki:
->
-> Ustaw na routerze:
-WAN: 50.50.50.1, z maską 24
-> ![](media/image38.png)
-LAN: 10.9.8.5 z maską zgodną z kartą serwera
-Na stacji: ip stacji, dolna karta: 50.50.50.2/24 z bramką 50.50.50.1
+   - W DNS dodaj strefę przeszukiwania wstecz, następnie dodaj
+     odpowiednie rekordy tak, aby można było odczytaj stronę www
+     poprzez adres: [www.zsmeie.abcd](http://www.zsmeie.abcd/)
+
+   - przekieruj porty na routerze tak, aby po wpisaniu na stacji
+     adresu [http://50.50.50.1:8080](http://50.50.50.1:8080/)
+
+     wyświetliła się strona z serwera 10.9.8.1:80.
+
+     Wskazówki:
+
+     Ustaw na routerze:
+
+     WAN: 50.50.50.1, z maską 24
+
+     ![image38](media/image38.png)
+
+     LAN: 10.9.8.5 z maską zgodną z kartą serwera
+
+     Na stacji: ip stacji, dolna karta: 50.50.50.2/24 z bramką 50.50.50.1
 
 1. Dodatkowe zadanie.
-2. Wyłączyć routing i dostęp zdalny
 
-> ![](media/image2.png)
+1. Wyłączyć routing i dostęp zdalny
+
+   ![image2](media/image2.png)
 
 1. Zresetuj ustawienia zapory na serwerze do ustawień domyślnych.
 
-> ![](media/image40.png)
+   ![image40](media/image40.png)
 
-1. KONIEC.
+1. KONIEC.🔚
