@@ -247,6 +247,58 @@ echo "Zakończono: plik skopiowany na pendrive"
 umount $MOUNT_DIR
 ```
 
+- pobranie kursu bitcoina
+
+```bash
+#!/bin/bash
+
+# pobranie danych z API
+json=$(curl -s "https://api.coinbase.com/v2/prices/spot?currency=USD")
+
+# mała przerwa
+sleep 2
+
+# wyciągnięcie kursu
+kurs=$(echo "$json" | jq -r '.data.amount')
+
+# data
+data=$(date +%F)
+
+# wynik końcowy
+echo "Kurs BTC/USD w dniu $data wynosi: $kurs USD"
+```
+
+Wynik:
+
+```text
+Kurs BTC/USD w dniu 2026-04-15 wynosi: 73942.965 USD
+```
+
+- utwórz skrypt o nazwie zajetosc_dysku.sh, który tworzy plik na dysku z raportem o zajętości miejsca na dysku:
+
+```bash
+#!/bin/bash
+
+RAPORT="/tmp/raport_dysk_$(date +%F).txt"
+
+echo "Raport zajętości dysku - $(date)" > "$RAPORT"
+
+df -h >> "$RAPORT"
+
+echo "Raport zapisany do: $RAPORT"
+```
+
+- skrypt wypisujący urządzenia blokowe z katalogu /dev
+
+```bash
+#!/bin/bash
+
+echo "Lista urządzeń blokowych (/dev):"
+echo "--------------------------------"
+
+ls -l /dev | grep "^b" | awk '{print $10}'
+```
+
 ---
 
 ## 2. Windows 11 (*.cmd)
