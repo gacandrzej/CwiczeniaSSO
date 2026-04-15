@@ -1,4 +1,4 @@
-# Ćwiczenia 33 -- tworzenie skryptów administracyjnych
+# Ćwiczenia 40 -- tworzenie skryptów administracyjnych
 
 ---
 
