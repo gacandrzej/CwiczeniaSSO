@@ -1,4 +1,4 @@
-# Ćwiczenia 33 -- tworzenie skryptów administracyjnych -- Windows 2022
+# Ćwiczenia 33 -- tworzenie skryptów administracyjnych
 
 # 📘 Ćwiczenia — Skrypty administracyjne
 
@@ -7,40 +7,270 @@
 ## 1. Bash (Linux)
 
 - Wyświetlenie komunikatu „Hello World”  
+
+```Bash
+#!/bin/bash
+echo "Hello World"
+```
+
 - Archiwizacja pliku z użyciem tar i gzip  
+
+```bash
+#!/bin/bash
+tar cvfz archiwum.tar.gz plik.txt
+```
+
 - Archiwizacja katalogu użytkownika  
+
+```bash
+#!/bin/bash
+tar cvfj backup_katalogu.tar.bz2 /home/user
+```
+
 - Wykonanie kopii zapasowej plików logów systemowych  
+
+```bash
+#!/bin/bash
+sudo cp /var/log/syslog /home/user/syslog_backup.log
+```
+
 - Wykonanie kopii zapasowej pliku konfiguracyjnego (.conf)  
+
+```bash
+#!/bin/bash
+cp /etc/apache2/apache2.conf apache2.conf.bak
+```
+
 - Utworzenie nowego użytkownika w systemie  
+
+```bash
+#!/bin/bash
+sudo useradd jan
+sudo passwd jan
+```
+
 - Utworzenie nowej grupy w systemie  
+
+```bash
+#!/bin/bash
+sudo groupadd programisci
+```
+
 - Dodanie użytkownika do istniejącej grupy  
+
+```bash
+#!/bin/bash
+sudo usermod -aG programisci jan
+```
+
 - Usunięcie użytkownika z systemu  
+
+```bash
+```
+
 - Utworzenie pięciu użytkowników na podstawie parametrów  
+
+```bash
+#!/bin/bash
+
+KONTO=$1
+
+for i in {1..5}
+do
+    useradd -m ${KONTO}${i}
+done
+```
+
 - Utworzenie grupy systemowej i przypisanie do niej użytkowników  
+
+```bash
+#!/bin/bash
+
+GRUPA="informatyk"
+sudo groupadd -r $GRUPA
+
+for i in {1..5}
+do
+    sudo useradd -m uczen$i -g $GRUPA
+done
+```
+
 - Utworzenie katalogów domowych w niestandardowej lokalizacji  
+
+```bash
+#!/bin/bash
+
+KATALOG=$1
+
+for i in {1..5}
+do
+    useradd -m -d /home/$KATALOG/uczen$i uczen$i
+done
+```
+
 - Wykonanie backupu katalogu użytkownika z datą w nazwie  
+
+```bash
+#!/bin/bash
+
+DATA=$(date +%F)
+tar -czvf backup_$DATA.tar.gz /home/user
+```
+
 - Nadanie uprawnień do plików i katalogów  
+
+```bash
+#!/bin/bash
+
+chmod 755 skrypt.sh
+chown root:admin skrypt.sh
+```
+
 - Automatyzacja zadań administracyjnych w Bash  
+
+```bash
+#!/bin/bash
+
+echo "Start administracji systemem"
+
+apt update -y
+apt autoremove -y
+
+echo "Gotowe"
+```
 
 ---
 
 ## 2. Windows 11 (*.cmd)
 
 - Wyświetlenie komunikatu „Hello World”  
+
+```bash
+@echo off
+echo Hello World
+pause
+```
+
 - Utworzenie katalogu na dane użytkownika  
+
+```bash
+@echo off
+mkdir C:\Users\DaneUzytkownika
+pause
+```
+
 - Skopiowanie pliku do katalogu zapasowego  
+
+```bash
+@echo off
+mkdir C:\Backup
+copy C:\plik.txt C:\Backup\
+pause
+```
+
 - Wykonanie kopii zapasowej plików logów systemowych  
+
+```bash
+@echo off
+copy C:\Windows\System32\winevt\Logs\*.evtx C:\Backup\
+pause
+```
+
 - Utworzenie archiwum plików  
+
+```bash
+@echo off
+powershell Compress-Archive -Path C:\Dane\* -DestinationPath C:\Backup\dane.zip
+pause
+```
+
 - Utworzenie lokalnego konta użytkownika  
+
+```bash
+@echo off
+net user jan Haslo123 /add
+pause
+```
+
 - Utworzenie lokalnej grupy użytkowników  
+
+```bash
+@echo off
+net localgroup Programisci /add
+pause
+```
+
 - Dodanie użytkownika do grupy lokalnej  
+
+```bash
+@echo off
+net localgroup Programisci jan /add
+pause
+```
+
 - Usunięcie użytkownika z systemu  
+
+```bash
+@echo off
+net user jan /delete
+pause
+```
+
 - Automatyczne tworzenie wielu użytkowników (pętla)  
+
+```bash
+@echo off
+
+for /L %%i in (1,1,5) do (
+    net user uczen%%i Haslo123 /add
+)
+pause
+```
+
 - Odczyt informacji o użytkowniku  
+
+```bash
+@echo off
+net user jan
+pause
+```
+
 - Zmiana hasła użytkownika  
+
+```bash
+@echo off
+net user jan NoweHaslo123
+pause
+```
+
 - Zarządzanie katalogami użytkowników  
+
+```bash
+@echo off
+mkdir C:\Users\jan
+mkdir C:\Users\anna
+mkdir C:\Users\piotr
+pause
+```
+
 - Nadawanie uprawnień do plików i katalogów  
+
+```bash
+@echo off
+icacls C:\Dane /grant jan:F
+pause
+```
+
 - Automatyzacja zadań w plikach .cmd  
+
+```bash
+@echo off
+echo Aktualizacja systemu...
+echo Czyszczenie plików tymczasowych...
+del /q/f/s %TEMP%\*
+echo Gotowe
+pause
+```
 
 ---
 
