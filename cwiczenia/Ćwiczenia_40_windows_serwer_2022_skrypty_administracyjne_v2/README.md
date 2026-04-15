@@ -1,7 +1,5 @@
 # Ćwiczenia 33 -- tworzenie skryptów administracyjnych
 
-# 📘 Ćwiczenia — Skrypty administracyjne
-
 ---
 
 ## 1. Bash (Linux)
@@ -66,6 +64,8 @@ sudo usermod -aG programisci jan
 - Usunięcie użytkownika z systemu  
 
 ```bash
+#!/bin/bash
+sudo userdel jan
 ```
 
 - Utworzenie pięciu użytkowników na podstawie parametrów  
@@ -307,9 +307,64 @@ objOU.SetInfo
 
 - Tworzenie konta użytkownika w Active Directory  
 
+```Bash
+'w jakiej OU tworzymy konto
+Set jedorg = GetObject("LDAP://ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+
+'tworzenie konta
+Set usr = jedorg.Create("User","cn=xKowalskiJ")
+
+'podstawowe dane
+usr.Put "givenName", "Jan"
+usr.Put "sn", "xKowalski"
+usr.Put "displayName", "xKowalski Jan"
+usr.Put "userPrincipalName", "xKowalskiJ@zsmeie.abcd"
+usr.Put "sAMAccountName", "xKowalskiJ"
+usr.Put "mail", "xKowalskiJ@zsmeie.abcd"
+usr.Put "mailNickname", "xKowalskiJ"
+usr.Put "description", "przez skrypt"
+
+'profil użytkownika
+usr.Put "profilePath", "\\k5\profile$\%username%"
+usr.Put "HomeDirectory", "\\k5\profile$\%username%"
+usr.Put "HomeDrive", "h:"
+
+'zapis
+usr.SetInfo
+
+'aktywacja konta i hasło
+usr.SetPassword "password"
+usr.AccountDisabled = False
+usr.SetInfo
+```
+
 - Ustawianie atrybutów użytkownika  
 
-- Konfiguracja profilu użytkownika  
+```Bash
+Const crlf = vbCrLf
+
+Set usr = GetObject("LDAP://cn=xKowalskiJ,ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+
+WScript.Echo "User Principal Name: " & usr.userPrincipalName & crlf & _
+"SAM Account Name: " & usr.sAMAccountName & crlf & _
+"givenName: " & usr.givenName & crlf & _
+"Profile Path: " & usr.ProfilePath & crlf & _
+"displayName: " & usr.displayName & crlf & _
+"Home Directory: " & usr.HomeDirectory & crlf & _
+"Home Drive: " & usr.HomeDrive & crlf & _
+"Created: " & usr.whenCreated & crlf & _
+"Changed: " & usr.whenChanged
+```
+
+- Konfiguracja profilu użytkownika
+
+```bash
+usr.Put "profilePath", "\\k5\profile$\%username%"
+usr.Put "HomeDirectory", "\\k5\profile$\%username%"
+usr.Put "HomeDrive", "H:"
+usr.SetInfo
+```
+
 - Ustawienie/zmiana hasła użytkownika  
 
 ```bash
@@ -318,7 +373,18 @@ usr.SetInfo
 ```
 
 - Włączenie konta użytkownika
-- blokowanie konta
+
+```bash
+' WŁĄCZENIE
+usr.AccountDisabled = False
+usr.SetInfo
+
+' BLOKOWANIE
+usr.AccountDisabled = True
+usr.SetInfo
+```
+
+- odblokowanie konta
 
 ```bash
 usr.AccountDisabled = False  'odblokowanie
@@ -326,13 +392,93 @@ usr.SetInfo
 ```
 
 - Odczyt atrybutów konta  
-- Tworzenie wielu użytkowników z pliku CSV  
+
+```bash
+Const crlf = vbCrLf
+
+Set usr = GetObject("LDAP://cn=xKowalskiJ,ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+
+WScript.Echo _
+"UPN: " & usr.userPrincipalName & crlf & _
+"SAM: " & usr.sAMAccountName & crlf & _
+"Imię: " & usr.givenName & crlf & _
+"Nazwisko: " & usr.sn & crlf & _
+"Display: " & usr.displayName & crlf & _
+"Profil: " & usr.profilePath & crlf & _
+"Home: " & usr.HomeDirectory & crlf & _
+"Drive: " & usr.HomeDrive & crlf & _
+"Created: " & usr.whenCreated & crlf & _
+"Changed: " & usr.whenChanged
+```
 
 - Wykorzystanie argumentów w skryptach VBScript  
+
+```bash
+Set args = WScript.Arguments
+
+If args.Count = 3 Then
+    Set usr = GetObject("LDAP://ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+
+    Set newUser = usr.Create("User", "cn=" & args(0))
+    newUser.Put "givenName", args(1)
+    newUser.Put "sn", args(2)
+
+    newUser.SetInfo
+End If
+```
+
 - Automatyzacja tworzenia kont w AD  
+
+```bash
+Set jedorg = GetObject("LDAP://ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+
+Set usr = jedorg.Create("User","cn=xKowalskiJ")
+
+usr.Put "givenName", "Jan"
+usr.Put "sn", "Kowalski"
+
+usr.SetPassword "Haslo123"
+usr.AccountDisabled = False
+
+usr.SetInfo
+```
+
 - Zarządzanie jednostkami organizacyjnymi  
+
+```bash
+Set dom = GetObject("LDAP://ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+Set ou = dom.Create("organizationalUnit", "ou=2024")
+ou.SetInfo
+```
+
 - Weryfikacja operacji w Active Directory  
+
+```bash
+On Error Resume Next
+
+Set usr = GetObject("LDAP://cn=test,ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+
+If Err.Number <> 0 Then
+    WScript.Echo "Użytkownik nie istnieje"
+Else
+    WScript.Echo "Użytkownik istnieje"
+End If
+```
+
 - Automatyzacja administracji domeną  
+
+```bash
+WScript.Echo "Start automatyzacji AD..."
+
+' tutaj operacje:
+' - OU
+' - user
+' - grupy
+' - atrybuty
+
+WScript.Echo "Zakończono"
+```
+
 - usuwanie jednostki org. z AD
 
 ```bash
@@ -379,72 +525,7 @@ For Each obj In ou
 Next
 ```
 
----
-
-1. Napisz skrypt (rozszerzenie vbs), który:
-<!-- -->
-
-c)  Tworzący jednostkę organizacyjną w Active Directory,
-
-```Bash
-Set objDomain = GetObject("LDAP://ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
-Set objOU = objDomain.Create("organizationalUnit", "ou=2026")
-objOU.SetInfo
-```
-
-d)  tworzący konto w Active Directory,
-
-```Bash
-'w jakiej OU tworzymy konto
-Set jedorg = GetObject("LDAP://ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
-
-'tworzenie konta
-Set usr = jedorg.Create("User","cn=xKowalskiJ")
-
-'podstawowe dane
-usr.Put "givenName", "Jan"
-usr.Put "sn", "xKowalski"
-usr.Put "displayName", "xKowalski Jan"
-usr.Put "userPrincipalName", "xKowalskiJ@zsmeie.abcd"
-usr.Put "sAMAccountName", "xKowalskiJ"
-usr.Put "mail", "xKowalskiJ@zsmeie.abcd"
-usr.Put "mailNickname", "xKowalskiJ"
-usr.Put "description", "przez skrypt"
-
-'profil użytkownika
-usr.Put "profilePath", "\\k5\profile$\%username%"
-usr.Put "HomeDirectory", "\\k5\profile$\%username%"
-usr.Put "HomeDrive", "h:"
-
-'zapis
-usr.SetInfo
-
-'aktywacja konta i hasło
-usr.SetPassword "password"
-usr.AccountDisabled = False
-usr.SetInfo
-```
-
-e)  odczytujący atrybuty wybranego konta
-    w ktorej jednostce organizacyjnej znajduje się konto
-
-```Bash
-Const crlf = vbCrLf
-
-Set usr = GetObject("LDAP://cn=xKowalskiJ,ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
-
-WScript.Echo "User Principal Name: " & usr.userPrincipalName & crlf & _
-"SAM Account Name: " & usr.sAMAccountName & crlf & _
-"givenName: " & usr.givenName & crlf & _
-"Profile Path: " & usr.ProfilePath & crlf & _
-"displayName: " & usr.displayName & crlf & _
-"Home Directory: " & usr.HomeDirectory & crlf & _
-"Home Drive: " & usr.HomeDrive & crlf & _
-"Created: " & usr.whenCreated & crlf & _
-"Changed: " & usr.whenChanged
-```
-
-f)  tworzący jednocześnie 5 kont w OU:
+- Tworzenie wielu użytkowników z pliku CSV  
 
 wskazówka: potrzebne są 3 pliki:
 
