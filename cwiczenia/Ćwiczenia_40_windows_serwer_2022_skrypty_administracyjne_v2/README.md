@@ -277,32 +277,12 @@ pause
 ## 3. Windows Server 2022 (VBScript / Active Directory)
 
 - Wyświetlenie komunikatu „Hello World”  
-- Przyłączenie stacji do domeny  
-- Tworzenie jednostki organizacyjnej (OU)  
-- Tworzenie konta użytkownika w Active Directory  
-- Ustawianie atrybutów użytkownika  
-- Konfiguracja profilu użytkownika  
-- Ustawienie hasła użytkownika  
-- Włączenie konta użytkownika  
-- Odczyt atrybutów konta  
-- Tworzenie wielu użytkowników z pliku CSV  
-- Wykorzystanie argumentów w skryptach VBScript  
-- Automatyzacja tworzenia kont w AD  
-- Zarządzanie jednostkami organizacyjnymi  
-- Weryfikacja operacji w Active Directory  
-- Automatyzacja administracji domeną  
-
----
-
-1. Napisz skrypt (rozszerzenie vbs), który:
-<!-- -->
-a)  Wyświetli „hello world" , wsk. Wscript.Echo „"
 
 ```Bash
 WScript.Echo "Hello World"
 ```
 
-b)  przyłączający stację do domeny,
+- Przyłączenie stacji do domeny  
 
  wskazówka:
  <https://technet.microsoft.com/pl-pl/library/cc788049(v=ws.10).aspx>
@@ -316,6 +296,93 @@ netdom join STACJA /domain:zsmeie.abcd /ou:OU=Computers,DC=zsmeie,DC=abcd /userd
 ```Bash
 Add-Computer -DomainName zsmeie.abcd -Credential (Get-Credential)
 ```
+
+- Tworzenie jednostki organizacyjnej (OU)  
+
+```Bash
+Set objDomain = GetObject("LDAP://ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+Set objOU = objDomain.Create("organizationalUnit", "ou=2026")
+objOU.SetInfo
+```
+
+- Tworzenie konta użytkownika w Active Directory  
+
+- Ustawianie atrybutów użytkownika  
+
+- Konfiguracja profilu użytkownika  
+- Ustawienie/zmiana hasła użytkownika  
+
+```bash
+usr.SetPassword "NoweHaslo123"
+usr.SetInfo
+```
+
+- Włączenie konta użytkownika
+- blokowanie konta
+
+```bash
+usr.AccountDisabled = False  'odblokowanie
+usr.SetInfo
+```
+
+- Odczyt atrybutów konta  
+- Tworzenie wielu użytkowników z pliku CSV  
+
+- Wykorzystanie argumentów w skryptach VBScript  
+- Automatyzacja tworzenia kont w AD  
+- Zarządzanie jednostkami organizacyjnymi  
+- Weryfikacja operacji w Active Directory  
+- Automatyzacja administracji domeną  
+- usuwanie jednostki org. z AD
+
+```bash
+Set objOU = GetObject("LDAP://ou=2025,ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+objOU.DeleteObject 0
+```
+
+- usuwanie użytkownika z Ad
+
+```bash
+Set objUser = GetObject("LDAP://cn=xKowalskiJ,ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+objUser.DeleteObject
+```
+
+- Dodanie użytkownika do grupy AD
+
+```bash
+Set grp = GetObject("LDAP://cn=Uczniowie,ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+grp.Add "LDAP://cn=xKowalskiJ,ou=gr1,ou=3k,dc=zsmeie,dc=abcd"
+grp.SetInfo
+```
+
+- sprawdzenie czy konto istniej
+
+```bash
+On Error Resume Next
+
+Set usr = GetObject("LDAP://cn=test,ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+
+If Err.Number <> 0 Then
+    WScript.Echo "Użytkownik nie istnieje"
+Else
+    WScript.Echo "Użytkownik istnieje"
+End If
+```
+
+- wypisanie listy użytkowników w OU
+
+```bash
+Set ou = GetObject("LDAP://ou=gr1,ou=3k,dc=zsmeie,dc=abcd")
+
+For Each obj In ou
+    WScript.Echo obj.Name
+Next
+```
+
+---
+
+1. Napisz skrypt (rozszerzenie vbs), który:
+<!-- -->
 
 c)  Tworzący jednostkę organizacyjną w Active Directory,
 
