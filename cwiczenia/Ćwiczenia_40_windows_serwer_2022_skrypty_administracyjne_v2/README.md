@@ -2,6 +2,84 @@
 
 ---
 
+## 🐧 Uruchamianie skryptu Bash — INF.02
+
+### 1. Shebang
+
+Na początku każdego skryptu Bash umieszczamy:
+
+```bash
+#!/bin/bash
+```
+
+👉 oznacza to:
+
+- użycie interpretera Bash
+- system wie, jak uruchomić plik jako skrypt
+
+---
+
+### 2. Nadanie uprawnień do uruchamiania
+
+```bash
+chmod +x skrypt.sh
+```
+
+👉 `+x` oznacza:
+
+- plik staje się wykonywalny (executable)
+
+---
+
+### 3. Uruchamianie skryptu
+
+#### ✔ Sposób 1 — standardowy (egzaminacyjny)
+
+```bash
+./skrypt.sh
+```
+
+👉 wymaga wcześniej `chmod +x`
+
+---
+
+#### ✔ Sposób 2 — bez nadawania uprawnień
+
+```bash
+bash skrypt.sh
+```
+
+👉 nie wymaga `chmod +x`
+
+---
+
+### 4. Uruchamianie z parametrami
+
+```bash
+./skrypt.sh uczen egzamin
+```
+
+lub
+
+```bash
+bash skrypt.sh uczen egzamin
+```
+
+---
+
+### 5. Przykładowy szablon skryptu
+
+```bash
+#!/bin/bash
+
+echo "Start skryptu"
+
+echo "Pierwszy parametr: $1"
+echo "Drugi parametr: $2"
+```
+
+---
+
 ## 1. Bash (Linux)
 
 - Wyświetlenie komunikatu „Hello World”  
@@ -137,6 +215,36 @@ apt update -y
 apt autoremove -y
 
 echo "Gotowe"
+```
+
+- 💾 Montowanie pendrive + listing /etc → plik → kopiowanie
+
+```bash
+#!/bin/bash
+
+# 1. Ścieżka do pendrive (urządzenie – może się zmieniać!)
+USB_DEV="/dev/sdb1"
+
+# 2. Punkt montowania
+MOUNT_DIR="/mnt/pendrive"
+
+# 3. Tworzenie punktu montowania
+mkdir -p $MOUNT_DIR
+
+# 4. Montowanie pendrive
+mount $USB_DEV $MOUNT_DIR
+
+# 5. Tworzenie listy plików z /etc
+ls /etc | grep "^c" > letter_c.txt
+
+# 6. Kopiowanie pliku na pendrive
+cp letter_c.txt $MOUNT_DIR/
+
+# 7. Informacja
+echo "Zakończono: plik skopiowany na pendrive"
+
+# 8. (opcjonalnie) odmontowanie
+umount $MOUNT_DIR
 ```
 
 ---
