@@ -432,6 +432,35 @@ echo Gotowe
 pause
 ```
 
+- raport do pliku
+
+```bash
+@echo off
+
+set RAPORT=C:\raport.txt
+
+echo RAPORT SYSTEMU > %RAPORT%
+echo ---------------- >> %RAPORT%
+
+systeminfo >> %RAPORT%
+ipconfig >> %RAPORT%
+
+echo Zapisano raport
+pause
+```
+
+- kopia dokumentów
+
+```bash
+@echo off
+
+mkdir C:\Backup
+xcopy C:\Users\user\Documents C:\Backup\Documents /E /I /Y
+
+echo Backup wykonany
+pause
+```
+
 ---
 
 ## 3. Windows Server 2022 (VBScript / Active Directory)
