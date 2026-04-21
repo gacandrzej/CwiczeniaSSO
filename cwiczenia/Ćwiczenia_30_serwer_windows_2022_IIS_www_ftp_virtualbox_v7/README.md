@@ -44,7 +44,7 @@
         c:\\ferie\\www3_twojeimię
         **,** testujemy na wszystkich adresach ip*
     - https, ip 10.9.8.1 , port 443 podkatalog
-        c:\\XYZ\\Inetpub\\www4_twojeimię
+        c:\\XYZ\\www4_twojeimię
 
    ![image4](media/image4.png)
 
