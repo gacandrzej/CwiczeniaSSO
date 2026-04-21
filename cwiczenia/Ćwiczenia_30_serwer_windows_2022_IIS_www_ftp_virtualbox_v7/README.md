@@ -13,6 +13,8 @@
 
    dodaj w kreatorze instalacji konfigurację dla **FTP**.
 
+   ![rola_ftp](media/rola_ftp.png)
+
 1. Sprawdź czy usługa routingu i dostępu zdalnego jest
    nieskonfigurowana, powinno być tak:
 
