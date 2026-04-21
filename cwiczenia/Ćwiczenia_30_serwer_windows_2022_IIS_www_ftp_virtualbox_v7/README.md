@@ -171,8 +171,13 @@
 
     ![image25](media/image25.png)
 
-1. Połącz się ze stacji za pomocą VPN, instrukcja na teams. (nie
-   podłączamy stacji do domeny!!!)
+1. Połącz się ze stacji za pomocą VPN, nie
+   podłączamy stacji do domeny!!!
+
+    🔗 Dokumentacja VPN
+
+   Pełna instrukcja konfiguracji VPN (Windows Server 2022 + Windows 11):  
+   👉 [Kliknij tutaj](README_VPN.md)
 
    ![image26](media/image26.png)
 
