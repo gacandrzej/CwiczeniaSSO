@@ -93,11 +93,11 @@
 
       c:\\Inetpub\\ftp1_twojeimię (brak SSL),
 
-      ![image13](media/image13.png)
+      ![image14](media/image14.png)
 
       *logowanie anonimowe tylko do odczytu ( wykonać get)*
 
-      ![image14](media/image14.png)
+      ![image13](media/image13.png)
 
     - ip: 172.18.19.2 port 23,
 
@@ -105,8 +105,6 @@
 
       logowanie anonimowe do odczytu i zapisu
       wykonać put i get
-
-      ![image15](media/image15.png)
 
     - ip: 10.9.8.1 port 21,
       [c:\\ftp_XYZ\\](../../../../../../c:/Inetpub/%20ftp_twojeimię)*ftp3_twojeimię*,
@@ -117,6 +115,8 @@
         *logowanie podstawowe na twoje konto z AD,*
 
         *do odczytu i zapisu ( wykonać put i get)*
+
+        ![image15](media/image15.png)
 
     - *ip: 10.9.8.1 port 2125,*
       c:\\ftp_XYZ\\
