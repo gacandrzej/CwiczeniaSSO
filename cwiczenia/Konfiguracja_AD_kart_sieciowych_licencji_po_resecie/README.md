@@ -1,10 +1,10 @@
 # Konfiguracja podstawowa
 
-## Nazwa serwera
+## 🖥️Nazwa serwera
 
 `serverX` za X wstaw numer stanowiska
 
-## Licencja
+## 🔑 Licencja
 
 Gdy mamy dostęp na serwerze do internetu:
 
@@ -14,9 +14,9 @@ slmgr -rearm
 
 Restart serwera.
 
-## Karty sieciowe
+## 🔌 Karty sieciowe
 
-### Górna
+### ⬆️Górna
 
 | pole  | zawartość     |
 | ----: | :------------ |
@@ -27,7 +27,7 @@ Restart serwera.
 | DNS 1 | 8.8.8.8       |
 | DNS 2 | 8.8.4.4       |
 
-### Dolna (TP-Link)
+### ⬇️Dolna (TP-Link)
 
 | pole     | zawartość       |
 |---------:|:----------------|
@@ -37,6 +37,6 @@ Restart serwera.
 | Bramka   | brak            |
 | DNS 1    | 10.9.8.1        |
 
-## Instalacja AD
+## 🌲Instalacja AD
 
-dla domeny: `zsmeie.abcd`
+🌐 domena: `zsmeie.abcd`
