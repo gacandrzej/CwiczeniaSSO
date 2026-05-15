@@ -2,6 +2,7 @@
 <!-- SPIS_TREŚCI_START -->
 ## 📚 Spis Ćwiczeń
 
+- [Konfiguracja podstawowa serwera windows](cwiczenia/Konfiguracja_AD_kart_sieciowych_licencji_po_resecie/README.md)
 - [Ćwiczenia_1_serwery_polecenia_systemowe_v2](cwiczenia/Ćwiczenia_1_serwery_polecenia_systemowe_v2/README.md)
 - [Ćwiczenia_2_i_3_polecenia_i_narzedzia_linux_ubuntu_v8](cwiczenia/Ćwiczenia_2_i_3_polecenia_i_narzedzia_linux_ubuntu_v8/README.md)
 - [Ćwiczenia_4_linux_ubuntu_crontab_at_v7](cwiczenia/Ćwiczenia_4_linux_ubuntu_crontab_at_v7/README.md)
