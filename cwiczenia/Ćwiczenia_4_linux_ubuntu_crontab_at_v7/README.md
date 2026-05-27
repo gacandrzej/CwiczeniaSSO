@@ -2,213 +2,241 @@
 
 Zaloguj się na swoje konto `imienXYZ`, gdzie `XYZ` oznacza kod klasy i
 grupy, np. jank3t1
-Jeśli nie masz konta, 
+Jeśli nie masz konta,
+
 ```bash
 sudo adduser imienXYZ
 ```
 
-1.  Dodaj swoje konto do grupy sudo: 
-```bash
-sudo usermod twoje_konto -G sudo
-```
-lub
-```bash
-sudo adduser imienXYZ sudo
-```
-2.  Sprawdzenie czy jesteśmy w grupie sudo: *id konto*
-3.  Wydaj komendę na piątym terminal: 
-```bash
-man at
-```
-4.  Wydaj komendę na szóstym terminalu: 
-```bash
-info crontab
-````
-5.  Otwórz pomocniczo na czwartym terminal: 
-```bash
-cat /etc/crontab
-```
-![img.png](media/image5_1.png)
+1. Dodaj swoje konto do grupy sudo:
 
-6.  Otwórz stronę pomocy, np.: <https://crontab.guru/>
-7.  Zainstaluj obsługę poczty, podaj tylko lokanie: 
-```bash
-sudo apt install mailutils 
-```
-    
-8.  Sprawdzić pocztę komendą: 
-```bash
-mail
-```
-9.  Z pomocą polecenia crontab zaplanuj:
+    ```bash
+    sudo usermod twoje_konto -G sudo
+    ```
 
-a)  Archiwizuj swój katalog domowy co 1
-    minutę do katalogu _**/var/backups**_ oraz _**/tmp**_ z użyciem narzędzia `tar` i `gzip`.  
-   Wybór edytora po `crontab -e` można powtórzyć poleceniem `select-editor`
+    lub
 
-![](media/image1.png)
+    ```bash
+    sudo adduser imienXYZ sudo
+    ```
 
-b)  Utwórz co 1 minutę podając dzień i miesiąc plik o nazwie
-    plikcrontabtest w \~
+1. Sprawdzenie czy jesteśmy w grupie sudo:
 
-![](media/image2.png)
+   ```bash
+   id konto
+   ```
 
-c)  Uruchom skrypt co 1 minutę w każdy dzień roboczy pobierający wycenę
-    bitcoina ze strony:
+1. Wydaj komendę na piątym terminal:
 
-https://docs.cdp.coinbase.com/coinbase-app/track-apis/prices
+   ```bash
+   man at
+   ```
 
-```bash
-curl https://api.coinbase.com/v2/prices/spot?currency=USD
-```
- ![](media/image3.png)
-```bash
-jason=$(curl https://api.coinbase.com/v2/prices/spot\?currency\=USD)
-```
-```bash
-jq -r '.data.amount' <<< $jason
-```
+1. Wydaj komendę na szóstym terminalu:
 
- ![](media/image4.png)
+    ```bash
+    info crontab
+    ````
 
- ![](media/image5.png)
+1. Otwórz pomocniczo na czwartym terminal:
 
- Efekt działania:
+    ```bash
+    cat /etc/crontab
+    ```
 
- ![](media/image6.png)
-d)  uruchomienie skryptu skrypt3.sh
-    zbierającego statystyki pracy karty sieciowej z ostatnich 5 minut o
-    zadanej godzinie, ale tylko w środy i piątki oraz w dniu ćwiczeń.  
-    Najpierw zainstaluj potrzebne pakiety:
-```bash
- sudo apt install vnstat vnstati -y
-```
- ![](media/image7.png)
+   ![img.png](media/image5_1.png)
 
- ![](media/image8.png)
+1. Otwórz stronę pomocy, np.: <https://crontab.guru/>
 
- Zadanie crona:
+1. Zainstaluj obsługę poczty, podaj tylko lokanie:
 
- ![](media/image9.png)
+    ```bash
+    sudo apt install mailutils 
+    ```
 
- Sprawdzenie:
+1. Sprawdzić pocztę komendą:
 
- ![](media/image10.png)
+    ```bash
+    mail
+    ```
 
-e)  uruchomienie skryptu skrypt4.sh zbierającego statystyki pracy karty
-    sieciowej do pliku graficznego z ostatnich 5 minut o zadanej
-    godzinie, ale tylko w środy i piątki oraz w dniu ćwiczeń
- ![](media/image11.png)
+1. Z pomocą polecenia crontab zaplanuj:
 
- ![](media/image12.png)
+    a)  Archiwizuj swój katalog domowy co 1
+        minutę do katalogu ***/var/backups*** oraz ***/tmp*** z użyciem narzędzia `tar` i `gzip`.  
+      Wybór edytora po `crontab -e` można powtórzyć poleceniem `select-editor`
 
- Sprawdzenie, ściągamy plik ze stacji windows programem winscp:
+    ![image1](media/image1.png)
 
- ![](media/image13.png)
+    b)  Utwórz co 1 minutę podając dzień i miesiąc plik o nazwie
+        plikcrontabtest w \~
 
- Otworzyć plik w eksploratorze windows:
+    ![image2](media/image2.png)
 
- ![](media/image14.png)
+    c)  Uruchom skrypt co 1 minutę w każdy dzień roboczy pobierający wycenę
+        bitcoina ze strony:
 
-f)  uruchomienie skryptu arch_mysql.sh o
-    zadanej godzinie, każdego 28 i 14 dnia miesiąca oraz w każdą środę,
-    który wykona kopię zapasowa bazy mysql w katalogu _**/tmp**_.
-```bash
- sudo apt install mysql-server -y
-```
- ![](media/image15.png)
+    <https://docs.cdp.coinbase.com/coinbase-app/track-apis/prices>
 
- ![](media/image16.png)
+    ```bash
+    curl https://api.coinbase.com/v2/prices/spot?currency=USD
+    ```
 
- ![](media/image17.png)
+    ![image3](media/image3.png)
 
- ![](media/image18.png)
+    ```bash
+    jason=$(curl https://api.coinbase.com/v2/prices/spot\?currency\=USD)
+    ```
 
- ![](media/image19.png)
+    ```bash
+    jq -r '.data.amount' <<< $jason
+    ```
 
- ![](media/image20.png)
+    ![image4](media/image4.png)
 
-g)  uruchomienie skryptu restart.sh przy każdym restarcie serwera, który
-    wyśle maila z powiadomieniem  
+    ![image5](media/image5.png)
 
-h)  wyślij mail do siebie każdego dnia 5 minut po północy.  
+    Efekt działania:
 
-10. Sprawdź zadania crontab wszystkich użytkowników
+    ![image6](media/image6.png)
+    d)  uruchomienie skryptu skrypt3.sh
+        zbierającego statystyki pracy karty sieciowej z ostatnich 5 minut o
+        zadanej godzinie, ale tylko w środy i piątki oraz w dniu ćwiczeń.  
+        Najpierw zainstaluj potrzebne pakiety:
 
-![](media/image21.png)
+    ```bash
+    sudo apt install vnstat vnstati -y
+    ```
 
-11. Z pomocą polecenia at zaplanuj zadania wykonane wcześniej dla crona.
+    ![image7](media/image7.png)
 
-12. Utwórz plik testat za 1 minutę:
+    ![image8](media/image8.png)
 
-    ![](media/image22.png)
+    Zadanie crona:
 
-13. Utwórz skrypt o nazwie arch.sh, który kopiuje zawartość katalogu
-    _**\~/at_crontab/dane**_ do katalogu _**\~/at_crontab/kopie**_.
+    ![image9](media/image9.png)
 
-14. Sprawdź zawartość katalogu _**/var/spool/cron/atjobs/**_
+    Sprawdzenie:
 
-    ![](media/image23.png)
+    ![image10](media/image10.png)
 
-15. Utwórz skrypt o nazwie zmiana.sh, który zmieni nazwę pliku test2.txt
+    e)  uruchomienie skryptu skrypt4.sh zbierającego statystyki pracy karty
+        sieciowej do pliku graficznego z ostatnich 5 minut o zadanej
+        godzinie, ale tylko w środy i piątki oraz w dniu ćwiczeń
+    ![image11](media/image11.png)
+
+    ![image12](media/image12.png)
+
+    Sprawdzenie, ściągamy plik ze stacji windows programem winscp:
+
+    ![image13](media/image13.png)
+
+    Otworzyć plik w eksploratorze windows:
+
+    ![image14](media/image14.png)
+
+    f)  uruchomienie skryptu arch_mysql.sh o
+        zadanej godzinie, każdego 28 i 14 dnia miesiąca oraz w każdą środę,
+        który wykona kopię zapasowa bazy mysql w katalogu ***/tmp***.
+
+    ```bash
+    sudo apt install mysql-server -y
+    ```
+
+    ![image15](media/image15.png)
+
+    ![image16](media/image16.png)
+
+    ![image17](media/image17.png)
+
+    ![image18](media/image18.png)
+
+    ![image19](media/image19.png)
+
+    ![image20](media/image20.png)
+
+    g)  uruchomienie skryptu restart.sh przy każdym restarcie serwera, który
+        wyśle maila z powiadomieniem  
+
+    h)  wyślij mail do siebie każdego dnia 5 minut po północy.  
+
+1. Sprawdź zadania crontab wszystkich użytkowników
+
+![image21](media/image21.png)
+
+1. Z pomocą polecenia at zaplanuj zadania wykonane wcześniej dla crona.
+
+2. Utwórz plik testat za 1 minutę:
+
+    ![image22](media/image22.png)
+
+3. Utwórz skrypt o nazwie arch.sh, który kopiuje zawartość katalogu
+    ***\~/at_crontab/dane*** do katalogu ***\~/at_crontab/kopie***.
+
+4. Sprawdź zawartość katalogu ***/var/spool/cron/atjobs/***
+
+    ![image23](media/image23.png)
+
+5. Utwórz skrypt o nazwie zmiana.sh, który zmieni nazwę pliku test2.txt
     na nowy.txt, przetestuj jego działanie, a następnie zaplanuj
     uruchomienie 22 i 23 grudnia, 5 minut po godzinie 12
 
-16. Zaplanuj uruchomienie skryptu kom1.sh tylko w lutym, marcu,kwietniu
+6. Zaplanuj uruchomienie skryptu kom1.sh tylko w lutym, marcu,kwietniu
     i wrześniu o godzinie 11:30, ale tylko we wtorki i czwartki.
 
-17. Z pomocą polecenia at zaplanuj:
+7. Z pomocą polecenia at zaplanuj:
 
 a)  utwórz skrypt o nazwie
     zajetosc_dysku.sh, który tworzy plik na dysku z raportem o zajętości
     miejsca na dysku. Przetestuj jego działanie, a następnie zaplanuj
     jego uruchomienie podając godzinę, minuty i dzień tygodnia.
     Wykorzystaj narzędzie duf.
-![](media/image24.png)
-![](media/image25.png)
-![](media/image26.png)
+![image24](media/image24.png)
+![image25](media/image25.png)
+![image26](media/image26.png)
 
- ![](media/image27.png)
+ ![image27](media/image27.png)
 
  Skrypt:
 
- ![](media/image28.png)
+ ![image28](media/image28.png)
 
- ![](media/image29.png)
+ ![image29](media/image29.png)
 
-18. Sprawdź jakie prawa posiadają pliki at, crontab.
+1. Sprawdź jakie prawa posiadają pliki at, crontab.
 
-19. Zezwól na używanie polecenia at sobie, a zabroń używania go
+2. Zezwól na używanie polecenia at sobie, a zabroń używania go
     użytkownikowi Blazej.
 
-![](media/image30.png)
+![image30](media/image30.png)
 
-20. Zezwól na używanie polecenia crontab sobie, a
+1. Zezwól na używanie polecenia crontab sobie, a
     zabroń używania go użytkownikowi blazej.
-    ![](media/image31.png)
- ![](media/image32.png)
+    ![image31](media/image31.png)
+ ![image32](media/image32.png)
 
-21. Dodatkowe zadania:  
+2. Dodatkowe zadania:  
 
 a)  Wykonaj kopię zapasową bazy postgresql z pomocą crontab  
-    Instalacja: 
+    Instalacja:
+
 ```bash
  sudo apt install postgresql -y
 ```
 
- ![](media/image33.png)
+ ![image33](media/image33.png)
 
- ![](media/image34.png)
+ ![image34](media/image34.png)
 
  Utworzenie pliku .pgpass:
 
- ![](media/image35.png)
+ ![image35](media/image35.png)
 
  Crontab:
 
- ![](media/image36.png)
+ ![image36](media/image36.png)
 
- ![](media/image37.png)
+ ![image37](media/image37.png)
 
 b)  Wykonaj kopię zapasową bazy MongoDB z pomocą at
 
@@ -216,8 +244,8 @@ c)  przetestuj polecenie at w Windows Server.
 
 d)  inne podane przez nauczyciela
 
+1. Na koniec zajęć 😃
 
-22. Na koniec zajęć 😃
 ```bash
  sudo poweroff
 ```

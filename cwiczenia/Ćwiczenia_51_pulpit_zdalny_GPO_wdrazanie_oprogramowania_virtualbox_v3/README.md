@@ -1,165 +1,192 @@
 # Ćwiczenia 51 -- GP0, wdrażanie oprogramowania + pulpit zdalny
 
-1.  Zaloguj się na konto administrator.
-2.  W AD utwórz nową jednostkę organizacyjną o nazwie **addapp**.
-3.  Dołącz stację do domeny.
-4.  Po dołączeniu stacji, przenieś komputer w AD do jednostki organizacyjnej addapp.
-5.  Przenieś konto, na które logujesz się na stacji do jednostki
+1. Zaloguj się na konto administrator.
+1. W AD utwórz nową jednostkę organizacyjną o nazwie **addapp**.
+1. Dołącz stację do domeny.
+1. Po dołączeniu stacji, przenieś komputer w AD do jednostki organizacyjnej addapp.
+1. Przenieś konto, na które logujesz się na stacji do jednostki
     organizacyjnej addapp.
 
- ![](media/image1.png)
+   ![image1](media/image1.png)
 
-6.  Na dysku udostępnij folder o nazwie apps (udostępnianie
+1. Na dysku udostępnij folder o nazwie apps (udostępnianie
     zaawansowane) jako ukryty,  
- obie zakładki: udostępnianie i zabezpieczenia.
+    obie zakładki: udostępnianie i zabezpieczenia.
 
- - administratorzy domeny - pełna kontrola,
+    - administratorzy domeny - pełna kontrola,
 
- - użytkownicy uwierzytelnieni -- odczyt,
+    - użytkownicy uwierzytelnieni -- odczyt,
 
- - wszyscy -zmiana(change).
+    - wszyscy -zmiana(change).
 
- ![](media/image2.png)
+    ![image2](media/image2.png)
 
-7.  Na stacji wybierz: Ten komputer - \> Mapuj dysk sieciowy (
+1. Na stacji wybierz: Ten komputer - \> Mapuj dysk sieciowy (
     [\\\\10.9.8.1\\apps\$](../../../../../../apps$) ) pod literę R:
-8.  Ściągnąć instalkę teams ze strony:
 
-    https://learn.microsoft.com/en-us/microsoftteams/msi-deployment  
+1. Ściągnąć instalkę teams ze strony:
 
-    https://go.microsoft.com/fwlink/?linkid=2243204&clcid=0x409
+    <https://learn.microsoft.com/en-us/microsoftteams/msi-deployment>  
 
-    https://go.microsoft.com/fwlink/?linkid=2196106
+    <https://go.microsoft.com/fwlink/?linkid=2243204&clcid=0x409>
 
-9.  Pobrane pliki installerów zapisz na zmapowanym dysku R.
-10. Utwórz skrypt bat o zawartości:
-```bash
+    <https://go.microsoft.com/fwlink/?linkid=2196106>
+
+1. Pobrane pliki installerów zapisz na zmapowanym dysku R.
+
+1. Utwórz skrypt bat o zawartości:
+
+   ```bash
     \\10.9.8.1\apps$\teamsbootstrapper.exe -p -o "\\10.9.8.1\apps$\MSTeams-x64.msix"
-```
-10. Skrypt dodać w 
-```text
-Computer configuration -> Policies -> Windows settings -> Scripts -> Startup.
-```
-i przycisk add
+   ```
 
-11. Ściągnąć instalkę putty:
-    https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.83-installer.msi
-11. Ściągnąć plik dla 7-zip:
-    https://7-zip.org/a/7z2600-x64.msi
-12. Również zapisz plik msi na zmapowanym dysku R.
-12. Możesz zaktualizować te pliki na nośnikach pendrive. 
-12. Otwórz przystawkę GPO Zarządzanie zasadami grupy.
+1. Skrypt dodać w
 
- ![](media/image3.png)
+   ```text
+   Computer configuration -> Policies -> Windows settings -> Scripts -> Startup.
+   ```
 
-13. Dla jednostki **addapp** utwórz nowy obiekt zasad grup.
-14. Podać nazwę instalacja oprogramowania. OK.
-15. Po utworzeniu obiektu wybierz Edytuj.
+   i przycisk add
 
- ![](media/image4.png)
+1. Ściągnąć instalkę putty:
 
-16. W nowo otwartym oknie:  
-```text
-Konfiguracja komputera -> Zasady -> Ustawienia oprogramowania ->Instalacja oprogramowania.
-```
+    <https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.83-installer.msi>
 
-17. Następnie prawym klawiszem myszki i z rozwiniętego menu
+1. Ściągnąć plik dla 7-zip:
+
+    <https://7-zip.org/a/7z2600-x64.msi>
+
+1. Również zapisz plik msi na zmapowanym dysku R.
+
+1. Możesz zaktualizować te pliki na nośnikach pendrive.
+
+1. Otwórz przystawkę GPO Zarządzanie zasadami grupy.
+
+   ![image3](media/image3.png)
+
+1. Dla jednostki **addapp** utwórz nowy obiekt zasad grup.
+1. Podać nazwę instalacja oprogramowania. OK.
+1. Po utworzeniu obiektu wybierz Edytuj.
+
+   ![image4](media/image4.png)
+
+1. W nowo otwartym oknie:  
+
+   ```text
+   Konfiguracja komputera -> Zasady -> Ustawienia oprogramowania ->Instalacja oprogramowania.
+   ```
+
+1. Następnie prawym klawiszem myszki i z rozwiniętego menu
     kontekstowego wybieramy:
-```text
-Nowy -> Pakiet.
-```
-18. Nazwa pliku, podajemy
+
+   ```text
+   Nowy -> Pakiet.
+   ```
+
+1. Nazwa pliku, podajemy
     `\\10.9.8.1\apps$` i wybieramy plik teams \...msi .
 
- ![](media/image5.png)
+   ![image5](media/image5.png)
 
-19. Rozmieszczenie oprogramowania: przypisany.
+1. Rozmieszczenie oprogramowania: przypisany.
 
- ![](media/image6.png)
+   ![image6](media/image6.png)
 
-20. Analogicznie dla drugiego pakietu msi.
+1. Analogicznie dla drugiego pakietu msi.
 
- ![](media/image7.png)
+   ![image7](media/image7.png)
 
-21. Finalnie:
+1. Finalnie:
 
- ![](media/image8.png)
+   ![image8](media/image8.png)
 
-22. Wybierz:
-```text
-Szablony administracyjne -> System -> Wyświetlaj bardzo szczegółowe komunikaty o stanie. Włącz.
-```
+1. Wybierz:
 
-![](media/image9.png)
+   ```text
+   Szablony administracyjne -> System -> Wyświetlaj bardzo szczegółowe komunikaty o stanie. Włącz.
+   ```
 
-23. Zamykamy okno edycji zasad.
+   ![image9](media/image9.png)
 
-24. Zapisz raport na pulpicie z utworzonych
+1. Zamykamy okno edycji zasad.
+
+1. Zapisz raport na pulpicie z utworzonych
     zasad. Prawy klawisz myszy po prawej stronie na Settings.
 
-![](media/image10.png)
+   ![image10](media/image10.png)
 
-25. Na stacji w cmd wpisujemy polecenie: gpupdate /force
- Serwer:
+1. Na stacji w cmd wpisujemy polecenie: gpupdate /force
+   Serwer:
 
- ![](media/image11.png)
+   ![image11](media/image11.png)
 
- Stacja:
+   Stacja:
 
- ![](media/image12.png)
+   ![image12](media/image12.png)
 
-26. Po restarcie stacji sprawdzić czy oprogramowanie zostało
+1. Po restarcie stacji sprawdzić czy oprogramowanie zostało
     zainstalowane.
 
- ![](media/image13.png)
+   ![image13](media/image13.png)
 
-27. Sprawdzenie oprogramowania:
+1. Sprawdzenie oprogramowania:
 
-![](media/image14.png)
+   ![image14](media/image14.png)
 
-28. Sprawdź poleceniem 
-```bash
- gpresult /r
-```
-oraz 
-```bash
- gpresult /h raport.html
-```
+1. Sprawdź poleceniem
 
-29. Jeśli po restarcie stacji oprogramowanie nie pojawiło się w systemie, wykonaj poniższe kroki na stacji roboczej:
+   ```bash
+    gpresult /r
+   ```
+
+   oraz
+
+   ```bash
+    gpresult /h raport.html
+   ```
+
+1. Jeśli po restarcie stacji oprogramowanie nie pojawiło się w systemie, wykonaj poniższe kroki na stacji roboczej:
     Naciśnij <kbd>Win</kbd> + <kbd>R</kbd>, wpisz `eventvwr.msc` i enter.
 
-    Rozwiń sekcję:   
+    Rozwiń sekcję:
     Dzienniki systemu Windows (Windows Logs) -> Aplikacja (Application).  
     Szukaj: `App Mgmt`
 
-30. Odłącz stację od domeny.
-29. Przenieś komputer w AD z jednostki organizacyjnej **addapp** do
+1. Odłącz stację od domeny.
+
+1. Przenieś komputer w AD z jednostki organizacyjnej **addapp** do
     kontenera Computers.
 
-30. Zatrzymaj udostępnianie katalogu apps, następnie usuń ten folder.
-31. Usunąć raport z pulpitu. 
-32. Opróżnij kosz.
-32. W przystawce _`GPO Group Policy Management`_ usunąć obiekt „instalacja
+1. Zatrzymaj udostępnianie katalogu apps, następnie usuń ten folder.
+
+1. Usunąć raport z pulpitu.
+
+1. Opróżnij kosz.
+
+1. W przystawce _`GPO Group Policy Management`_ usunąć obiekt „instalacja
     oprogramowania".
 
 ---
 
-33. Dodatkowe ćwiczenie -- **pulpit zdalny**.
-34. Konfiguracja pulpitu zdalnego: 
-```text
-Server Manager -> Local Server -> Remote Desktop
-```
-, klikamy na disabled
+1. Dodatkowe ćwiczenie -- **pulpit zdalny**.
 
-![](media/image15.png)
+2. Konfiguracja pulpitu zdalnego:
 
-35. Na stacji windows. Po kliknięciu Podłącz podać hasło i odpowiedzieć
+   ```text
+   Server Manager -> Local Server -> Remote Desktop
+   ```
+
+   , klikamy na disabled
+
+   ![image15](media/image15.png)
+
+3. Na stacji windows. Po kliknięciu Podłącz podać hasło i odpowiedzieć
     twierdzącą w nowym oknie.
 
-![](media/image16.png)
+   ![image16](media/image16.png)
 
- ![](media/image17.png)
+   ![image17](media/image17.png)
 
-36. Wyłączyć pulpit zdalny.
-37. KONIEC.🔚
+4. Wyłączyć pulpit zdalny.
+
+5. KONIEC.🔚

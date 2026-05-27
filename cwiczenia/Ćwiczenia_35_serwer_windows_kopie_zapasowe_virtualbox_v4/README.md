@@ -30,51 +30,52 @@
     [\\\\nazwa](../../../../../../../%5C%5Cnazwa)
     \_lub_ip_stacji\\nazwa_udziału → dalej → Kopia zapasowa
 
-> ![image5](media/image5.png)
->
-> ![image6](media/image6.png)
->
-> ![image7](media/image7.png)
+   ![image5](media/image5.png)
+
+   ![image6](media/image6.png)
+
+   ![image7](media/image7.png)
 
 1. Zweryfikuj na serwerze poprawność wykonania kopii:
 
-> ![image8](media/image8.png)
+   ![image8](media/image8.png)
 
 1. Zapisz plik z listą zarchiwizowanych katalogów i plików na pulpicie.
-2. Zweryfikuj na stacji poprawność wykonanej kopii. Powinien powstać
+1. Zweryfikuj na stacji poprawność wykonanej kopii. Powinien powstać
     katalog WindowsImageBackup z podkatalogami. ( około 100MB)
 
-> ![image9](media/image9.png)
+   ![image9](media/image9.png)
 
 1. Spróbuj odtworzyć zawartość kopii.
 
-> ![image10](media/image10.png)
->
-> ![image11](media/image11.png)
+   ![image10](media/image10.png)
+
+   ![image11](media/image11.png)
 
 1. Przygotuj powyższą kopię według harmonogramu 1:00 i 11:00 godz. (
     dobierz godzinę ćwiczeń)
 
-> ![image12](media/image12.png)
->
-> ![image13](media/image13.png)
->
-> ![image14](media/image14.png)
->
-> ![image15](media/image15.png)
+   ![image12](media/image12.png)
+
+   ![image13](media/image13.png)
+
+   ![image14](media/image14.png)
+
+   ![image15](media/image15.png)
 
 1. Sprawdzenie wykonania kopii za pomocą harmonogramu.
 
-> ![image16](media/image16.png)
->
-> ![image17](media/image17.png)
+   ![image16](media/image16.png)
+
+   ![image17](media/image17.png)
 
 1. Wykonaj sprawdzenie kopii stanu systemu. (**kilka giga nie
     wykonujemy!!!**)
 
-> ![image18](media/image18.png)
->
-> ![image19](media/image19.png)
+   ![image18](media/image18.png)
+
+   ![image19](media/image19.png)
 
 1. Wykonaj kopię z wykluczeniem wszystkich plików z rozszerzeniem txt.
-2. KONIEC.
+
+1. KONIEC.🔚
