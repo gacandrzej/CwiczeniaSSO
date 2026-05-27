@@ -54,11 +54,11 @@
 
 1. Dodaj zakres 2 na serwerze DHCP dla stacji po prawej stronie serwera.
 
-1. Sprawdź pingi z obu stacji.
+1. Sprawdź pingi z obu stacji. Użyj również narzędzia `tracert`.
 
 1. Sprawdzić połączenie z użyciem tracert.
 
-1. Zrealizuj powyższe ćwiczenie na linux.
+1. Zrealizuj powyższe ćwiczenie na stacjach linux. Użyj narzędzi:
 
 ![mtr](../../media/2026-05-27-15-12-39.png)
 
