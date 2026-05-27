@@ -128,22 +128,22 @@ sudo usermod twoje_konto -G sudo
     komputerem.**
 
 1. Ustaw na dolnej karcie sieciowej następujące parametry sieci:
-<!-- markdownlint-disable MD013 -->
-      | Nr sieci | ip(pierwszy adres w sieci)   | klient dla 9 kolejnych     | Bramka( ostatni adres w sieci)  | DNSy                                | Sprawdzenie z sąsiadem na |
-      |:---------|:-----------------------------|:---------------------------|:--------------------------------|:------------------------------------|:--------------------------|
-      | 1        | 172.16.21.225                | 172.16.21.224/28           | 172.16.21.238                   | 2.2.2.2 8.8.8.8                     | ubuntu server             |
-      | 2        | 10.25.50.129                 | 10.25.50.128/29            | 10.25.50.134                    | 8.8.4.4 5.5.5.5                     | ubuntu server             |
-      | 3        | oblicz                       | 192.168.70.64/27           | oblicz                          | 158.75.22.164, 8.8.7.7              | windows                   |
-      | 4        | oblicz                       | 198.51.100.212/30          | oblicz                          | 1.1.1.1, 1.0.0.1                    | windows                   |
-      | 5        | oblicz                       | 203.0.113.237/28           | oblicz                          | 1.1.1.2, 1.0.0.2                    | ubuntu desktop            |
-      | 6        | oblicz                       | 192.0.2.85/29              | oblicz                          | 208.67.222.222, 208.67.220.220      | ubuntu desktop            |
-      | 7        | oblicz                       | 10.11.12.172/26            | oblicz                          | 2.2.2.2 8.8.8.8                     | windows                   |
-      | 8        | oblicz                       | 192.168.0.235/28           | oblicz                          | 8.8.4.4 5.5.5.5                     | windows                   |
-      | 9        | oblicz                       | 172.19.17.88/27            | oblicz                          | 158.75.22.164, 8.8.7.7              | windows                   |
-      | 10       | oblicz                       | 10.40.80.114/29            | oblicz                          | 1.1.1.1, 1.0.0.1                    | ubuntu desktop            |
-      | 11       | oblicz                       | 192.168.11.46/30           | oblicz                          | 1.1.1.2, 1.0.0.2                    | ubuntu desktop            |
-      |  12      | oblicz                       |   172.20.30.126/25         | oblicz                          | 208.67.222.222,208.67.220.220       | ubuntu desktop            |
-
+   <!-- markdownlint-disable MD013 -->
+      | Nr sieci | ip(pierwszy adres w sieci)   | klient             | Bramka( ostatni adres w sieci)  | DNSy                                | Sprawdzenie z sąsiadem na |
+      |:---------|:-----------------------------|:-------------------|:--------------------------------|:------------------------------------|:--------------------------|
+      | 1        | 172.16.21.225                | 172.16.21.224/28   | 172.16.21.238                   | 2.2.2.2 8.8.8.8                     | ubuntu server             |
+      | 2        | 10.25.50.129                 | 10.25.50.128/29    | 10.25.50.134                    | 8.8.4.4 5.5.5.5                     | ubuntu server             |
+      | 3        | oblicz                       | 192.168.70.64/27   | oblicz                          | 158.75.22.164, 8.8.7.7              | windows                   |
+      | 4        | oblicz                       | 198.51.100.212/30  | oblicz                          | 1.1.1.1, 1.0.0.1                    | windows                   |
+      | 5        | oblicz                       | 203.0.113.237/28   | oblicz                          | 1.1.1.2, 1.0.0.2                    | ubuntu desktop            |
+      | 6        | oblicz                       | 192.0.2.85/29      | oblicz                          | 208.67.222.222, 208.67.220.220      | ubuntu desktop            |
+      | 7        | oblicz                       | 10.11.12.172/26    | oblicz                          | 2.2.2.2 8.8.8.8                     | windows                   |
+      | 8        | oblicz                       | 192.168.0.235/28   | oblicz                          | 8.8.4.4 5.5.5.5                     | windows                   |
+      | 9        | oblicz                       | 172.19.17.88/27    | oblicz                          | 158.75.22.164, 8.8.7.7              | windows                   |
+      | 10       | oblicz                       | 10.40.80.114/29    | oblicz                          | 1.1.1.1, 1.0.0.1                    | ubuntu desktop            |
+      | 11       | oblicz                       | 192.168.11.46/30   | oblicz                          | 1.1.1.2, 1.0.0.2                    | ubuntu desktop            |
+      |  12      | oblicz                       |   172.20.30.126/25 | oblicz                          | 208.67.222.222,208.67.220.220       | ubuntu desktop            |
+   <!-- markdownlint-enable MD013 -->
    ✅ Sprawdź połączenie z bramką dla każdej z powyższych sieci.
    ( ping ip bramki )
 
