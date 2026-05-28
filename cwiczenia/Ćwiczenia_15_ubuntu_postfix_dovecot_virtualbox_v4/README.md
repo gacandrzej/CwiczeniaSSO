@@ -164,51 +164,81 @@
 
    ![image7](media/image7.png)
 
-1. Wyślij wiadomość testową 2: mail -s „Witaj" twoje_konto
+1. Wyślij wiadomość testową 2:
 
-> potem podajemy treść maila
->
-> w nowym wierszu . (piszemy kropkę i enter Ctrl+D )
+   ```bash
+   mail -s „Witaj" twoje_konto
+   ```
+
+   potem podajemy treść maila
+
+   w nowym wierszu . (piszemy kropkę i enter `Ctrl+D` )
 
 1. Sprawdź pocztę w kliencie poczty **mutt**
-Z programu mutt:
 
-> ![image8](media/image8.png)
+   Z programu mutt:
 
-1. Zainstaluj pakiet: sudo apt install pflogsumm -y
-2. ![image9](media/image9.png)
-    Sprawdź logi poczty: perl
-    /usr/sbin/pflogsumm -d today /var/log/mail.log
-3. Wyślij wiadomość do testmail poleceniem:
+   ![image8](media/image8.png)
 
-> perl /usr/sbin/pflogsumm -e -d today /var/log/maillog \| mail -s
-> \'Logwatch for Postfix\' testmail
+1. Zainstaluj pakiet pflogsumm:
+
+   ```bash
+   sudo apt install pflogsumm -y
+   ```
+
+1. Sprawdź logi poczty:
+
+   ```bash
+   perl /usr/sbin/pflogsumm -d today /var/log/mail.log
+   ```
+
+   ![image9](media/image9.png)
+
+1. Wyślij wiadomość do testmail poleceniem:
+
+   ```bash
+   perl /usr/sbin/pflogsumm -e -d today /var/log/maillog | mail -s 'Logwatch for Postfix' testmail
+   ```
 
 1. Ustaw crontaba:
-crontab -e
-\# send mail log summary every 5 minutes to root
-\*/5 \* \* \* \* perl /usr/sbin/pflogsumm -e -d today /var/log/maillog
-\| mail -s \'Logwatch for Postfix\' root
-2. Otwórz porty na zaporze: imap (143), starttls (587), ssl/tls (465).
-3.
-4. Skonfiguruj na stacjiubuntu klienta poczty thunderbird dla konta
+
+   ```bash
+   crontab -e
+   # send mail log summary every 5 minutes to root
+   */5 * * * * perl /usr/sbin/pflogsumm -e -d today /var/log/maillog | mail -s 'Logwatch for Postfix' root
+   ```
+
+1. Otwórz porty na zaporze:
+
+   - imap (143),
+   - starttls (587),
+   - ssl/tls (465).
+
+1. Skonfiguruj na stacji ubuntu klienta poczty thunderbird dla konta
     <testmail@example.net>
-5. Ustawienia:
 
-> ![image10](media/image10.png)
->
-> ![image11](media/image11.png)
->
-> Widok skrzynki na stacji:
->
-> ![image12](media/image12.png)
+1. Ustawienia:
 
-1. Doinstaluj amavisd, clamav i spamassassina: sudo apt install
-    clamav-daemon amavisd-new spamassassin -y
+   ![image10](media/image10.png)
 
-> ![image13](media/image13.png)
+   ![image11](media/image11.png)
+
+   Widok skrzynki na stacji:
+
+   ![image12](media/image12.png)
+
+1. Doinstaluj pakiety dla amavisd, clamav i spamassassina:
+
+   ```bash
+   sudo apt install clamav-daemon amavisd-new spamassassin -y
+   ```
+
+   ![image13](media/image13.png)
 
 1. Sprawdź działanie usług.
-2. Zainstaluj serwer apache z roundcube.
-3. Skonfiguruj szyfrowanie poczty, wygeneruj certyfikat.
-4. KONIEC.
+
+1. Zainstaluj serwer apache z roundcube.
+
+1. Skonfiguruj szyfrowanie poczty, wygeneruj certyfikat.
+
+1. KONIEC.🔚
