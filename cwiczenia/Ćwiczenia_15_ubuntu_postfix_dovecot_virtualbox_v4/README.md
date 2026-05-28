@@ -70,7 +70,7 @@
 1. Uruchom usługę na stałe:
 
    ```bash
-   sudo systemctl enable postfix.
+   sudo systemctl enable postfix
    ```
 
 1. Zrestartuj usługę:
@@ -119,28 +119,52 @@
 
 1. Ustaw zaporę:
 
-> sudo ufw enable
->
-> sudo ufw allow 143,587 ,993, 995/tcp
->
-> sudo ufw reload
->
-> sudo ufw status
+   ```bash
+   sudo ufw enable
+   sudo ufw allow 143,587 ,993, 995/tcp
+   sudo ufw reload
+   sudo ufw status
+   ```
 
-1. Zainstaluj clienta poczty: sudo apt install mailutils -y
-2. [echo](https://www.server-world.info/en/command/html/echo.html)
-    \'export MAIL=\$HOME/Maildir\' \>\> /etc/profile.d/mail.sh
-3. Załóż konto w systemie o nazwie testmail
-4. Zrestartuj serwer.
-5. ![image5](media/image5.png)
-    Sprawdź dostępne konta:
-6. Wyślij wiadomość testową: echo „treść wiadomości" \| mail -s „Tytuł
-    np. witaj" twoje_konto
-7. Odczytaj wiadomość w kliencie poczty **mail**
-![image6](media/image6.png)
-8. Sprawdź logi: sudo journalctl -f
-![image7](media/image7.png)
-9. Wyślij wiadomość testową 2: mail -s „Witaj" twoje_konto
+1. Zainstaluj clienta poczty:
+
+   ```bash
+   sudo apt install mailutils -y
+   ```
+
+1. Wykonaj komendę:
+
+   ```bash
+   echo 'export MAIL=$HOME/Maildir' >> /etc/profile.d/mail.sh
+   ```
+
+1. Załóż konto w systemie o nazwie: `testmail`
+
+1. **Zrestartuj serwer!!!**
+
+1. Sprawdź dostępne konta:
+
+   ![image5](media/image5.png)
+
+1. Wyślij wiadomość testową:
+
+   ```bash
+   echo „treść wiadomości" | mail -s „Tytuł np. witaj" twoje_konto
+   ```
+
+1. Odczytaj wiadomość w kliencie poczty **mail**:
+
+   ![image6](media/image6.png)
+
+1. Sprawdź logi:
+
+   ```bash
+   sudo journalctl -f
+   ```
+
+   ![image7](media/image7.png)
+
+1. Wyślij wiadomość testową 2: mail -s „Witaj" twoje_konto
 
 > potem podajemy treść maila
 >
