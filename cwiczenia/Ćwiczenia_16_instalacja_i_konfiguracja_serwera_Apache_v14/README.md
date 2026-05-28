@@ -4,45 +4,96 @@
 
 1. Na stacji otwórz stronę: httpd.apache.org/docs/
 
-2. Zaloguj się na swoje konto.
+1. Zaloguj się na swoje konto.
 
-3. Wydaj komendę: *sudo apt purge apache2*
+1. Wydaj komendę:
 
-4. Zainstaluj pakiety: sudo apt install apache2 openssl libssl-dev
-    links lynx -y
-5. Sprawdź status serwer komendą: *systemctl status apache2*
-6. Sprawdź poprawność konfiguracji: sudo apache2ctl configtest
-7. Sprawdź na pierwszym terminalu logi: *journalctl -f*
-8. Sprawdź czy istnieje proces dla serwera komendą: ps aux \| grep
-    apache
-<!-- -->
-a)  Uruchomić przeglądarkę i sprawdzić na 3 sposoby działanie wpisując:
-> lynx localhost \| links 127.0.0.1 \| lynx ip serwera
->
-> (pomoc: ip addr add 10.11.12.13/24 dev enp3s0 \| ip link set enp3s0
-> up**)**
+   ```bash
+   sudo apt remove apache2 --purge -y 
+   ```
+
+1. Zainstaluj pakiety:
+
+   ```bash
+   sudo apt install apache2 openssl libssl-dev links lynx -y
+   ```
+
+1. Sprawdź status serwer komendą:
+
+   ```bash
+   sudo systemctl status apache2
+   ```
+
+1. Sprawdź poprawność konfiguracji:
+
+   ```bash
+   sudo apache2ctl configtest
+   ```
+
+1. Sprawdź na pierwszym terminalu logi:
+
+   ```bash
+   sudo journalctl -f
+   ```
+
+1. Sprawdź czy istnieje proces dla serwera komendą:
+
+   ```bash
+   sudo ps aux | grep apache
+   ```
+
+1. Uruchomić przeglądarkę i sprawdzić na 3 sposoby działanie wpisując:
+
+   ```bash
+   lynx localhost 
+   links 127.0.0.1
+   lynx ip serwera
+   ```
+
+   wskazówka:
+
+   ```bash
+   ip addr add 10.11.12.13/24 dev enp3s0 | ip link set enp3s0 up 
+   ```
 
 1. Analogicznie przetestuj serwer linksowy ze stacji, jeśli nie działa
-    dostosuj zaporę, należy otworzyć port **80** lub dodać usługę: sudo
-    ufw allow 'Apache Full'
+    dostosuj zaporę, należy otworzyć port **80** lub dodać usługę:
 
-> ![image2](media/image2.png)
->
-> ![image3](media/image3.png)
+   ```bash
+   sudo ufw allow 'Apache Full'
+   ```
+
+   ![image2](media/image2.png)
+
+   ```bash
+   sudo ufw status verbose
+   ```
+
+   ![image3](media/image3.png)
 
 1. Sprawdź połączenie z pomocą **wireshark**. ( filtruj ruch po http)
-2. Popraw wygląd swojej strony. ( Stwórz plik: /var/www/html/index.html
-    ) Sprawdź w przeglądarce.
-3. Dodać możliwość tworzenia stron www przez użytkowników systemowych:
+
+1. Popraw wygląd swojej strony. Stwórz plik: /var/www/html/index.html
+
+   Sprawdź w przeglądarce.
+
+1. Dodać możliwość tworzenia stron www przez użytkowników systemowych:
     np.
-    <http://localhost/>[\~twoje_konto](https://localhost/~twoje_konto) (
-    wskazówki: utwórz katalog public_html w swoim katalogu domowym)
+    <http://localhost/>[\~twoje_konto](https://localhost/~twoje_konto)
 
-> ![image4](media/image4.png)
+    wskazówki:
+    - utwórz katalog public_html w swoim katalogu domowym
+    - włącz moduł userdir
 
-1. Przetestuj stronę ( lynx localhost/\~twoje_konto ):
+   ![image4](media/image4.png)
 
-> ![image5](media/image5.png)
+1. Przetestuj stronę narzędziem curl na serwerze:
+
+   ```bash
+   curl localhost/~twoje_konto 
+   ```
+
+   ![image5](media/image5.png)
 
 1. Zmodyfikuj następujące parametry pracy serwera, za każdym razem
     sprawdzamy działanie w przeglądarce:
