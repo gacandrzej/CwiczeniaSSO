@@ -97,63 +97,90 @@
 
 1. Zmodyfikuj następujące parametry pracy serwera, za każdym razem
     sprawdzamy działanie w przeglądarce:
-    a)  Nasłuchiwanie na porcie 81 ( **/etc/apache2/ports.conf** ),
 
-> ![image6](media/image6.png)
-b)  ![image7](media/image7.png)
-    Ustaw ServerName
-    [www.example.com:81](http://www.example.com:81/)
-    (/etc/apache2/sites-available/000-default.conf)
-> ![image8](media/image8.png)
-c)  Plik strony w lokalizacji /var/www/twoje_konto/html/index.html
+    - nasłuchiwanie na porcie 81 ( **/etc/apache2/ports.conf** ),
+
+       ![image6](media/image6.png)
+
+    - wpisy w pliku hosts:
+
+       ![image7](media/image7.png)
+
+    - ustaw ServerName:
+
+       [www.example.com:81](http://www.example.com:81/)
+
+       /etc/apache2/sites-available/000-default.conf
+
+       ![image8](media/image8.png)
+
+   - plik strony w lokalizacji /var/www/twoje_konto/html/index.html
     (zawartość strony nowa)
-> ![image9](media/image9.png)
->
-> ![image10](media/image10.png)
->
-> Pamiętaj o bezpieczeństwie, o skopiowaniu sekcji ( shift + insert
-> kopiowanie pomiędzy terminalami)
->
-> \<Directory „/var/www/html"\> ... \</Directory\>
->
-> ![image11](media/image11.png)
->
-> ![image12](media/image12.png)
->
-> ![image13](media/image13.png)
-d)  Zmień wpis dla administratora strony www
-> ![image14](media/image14.png)
-e)  Zezwól na czytanie poza index.html na inne dokumenty: index.php
-    **egzamin.html i egz.php** ( pamiętaj, aby utworzyć te pliki)
-    (podpowiedź:
-    <https://httpd.apache.org/docs/2.4/mod/mod_dir.html#directoryindex>
-> ![image15](media/image15.png)
->
-> ![image16](media/image16.png)
-f)  Zmień poziom logów z warn na info lub debug (
+
+       ![image9](media/image9.png)
+
+       ![image10](media/image10.png)
+
+       Pamiętaj o bezpieczeństwie, o skopiowaniu sekcji ( shift + insert
+       kopiowanie pomiędzy terminalami)
+
+       \<Directory „/var/www/html"\> ... \</Directory\>
+
+       ![image11](media/image11.png)
+
+       ![image12](media/image12.png)
+
+       ![image13](media/image13.png)
+
+   - zmień wpis dla administratora strony www
+
+      ![image14](media/image14.png)
+
+   - zezwól na czytanie poza index.html na inne dokumenty:
+      - index.php
+      - egzamin.html
+      - egz.php ( pamiętaj, aby utworzyć te pliki)
+
+         podpowiedź:  <https://httpd.apache.org/docs/2.4/mod/mod_dir.html#directoryindex>
+
+        ![image15](media/image15.png)
+
+        ![image16](media/image16.png)
+
+   - Zmień poziom logów z warn na info lub debug (
     /etc/apache2/apache2.conf ),
-> ![image17](media/image17.png)
-g)  ![image18](media/image18.png)
-    Zmień domyślny content z UTF-8 na ISO-8859-1
-h)  Zmodyfikuj komunika 404 ( wsk. ErrorDocument 404 )
-i)  Utwórz 2 serwery wirtualne (skopiuj plik 000-default.conf na
-    /etc/apache2/sites-available/www1-example-com.conf,
-> pamiętaj o stworzeniu plików index.html i przeładowaniu serwera*: sudo
-> systemctl reload apache2*
->
-> pomoc:
-> [http://httpd.apache.org/docs/2.4/vhosts/](http://httpd.apache.org/docs/2.4/vhosts/)
-> ):
->
-> ![image19](media/image19.png)
->
-> ![image20](media/image20.png)
->
-> ![image22](media/image22.png)
->
-> ![image23](media/image23.png)
->
-> ![image25](media/image25.png)
+
+      ![image17](media/image17.png)
+
+   - Zmień domyślny content z UTF-8 na ISO-8859-1
+
+     ![image18](media/image18.png)
+
+   - Zmodyfikuj komunika 404 ( wsk. ErrorDocument 404 )
+
+   - Utwórz 2 serwery wirtualne:
+     skopiuj plik 000-default.conf na:
+
+     /etc/apache2/sites-available/www1-example-com.conf,
+
+     pamiętaj o stworzeniu plików index.html i przeładowaniu serwera:
+
+     ```bash
+      sudo systemctl reload apache2
+     ```
+
+       pomoc: [http://httpd.apache.org/docs/2.4/vhosts/](http://httpd.apache.org/docs/2.4/vhosts/)
+
+      ![image19](media/image19.png)
+
+      ![image20](media/image20.png)
+
+      ![image22](media/image22.png)
+
+      ![image23](media/image23.png)
+
+      ![image25](media/image25.png)
+
 j)  Sprawdź stronę poleceniem curl. np. curl <http://10.11.12.13:81> -sSI
 > ![image26](media/image26.png)
 k)  ![image27](media/image27.png)
