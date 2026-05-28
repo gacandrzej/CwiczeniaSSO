@@ -274,3 +274,15 @@
    ![image40](media/image40.png)
 
 1. KONIEC.🔚
+
+---
+
+Wykaz zadań egzaminacyjnych dla IIS:
+
+| rok | miesiąc | nr. zadania | witryna |
+|:---:|:-------:|:-----------:|:-------:|
+|2020 | styczeń | 1           | www     |
+|2020 | styczeń | 4           | ftp     |
+|2022 | czerwiec| 1           | www     |
+|2022 | czerwiec| 3           | www     |
+|2022 | czerwiec| 4           | ftp     |

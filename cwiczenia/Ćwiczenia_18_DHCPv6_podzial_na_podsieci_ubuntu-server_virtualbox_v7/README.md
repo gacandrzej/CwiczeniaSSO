@@ -289,6 +289,14 @@ plik _**/etc/dhcp/dhcpd.conf**_, i zrestartuj usługę.
 
 ---
 
+Wykaz zadań egzaminacyjnych dla dhcp:
+
+| rok | miesiąc | nr. zadania | dodatkowo |
+|:---:|:-------:|:-----------:|:---------:|
+|2026 | styczeń | 1           | skrypt    |
+
+---
+
 1) Skonfiguruj serwer do pracy w ipv6
 2) Skopiowanie skryptu:
    ![image21](media/image21.png)
