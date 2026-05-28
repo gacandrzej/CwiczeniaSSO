@@ -181,56 +181,86 @@
 
       ![image25](media/image25.png)
 
-j)  Sprawdź stronę poleceniem curl. np. curl <http://10.11.12.13:81> -sSI
-> ![image26](media/image26.png)
-k)  ![image27](media/image27.png)
-    Sprawdź konfigurację serwera
-    poleceniem: *sudo apache2ctl -S*
-l)  Dodaj jeszcze dwa serwery wirtualne, ale oparte o nazwy, wykorzystaj
-    poniższą podpowiedź:
-> ![image28](media/image28.png)
->
-> ![image29](media/image29.png)
->
-> \<VirtualHost \*:83\>
->
-> ServerName other.example.com
->
-> DocumentRoot \"/www/ other.example.com \"
->
-> \</VirtualHost\>
->
-> Przywróć nasłuchiwanie serwera na port 81!!!
->
-> **Druga część dla połączeń szyfrowanych:**
+   - Sprawdź stronę poleceniem curl. np.:
 
-1. ![image30](media/image30.png)
-    Sprawdź czy istnieją certyfikaty dla
+     ```bash
+     curl http://10.11.12.13:81 -sSI
+     ```
+
+     ![image26](media/image26.png)
+
+   - Sprawdź konfigurację serwera poleceniem:
+
+     ```bash
+     sudo apache2ctl -S
+     ```
+
+     ![image27](media/image27.png)
+
+   - Dodaj jeszcze dwa serwery wirtualne, ale oparte o nazwy, wykorzystaj
+     poniższą podpowiedź:
+
+     ![image28](media/image28.png)
+
+     ![image29](media/image29.png)
+
+     \<VirtualHost \*:83\>
+
+      ServerName other.example.com
+
+      DocumentRoot \"/www/ other.example.com \"
+
+      \</VirtualHost\>
+
+      Przywróć nasłuchiwanie serwera na port 81!!!
+
+    **Druga część dla połączeń szyfrowanych:**
+
+1. Sprawdź czy istnieją certyfikaty dla
     serwera:
-2. ![image31](media/image31.png)
-    Włącz obsługę ssl: **sudo a2enmod ssl**
-3. Uruchomić przeglądarkę i sprawdzić na 3 sposoby działanie wpisując
-    [https://**localhost**](https://localhost/) **-k \| 127.0.0.1 \| ip
-    serwera. Sprawdź też localhost:443**
 
-> ![image32](media/image32.png)
->
-> ![image33](media/image33.png)
+    ![image30](media/image30.png)
 
-1. ![image34](media/image34.png)
-    Jeżeli są problemy z uruchomieniem
-    stron to:
-2. Sprawdź aktywne połączenia ze swoim serwerem komendą: netstat \|
-    grep lub ss -l \| grep
-3. Analogicznie przetestuj serwer apache ze stacji, jeśli nie działa
+1. Włącz obsługę ssl: **sudo a2enmod ssl**
+
+    ![image31](media/image31.png)
+
+1. Uruchomić przeglądarkę i sprawdzić na 3 sposoby działanie wpisując
+
+    ```bash
+    curl https://localhost -k  
+    curl https://127.0.0.1 -k 
+    curl https://ip-serwera -k
+    curl localhost:443 -k 
+    ```
+
+    ![image32](media/image32.png)
+
+    ![image33](media/image33.png)
+
+1. Jeżeli są problemy z uruchomieniem stron to:
+
+    ![image34](media/image34.png)
+
+1. Sprawdź aktywne połączenia ze swoim serwerem komendą:
+
+    ```bash
+    netstat | grep lub ss -l | grep
+    ```
+
+1. Analogicznie przetestuj serwer apache ze stacji, jeśli nie działa
     dostosuj zaporę, należy otworzyć port **443 lub dodać usługę**)
-4. Sprawdź połączenie z pomocą **wireshark**. ( filtruj ruch po https)
-5. Sprawdź zawartość logów.
-6. Dodać możliwość tworzenia stron www przez użytkowników systemowych:
+
+1. Sprawdź połączenie z pomocą **wireshark**. ( filtruj ruch po https)
+
+1. Sprawdź zawartość logów.
+
+1. Dodać możliwość tworzenia stron www przez użytkowników systemowych:
     np.
+
     [**https**://localhost/\~twoje_konto](https://localhost/~twoje_konto)
     ( wskazówka: public_html )
-7. Utwórz serwer wirtualny, który:
+1. Utwórz serwer wirtualny, który:
 <!-- -->
 a)  Działa na ip 10.11.12.13 i porcie 443
 b)  Pliki stron znajdują się w lokalizacji /var/www/ssl/twoje_konto
