@@ -259,9 +259,11 @@
 
      ![image38](media/image38.png)
 
-     LAN: 10.9.8.5 z maską zgodną z kartą serwera
+     LAN: 10.9.8.5 z maską zgodną z kartą serwera.
+
      Skonfiguruj DHCP na routerze: dla zakresu 10.9.8.11 - 10.9.8.33,
-     dokonaj rezerwacji dla adresu 10.9.8.7 serwera 
+
+     dokonaj rezerwacji dla adresu 10.9.8.7 serwera.
 
      Na stacji: ip stacji, dolna karta: 50.50.50.2/24 z bramką 50.50.50.1
 
