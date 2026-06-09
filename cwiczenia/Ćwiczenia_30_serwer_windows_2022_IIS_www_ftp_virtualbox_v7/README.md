@@ -238,13 +238,13 @@
 
    ![image34](media/image34.png)
 
-   ![image35](media/image35.png)
-
 1. Wykonaj dodatkowe zadanie podane przez nauczyciela:
 
    - W DNS dodaj strefę przeszukiwania wstecz, następnie dodaj
      odpowiednie rekordy tak, aby można było odczytaj stronę www
      poprzez adres: [www.zsmeie.abcd](http://www.zsmeie.abcd/)
+
+        ![image35](media/image35.png)
 
    - przekieruj porty na routerze tak, aby po wpisaniu na stacji
      adresu [http://50.50.50.1:8080](http://50.50.50.1:8080/)
