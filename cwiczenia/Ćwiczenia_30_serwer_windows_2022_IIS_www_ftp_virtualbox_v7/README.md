@@ -249,7 +249,7 @@
    - przekieruj porty na routerze tak, aby po wpisaniu na stacji
      adresu [http://50.50.50.1:8080](http://50.50.50.1:8080/)
 
-     wyświetliła się strona z serwera 10.9.8.1:80.
+     wyświetliła się strona z serwera 10.9.8.7:80.
 
      Wskazówki:
 
@@ -260,6 +260,8 @@
      ![image38](media/image38.png)
 
      LAN: 10.9.8.5 z maską zgodną z kartą serwera
+     Skonfiguruj DHCP na routerze: dla zakresu 10.9.8.11 - 10.9.8.33,
+     dokonaj rezerwacji dla adresu 10.9.8.7 serwera 
 
      Na stacji: ip stacji, dolna karta: 50.50.50.2/24 z bramką 50.50.50.1
 
