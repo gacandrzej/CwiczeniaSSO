@@ -145,7 +145,7 @@
 
 1. Instalacja WireGuard na kliencie android (tablet):
 
-   ![image6](media/image6.png)
+   ![image6](media/image6.jpeg)
 
 1. Przykład dla serwera:
 
