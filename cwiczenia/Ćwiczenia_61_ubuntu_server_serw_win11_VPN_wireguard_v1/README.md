@@ -124,6 +124,21 @@
 
    ```
 
+1. Testowanie łączności (ping)
+   Jeśli `wg show` pokazuje udany "handshake", spróbuj spingować drugą stronę tunelu:
+
+   Z serwera do desktopa:
+
+   ```bash
+   ping 10.0.0.2
+   ```
+
+   Z desktopa do serwera:
+
+   ```bash
+   ping 10.0.0.1
+   ```
+
 1. Instalacja WireGuard na kliencie windows:
 
    ![image5](media/image5.png)
