@@ -141,9 +141,23 @@
 
 1. Instalacja WireGuard na kliencie windows:
 
+   Instalacja ze strony: 
+
+   https://www.wireguard.com/install/
+
+   https://download.wireguard.com/windows-client/wireguard-installer.exe
+
    ![image5](media/image5.png)
 
 1. Instalacja WireGuard na kliencie android (tablet):
+
+   Instalacja ze sklepu:
+
+   https://play.google.com/store/apps/details?id=com.wireguard.android
+
+   Skonfiguruj router tp-link:
+
+   ![router](media/router.png)
 
    ![image6](media/image6.jpeg)
 
