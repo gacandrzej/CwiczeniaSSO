@@ -20,11 +20,33 @@
    wg genkey | tee server_private.key | wg pubkey > server_public.key 
    ```
 
+   server_private.key – zachowaj dla siebie
+
+   server_public.key – będzie potrzebny do konfiguracji drugiego urządzenia.
+
    Dodanie kluczy do pliku wg0.conf:
 
    ```bash
    cat server_private.key >> wg0.conf
    cat server_ppublic.key >> wg0.conf 
+   ```
+
+   Plik wg0.conf:
+
+   ```conf
+   [Interface]
+
+   Address = 10.0.0.1/24
+   ListenPort = 51820
+   PrivateKey = <KLUCZ_PRYWATNY_SERWERA>
+
+   [Peer]
+
+   # Klucz publiczny stacji Desktop
+
+   PublicKey = <KLUCZ_PUBLICZNY_DESKTOP>
+   AllowedIPs = 10.0.0.2/32
+
    ```
 
 1. Uruchomienie wireguard i sprawdzenie stanu:
@@ -80,6 +102,27 @@
    ```
 
    ![image4](media/image4.png)
+
+   Plik wg0.conf:
+
+   ```conf
+   [Interface]
+    Address = 10.0.0.2/24
+    PrivateKey = <KLUCZ_PRYWATNY_DESKTOP>
+
+    [Peer]
+
+    # Klucz publiczny serwera
+
+    PublicKey = <KLUCZ_PUBLICZNY_SERWERA>
+    Endpoint = <PUBLICZNY_ADRES_IP_SERWERA>:51820
+    AllowedIPs = 10.0.0.0/24
+
+    # Opcjonalne: utrzymywanie połączenia przez NAT
+
+    PersistentKeepalive = 25
+
+   ```
 
 1. Instalacja WireGuard na kliencie windows:
 
