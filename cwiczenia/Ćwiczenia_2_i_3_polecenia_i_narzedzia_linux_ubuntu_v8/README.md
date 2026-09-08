@@ -9,68 +9,209 @@ grupy, np. jank3t1
     sudo usermod twoje_konto -G sudo
     ```
 
-1. Sprawdzenie czy jesteśmy w grupie sudo: *id konto*
-1. Zainstaluj obsługę myszy w terminalu: *sudo apt install gpm -y*
-1. sudo su -c 'polecenie' ( np. sudo su --c 'cat /var/log/syslog \|
-    more' lub sudo su --c 'cat /var/log/syslog \| less')
-![image1](media/image1.png)
+1. Sprawdzenie czy jesteśmy w grupie sudo:
+
+   ```bash
+   id konto
+   ```
+
+1. Zainstaluj obsługę myszy w terminalu:
+
+   ```bash
+   sudo apt install gpm -y
+   ```
+
+1. sudo su -c 'polecenie'
+   ( np. sudo su --c 'cat /var/log/syslog \| more' lub
+   sudo su --c 'cat /var/log/syslog \| less')
+
+   ![image1](media/image1.png)
+
 1. su administrator i pwd, następnie exit
-1. su -- administrator i pwd, następnie exit
+
+1. su - administrator i pwd, następnie exit
+
 1. sudo fdisk \--list lub sudo fdisk -l
-1. Wyświetl listę zainstalowanego oprogramowania: *sudo apt list
-    \--installed*
-1. *sudo apt list \--installed \| grep coreutils* ( sprawdzenie czy
-    paczka coreutils jest zainstalowana)
-1. Porównaj wykonanie poleceń: *df* i *df -vh*
-![image2](media/image2.png)
-1. ![image3](media/image3.png)
-    du ( np. du --cms /usr/\* lub du --cms
-    /usr/\* \| sort --nr ) du rosnąco i malejąco
+
+1. Wyświetl listę zainstalowanego oprogramowania:
+
+   ```bash
+   sudo apt list --installed
+   ```
+
+   lub
+   sprawdzenie czy paczka coreutils jest zainstalowana
+
+   ```bash
+   sudo apt list --installed | grep coreutils
+   ```
+
+1. Porównaj wykonanie poleceń: *df* i
+
+   ```bash
+   df -vh
+   ```
+
+   ![image2](media/image2.png)
+
+1. Polecenie  du, np.
+
+   ```bash
+   du --cms /usr/*
+   ```
+
+   lub du rosnąco i malejąco
+
+   ```bash
+   du --cms /usr/\* | sort --nr  
+   ```
+
+    ![image3](media/image3.png)
+
 1. krótki kurs nano ( *nano nazwa_pliku* , Ctrl+O zapis Ctrl+X wyjście)
+
 1. Sprawdzenie czy plik powstał: ls i *cat nazwa_pliku*
+
 1. krótki kurs vi ( vi nazwa_pliku ,
-i lub insert -- tryb pisania,
-Esc -- wyjście z trybu pisania,
-:x -- zapis,
-:q! -- wyjście bez zapisu
-: set number -- numeracja wierszy po lewej ( :set nonumber)
-W trypie komend:
-yy -- skopiowanie bieżącego wiersza
-nyy -- skopiowanie n wierszy
-p -- wklejenie wiersza/y za aktualnym
-dd -- kasuje cały wiersz, d5d kasuje 5 wierszy )
+
+      i lub insert -- tryb pisania,
+
+      Esc -- wyjście z trybu pisania,
+
+      :x -- zapis,
+
+      :q! -- wyjście bez zapisu
+
+      : set number -- numeracja wierszy po lewej ( :set nonumber)
+
+      W trypie komend:
+
+      yy -- skopiowanie bieżącego wiersza
+
+      nyy -- skopiowanie n wierszy
+
+      p -- wklejenie wiersza/y za aktualnym
+
+      dd -- kasuje cały wiersz, d5d kasuje 5 wierszy )
+
 1. nano plik1 zapisz 4 wiersze
-1. Sprawdź, który edytor jest domyślny w systemie: *sudo
-    update-alternatives \--config editor*
-1. cp plik1 plik2
+1. Sprawdź, który edytor jest domyślny w systemie:
+
+   ```bash
+   sudo update-alternatives --config editor
+   ```
+
+   lub
+
+   ```bash
+   select-editor
+   ```
+
+1. Kopiowanie plików:
+
+   ```bash
+   cp plik1 plik2
+   ```
+
 1. dodaj w pliku pierwszym jeden znak i sprawdź
-1. cmp plik1 plik2
-1. diff plik1 plik2
-![image5](media/image5.png)
-1. \> tworzenie nowego pliku, \>\> dopisywanie do istniejącego pliku
-1. sudo find / -name \*bashrc lub find / -name \*bashrc \> w1.txt
-![image6](media/image6.png)
-1. ls -al \~ \> list1.txt i ls -altr \~ \> list2.txt
-![image7](media/image7.png)
-1. lsblk
-![image8](media/image8.png)
-1. lscpu lub lscpu \| grep Model
-![image9](media/image9.png)
+
+1. Porównanie plików:
+
+   ```bash
+   cmp plik1 plik2
+   ```
+
+1. Drugi sposób na porównanie:
+
+   ```bash
+   diff plik1 plik2
+   ```
+
+   ![image5](media/image5.png)
+
+1. Przekierowania:
+
+   \> tworzenie nowego pliku,
+
+   \>\> dopisywanie do istniejącego pliku
+
+1. Szukanie:
+
+   ```bash
+   sudo find / -name \*bashrc lub find / -name \*bashrc \> w1.txt
+   ```
+
+   ![image6](media/image6.png)
+
+1. Sposoby na listowanie:
+
+   ```bash
+   ls -al ~ > list1.txt  
+   ls -altr ~ > list2.txt
+   ```
+
+   ![image7](media/image7.png)
+
+1. Polecenie: lsblk
+
+   ![image8](media/image8.png)
+
+1. Info. o procesorze:
+
+   ```bash
+   lscpu 
+   lub 
+   lscpu | grep Model
+   ```
+
+   ![image9](media/image9.png)
+
 1. lsusb + grep na sprzęt,
-![image10](media/image10.png)
+
+   ![image10](media/image10.png)
+
 1. przykład dla lspci:
-![image11](media/image11.png)
-1. lshw -short lub lshw -html
-![image12](media/image12.png)
-![image13](media/image13.png)
-![image14](media/image14.png)
-1. Sprawdzenie dnsów: *systemd-resolve \--status \| grep \'DNS
-    Servers\' -A2*
-*lub resolvectl*
-![image15](media/image15.png)
-1. ps z opcjami aux lub -ef
-![image16](media/image16.png)
-![image17](media/image17.png)
+
+   ![image11](media/image11.png)
+
+1. Informacje o sprzęcie:
+
+   ```bash
+   lshw -short 
+   lub 
+   lshw -html
+   ```
+
+   ![image12](media/image12.png)
+
+   ![image13](media/image13.png)
+
+   ![image14](media/image14.png)
+
+1. Sprawdzenie dnsów:
+
+   ```bash
+   systemd-resolve --status | grep 'DNS Servers' -A2
+   ```
+
+   lub
+
+   ```bash
+   resolvectl
+   ```
+
+   ![image15](media/image15.png)
+
+1. Procesy systemowe:
+
+   ```bash
+   ps z opcjami aux lub -ef
+   ```
+
+   ![image16](media/image16.png)
+
+   ![image17](media/image17.png)
+
 1. htop z przyciskami: F3, F6 oraz u (user) z opcjami p, e
 ![image18](media/image18.png)
 1. tree \> tree.txt i tree -d \> ttreed.txt\~
