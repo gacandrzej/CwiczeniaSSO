@@ -212,34 +212,83 @@ grupy, np. jank3t1
 
    ![image17](media/image17.png)
 
-1. htop z przyciskami: F3, F6 oraz u (user) z opcjami p, e
-![image18](media/image18.png)
-1. tree \> tree.txt i tree -d \> ttreed.txt\~
-![image19](media/image19.png)
-1. mkdir \~/cwiczenia7
-1. cp li\*.txt \~/cwiczenia7/
-1. cp -i \~/cwiczenia7/li\*.txt .
-1. cp ?re\*.\* \~/cwiczenia7/
-1. cat \*tr\*.txt \> tree4.txt
-lub cat tree.txt \> tree3.txt, cat ttreed.txt \>\> tree3.txt
-lub cat tree.txt ttreed.txt \> tree5.txt
-1. diff tree3.txt tree4.txt
+1. Zarządzanie procesami, narzędzie htop z przyciskami: F3, F6 oraz u (user) z opcjami p, e
+
+   ![image18](media/image18.png)
+
+1. Drzewo katalogów:
+
+   ```bash
+   tree > tree.txt 
+   i 
+   tree -d > ttreed.txt
+   ```
+
+   ![image19](media/image19.png)
+
+1. Ćwiczenie na kopiowanie:
+
+   ```bash
+   mkdir ~/cwiczenia7
+   cp li*.txt ~/cwiczenia7/
+   cp -i ~/cwiczenia7/li*.txt .
+   cp ?re*.* ~/cwiczenia7/
+   ```
+
+1. Operacje dodawania danych:
+
+   ```bash
+   cat *tr*.txt > tree4.txt
+   lub 
+   cat tree.txt > tree3.txt, 
+   cat ttreed.txt >> tree3.txt
+   lub 
+   cat tree.txt ttreed.txt \> tree5.txt
+   ```
+
+   Sprawdzenie, porównanie plików:
+
+   ```bash
+   diff tree3.txt tree4.txt
+   ```
+
 1. Tworzenie linków symbolicznych ( ln -s /ścieżka/plik nazwa_linku)
-1. ![image20](media/image20.png)
-    sudo cp /etc/passwd passwd.kopia
-1. cat passwd.kopia \| sort -t : -k3 -nr ( sortowanie po UID user id)
-![image21](media/image21.png)
-1. alias ( alias dla polecenia du) i usuwanie aliasów: unalias
-![image22](media/image22.png)
+
+   ![image20](media/image20.png)
+
+1. Sortowanie danych z pliku /etc/passwd:
+
+   ```bash
+   sudo cp /etc/passwd passwd.kopia
+   cat passwd.kopia | sort -t : -k3 -nr ( sortowanie po UID user id)
+   ```
+
+   ![image21](media/image21.png)
+
+1. Tworzenie aliasów, alias dla polecenia du i usuwanie aliasów: unalias
+
+   ![image22](media/image22.png)
+
 1. Wyświetlenie wszystkich aliasów + kasowanie
-![image23](media/image23.png)
+
+   ![image23](media/image23.png)
+
 1. export - dodanie zmiennej
-![image24](media/image24.png)
+
+   ![image24](media/image24.png)
+
 1. unset -- usunięcie zmiennej
-![image25](media/image25.png)
+
+   ![image25](media/image25.png)
+
 1. PS1 + colory
-![image26](media/image26.png)
+
+   ![image26](media/image26.png)
+
 1. FTP + konto (podstawowe polecenia: get, put, mget, mput)
+
 1. Piszemy ftp ftp.icm.edu.pl
-![image27](media/image27.png)
-1. *sudo shutdown now* ( na koniec zajęć)
+
+   ![image27](media/image27.png)
+
+1. *sudo shutdown now* ( na koniec zajęć)😀
