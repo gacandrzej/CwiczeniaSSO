@@ -1,28 +1,34 @@
-Ćwiczenia 2-3 -- Ubuntu serwer -- polecenia systemowe
+# Ćwiczenia 2-3 -- Ubuntu serwer -- polecenia systemowe
+
 Zaloguj się na swoje konto imienXYZ, gdzie XYZ oznacza kod klasy i
 grupy, np. jank3t1
 
-1. Dodaj swoje konto do grupy sudo: *sudo usermod twoje_konto -G sudo*
-2. Sprawdzenie czy jesteśmy w grupie sudo: *id konto*
-3. Zainstaluj obsługę myszy w terminalu: *sudo apt install gpm -y*
-4. sudo su -c 'polecenie' ( np. sudo su --c 'cat /var/log/syslog \|
+1. Dodaj swoje konto do grupy sudo:
+
+    ```bash
+    sudo usermod twoje_konto -G sudo
+    ```
+
+1. Sprawdzenie czy jesteśmy w grupie sudo: *id konto*
+1. Zainstaluj obsługę myszy w terminalu: *sudo apt install gpm -y*
+1. sudo su -c 'polecenie' ( np. sudo su --c 'cat /var/log/syslog \|
     more' lub sudo su --c 'cat /var/log/syslog \| less')
 ![image1](media/image1.png)
-5. su administrator i pwd, następnie exit
-6. su -- administrator i pwd, następnie exit
-7. sudo fdisk \--list lub sudo fdisk -l
-8. Wyświetl listę zainstalowanego oprogramowania: *sudo apt list
+1. su administrator i pwd, następnie exit
+1. su -- administrator i pwd, następnie exit
+1. sudo fdisk \--list lub sudo fdisk -l
+1. Wyświetl listę zainstalowanego oprogramowania: *sudo apt list
     \--installed*
-9. *sudo apt list \--installed \| grep coreutils* ( sprawdzenie czy
+1. *sudo apt list \--installed \| grep coreutils* ( sprawdzenie czy
     paczka coreutils jest zainstalowana)
-10. Porównaj wykonanie poleceń: *df* i *df -vh*
+1. Porównaj wykonanie poleceń: *df* i *df -vh*
 ![image2](media/image2.png)
-11. ![image3](media/image3.png)
+1. ![image3](media/image3.png)
     du ( np. du --cms /usr/\* lub du --cms
     /usr/\* \| sort --nr ) du rosnąco i malejąco
-12. krótki kurs nano ( *nano nazwa_pliku* , Ctrl+O zapis Ctrl+X wyjście)
-13. Sprawdzenie czy plik powstał: ls i *cat nazwa_pliku*
-14. krótki kurs vi ( vi nazwa_pliku ,
+1. krótki kurs nano ( *nano nazwa_pliku* , Ctrl+O zapis Ctrl+X wyjście)
+1. Sprawdzenie czy plik powstał: ls i *cat nazwa_pliku*
+1. krótki kurs vi ( vi nazwa_pliku ,
 i lub insert -- tryb pisania,
 Esc -- wyjście z trybu pisania,
 :x -- zapis,
@@ -33,66 +39,66 @@ yy -- skopiowanie bieżącego wiersza
 nyy -- skopiowanie n wierszy
 p -- wklejenie wiersza/y za aktualnym
 dd -- kasuje cały wiersz, d5d kasuje 5 wierszy )
-15. nano plik1 zapisz 4 wiersze
-16. Sprawdź, który edytor jest domyślny w systemie: *sudo
+1. nano plik1 zapisz 4 wiersze
+1. Sprawdź, który edytor jest domyślny w systemie: *sudo
     update-alternatives \--config editor*
-17. cp plik1 plik2
-18. dodaj w pliku pierwszym jeden znak i sprawdź
-19. cmp plik1 plik2
-20. diff plik1 plik2
+1. cp plik1 plik2
+1. dodaj w pliku pierwszym jeden znak i sprawdź
+1. cmp plik1 plik2
+1. diff plik1 plik2
 ![image5](media/image5.png)
-21. \> tworzenie nowego pliku, \>\> dopisywanie do istniejącego pliku
-22. sudo find / -name \*bashrc lub find / -name \*bashrc \> w1.txt
+1. \> tworzenie nowego pliku, \>\> dopisywanie do istniejącego pliku
+1. sudo find / -name \*bashrc lub find / -name \*bashrc \> w1.txt
 ![image6](media/image6.png)
-23. ls -al \~ \> list1.txt i ls -altr \~ \> list2.txt
+1. ls -al \~ \> list1.txt i ls -altr \~ \> list2.txt
 ![image7](media/image7.png)
-24. lsblk
+1. lsblk
 ![image8](media/image8.png)
-25. lscpu lub lscpu \| grep Model
+1. lscpu lub lscpu \| grep Model
 ![image9](media/image9.png)
-26. lsusb + grep na sprzęt,
+1. lsusb + grep na sprzęt,
 ![image10](media/image10.png)
-27. przykład dla lspci:
+1. przykład dla lspci:
 ![image11](media/image11.png)
-28. lshw -short lub lshw -html
+1. lshw -short lub lshw -html
 ![image12](media/image12.png)
 ![image13](media/image13.png)
 ![image14](media/image14.png)
-29. Sprawdzenie dnsów: *systemd-resolve \--status \| grep \'DNS
+1. Sprawdzenie dnsów: *systemd-resolve \--status \| grep \'DNS
     Servers\' -A2*
 *lub resolvectl*
 ![image15](media/image15.png)
-30. ps z opcjami aux lub -ef
+1. ps z opcjami aux lub -ef
 ![image16](media/image16.png)
 ![image17](media/image17.png)
-31. htop z przyciskami: F3, F6 oraz u (user) z opcjami p, e
+1. htop z przyciskami: F3, F6 oraz u (user) z opcjami p, e
 ![image18](media/image18.png)
-32. tree \> tree.txt i tree -d \> ttreed.txt\~
+1. tree \> tree.txt i tree -d \> ttreed.txt\~
 ![image19](media/image19.png)
-33. mkdir \~/cwiczenia7
-34. cp li\*.txt \~/cwiczenia7/
-35. cp -i \~/cwiczenia7/li\*.txt .
-36. cp ?re\*.\* \~/cwiczenia7/
-37. cat \*tr\*.txt \> tree4.txt
+1. mkdir \~/cwiczenia7
+1. cp li\*.txt \~/cwiczenia7/
+1. cp -i \~/cwiczenia7/li\*.txt .
+1. cp ?re\*.\* \~/cwiczenia7/
+1. cat \*tr\*.txt \> tree4.txt
 lub cat tree.txt \> tree3.txt, cat ttreed.txt \>\> tree3.txt
 lub cat tree.txt ttreed.txt \> tree5.txt
-38. diff tree3.txt tree4.txt
-39. Tworzenie linków symbolicznych ( ln -s /ścieżka/plik nazwa_linku)
-40. ![image20](media/image20.png)
+1. diff tree3.txt tree4.txt
+1. Tworzenie linków symbolicznych ( ln -s /ścieżka/plik nazwa_linku)
+1. ![image20](media/image20.png)
     sudo cp /etc/passwd passwd.kopia
-41. cat passwd.kopia \| sort -t : -k3 -nr ( sortowanie po UID user id)
+1. cat passwd.kopia \| sort -t : -k3 -nr ( sortowanie po UID user id)
 ![image21](media/image21.png)
-42. alias ( alias dla polecenia du) i usuwanie aliasów: unalias
+1. alias ( alias dla polecenia du) i usuwanie aliasów: unalias
 ![image22](media/image22.png)
-43. Wyświetlenie wszystkich aliasów + kasowanie
+1. Wyświetlenie wszystkich aliasów + kasowanie
 ![image23](media/image23.png)
-44. export - dodanie zmiennej
+1. export - dodanie zmiennej
 ![image24](media/image24.png)
-45. unset -- usunięcie zmiennej
+1. unset -- usunięcie zmiennej
 ![image25](media/image25.png)
-46. PS1 + colory
+1. PS1 + colory
 ![image26](media/image26.png)
-47. FTP + konto (podstawowe polecenia: get, put, mget, mput)
-48. Piszemy ftp ftp.icm.edu.pl
+1. FTP + konto (podstawowe polecenia: get, put, mget, mput)
+1. Piszemy ftp ftp.icm.edu.pl
 ![image27](media/image27.png)
-49. *sudo shutdown now* ( na koniec zajęć)
+1. *sudo shutdown now* ( na koniec zajęć)
