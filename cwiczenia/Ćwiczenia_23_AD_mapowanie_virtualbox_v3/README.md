@@ -5,7 +5,7 @@
 1. Z pomocą dwóch dodatkowych kabli podłącz **dolne karty** sieciowe na
     obu komputerach do switcha. ( w virtualbox dodaj drugą kartę)
 
-    ![image1](media/image1.png)
+   ![new_virtualbox](../../media/2026-09-15-16-35-50.png)
 
 1. Zaloguj się na konto administrator w systemie Windows Server.
 
