@@ -66,21 +66,21 @@
 
     **Nie drukować strony testowej z serwera!!!**
 
-   ![image2](media/image2.png)
+   ![autodetect](../../media/2026-09-28-10-25-18.png)
 
 1. Udostępnij drukarkę oraz zaznacz pozycję pokaż w katalogu.
 
-   ![image3](media/image3.png)
+   ![udost_kyocera](../../media/2026-09-28-10-27-00.png)
 
 1. Ustaw dostępność drukarki na 2 godziny (czas ćwiczeń), np. **od 7:00
     do 19:00**
 
-   ![image4](media/image4.png)
+   ![godziny](../../media/2026-09-28-10-28-08.png)
 
 1. Na stacji dodaj drukarkę: w pozycji: znajdź drukarkę w katalogu na
     podstawie lokalizacji lub funkcji.
 
-   ![image5](media/image5.png)
+   ![kyocera](../../media/2026-09-28-10-23-33.png)
 
 1. Po instalacji wydrukuj stronę testową ze stacji!!!
 
