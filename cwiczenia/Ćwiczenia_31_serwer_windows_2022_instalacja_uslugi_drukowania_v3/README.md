@@ -20,9 +20,9 @@
 1. Po instalacji usługi, zaloguj się na stacji i ściągnij sterownik dla
     drukarki:
 
-    **Kyocera Ecosys PA4000x**
+    **Kyocera Ecosys PA4000x** <- domyślna do instalacji na pracowni!!!
 
-    **TOSHIBA e-STUDIO338CS**.
+    TOSHIBA e-STUDIO338CS
 
 1. Na serwerze przygotować witrynę ftp dla konta z AD w katalogu
 
@@ -52,10 +52,18 @@
    ![image1](media/image1.png)
 
     dodaj drukarkę TCP/IP,
-    w drugim kroku podaj ip drukarki, dalej,
-    typ urządzenia: standardowy, dalej,
+
+    `192.168.100.69` <- adres w roku 2026
+
+    w drugim kroku podaj ip drukarki,
+
+    dalej,typ urządzenia: standardowy,
+    dalej,
+
     Zainstaluj nowy sterownik, dalej,
+
     przycisk z dysku i wskazać sterownik.
+
     **Nie drukować strony testowej z serwera!!!**
 
    ![image2](media/image2.png)
