@@ -31,7 +31,7 @@
 1. Rozpakować sterowniki, a następnie spakować do pliku exe i przesłać
     na serwer poprzez ftp.
 
-1. Odłącz stację od internetu. ( wypnij kabel)
+1. Odłącz stację od internetu. Zachowaj ćwiczenia offline.
 
 1. Dodaj stację do domeny.
 
@@ -77,10 +77,13 @@
 
    ![godziny](../../media/2026-09-28-10-28-08.png)
 
-1. Na stacji dodaj drukarkę: w pozycji: znajdź drukarkę w katalogu na
-    podstawie lokalizacji lub funkcji.
+1. Na stacji dodaj drukarkę: w pozycji: znajdź drukarkę w katalogu na podstawie lokalizacji lub funkcji. Jeżeli nie zadziała to tak jak na screenie.
 
    ![kyocera](../../media/2026-09-28-10-23-33.png)
+
+   Jeśli i to nie zadziała to zainstaluj poprzez:
+
+   * Dodaj drukarkę lokalną lub sieciową z ustawieniami ręcznymi. Uwaga: musisz posiadać sterownik na stacji!!!
 
 1. Po instalacji wydrukuj stronę testową ze stacji!!!
 
@@ -88,11 +91,11 @@
 
 1. W podanej kolejności:
 
-    - usuń drukarkę ze stacji
-    - usuń drukarkę z serwera
-    - usuń rolę Usługi drukowania i zarządzania dokumentami
-    - usuń sterowniki drukarki z serwera i stacji
-    - usuń witrynę ftp oraz jej katalog
+    * usuń drukarkę ze stacji
+    * usuń drukarkę z serwera
+    * usuń rolę Usługi drukowania i zarządzania dokumentami
+    * usuń sterowniki drukarki z serwera i stacji
+    * usuń witrynę ftp oraz jej katalog
 
 1. Druga osoba realizuje ćwiczenia.
 
