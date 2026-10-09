@@ -2,167 +2,173 @@
 
 💡 Zaloguj się na swoje konto imienXYZ, gdzie XYZ oznacza kod klasy i
 grupy, np. jank3t1
-Jeśli nie masz konta, 
+Jeśli nie masz konta,
+
 ```bash
 sudo adduser imienXYZ
 ```
-1.  Dodaj swoje konto do grupy sudo: 
-```bash
-sudo usermod twoje_konto -G sudo
-```
-2.  Sprawdzenie czy jesteśmy w grupie sudo: 
-```bash
-id konto
-```
-3.  Zainstaluj 7-zip:
 
-```bash
- sudo apt install p7zip-full
-```
-![](media/image1.png)
+1. Dodaj swoje konto do grupy sudo:
 
-4.  Przygotować strukturę katalogów:
+   ```bash
+   sudo usermod twoje_konto -G sudo
+   ```
 
-![](media/image2.png)
+1. Sprawdzenie czy jesteśmy w grupie sudo:
 
-5.  Utwórz 4 pliki z pomocą komend:
-```bash
- man ls > man_ls.txt
- man tar > man_tar.txt
- man gzip > man_gzip.txt
- man bzip2 > man_bzip2.txt
- 
-```
- ![](media/image3.png)
+   ```bash
+   id konto
+   ```
 
-6.  Utwórz archiwum w katalogu man powyższych plików:
+1. Zainstaluj 7-zip:
 
-![](media/image4.png)
+   ```bash
+    sudo apt install p7zip-full
+   ```
 
-7.  Utworzyć archiwum katalogu _/usr/share/doc_
+   ![image1](media/image1.png)
 
-![](media/image5.png)
+1. Przygotować strukturę katalogów:
 
-8.  Sprawdź poprawność spakowania w programie mc. ( wejście w plik
+   ![image2](media/image2.png)
+
+1. Utwórz 4 pliki z pomocą komend:
+
+    ```bash
+    man ls > man_ls.txt
+    man tar > man_tar.txt
+    man gzip > man_gzip.txt
+    man bzip2 > man_bzip2.txt
+    
+    ```
+
+   ![image3](media/image3.png)
+
+1. Utwórz archiwum w katalogu man powyższych plików:
+
+   ![image4](media/image4.png)
+
+1. Utworzyć archiwum katalogu _/usr/share/doc_
+
+   ![image5](media/image5.png)
+
+1. Sprawdź poprawność spakowania w programie mc. ( wejście w plik
     archiwum )
-9.  Wypakuj archiwum doc.tar do katalogu _~/kopie/tar/_
 
-![](media/image6.png)
+1. Wypakuj archiwum doc.tar do katalogu _~/kopie/tar/_
 
-10. Spakuj katalog _/usr/share/doc_ z użyciem `tar`, `gzip`, `bzip2`, `xz` i `7z`
-```bash
- tar cfz doc.tar.gz -P /usr/share/doc/
-```
-![](media/image7.png)
+   ![image6](media/image6.png)
 
-11. Porównaj wielkości poszczególnych plików archiwum (wartość w
+1. Spakuj katalog _/usr/share/doc_ z użyciem `tar`, `gzip`, `bzip2`, `xz` i `7z`
+
+   ```bash
+   tar cfz doc.tar.gz -P /usr/share/doc/
+   ```
+
+   ![image7](media/image7.png)
+
+1. Porównaj wielkości poszczególnych plików archiwum (wartość w
     bajtach). Który jest najmniejszy?
 
-![](media/image8.png)
+   ![image8](media/image8.png)
 
-12. Wypakuj powyższe pliki do odpowiednich katalogów, np.:
+1. Wypakuj powyższe pliki do odpowiednich katalogów, np.:
 
-![](media/image9.png)
+   ![image9](media/image9.png)
 
-13. Pozostałe:
+1. Pozostałe:
 
-![](media/image10.png)
+   ![image10](media/image10.png)
 
-14. Wypakowanie archiwum 7z:
+1. Wypakowanie archiwum 7z:
 
-![](media/image11.png)
+   ![image11](media/image11.png)
 
-15. Spakuj plik doc.tar narzędziem gzip używając 5 stopnia kompresji.
-Spakuj plik doc.tar narzędziem gzip używając 1 i 9 stopnia kompresji.
+1. Spakuj plik doc.tar narzędziem gzip używając 5 stopnia kompresji.
+   Spakuj plik doc.tar narzędziem gzip używając 1 i 9 stopnia kompresji.
 
-![](media/image12.png)
+   ![image12](media/image12.png)
 
-16. Wykonaj archiwum z pominięciem pliku:
+1. Wykonaj archiwum z pominięciem pliku:
 
-![](media/image13.png)
+   ![image13](media/image13.png)
 
-17. Wykonaj archiwum tar.bz2 zachowując uprawnienia
+1. Wykonaj archiwum tar.bz2 zachowując uprawnienia
 
-![](media/image14.png)
+   ![image14](media/image14.png)
 
-18. Utwórz archiwum z pomocą gzipa plików man
+1. Utwórz archiwum z pomocą gzipa plików man
 
-![](media/image15.png)
+   ![image15](media/image15.png)
 
-19. Utwórz archiwum z pomocą gzipa plików man\* zastosuj najlepszy
+1. Utwórz archiwum z pomocą gzipa plików man\* zastosuj najlepszy
     stopień kompresji
 
-![](media/image16.png)
+   ![image16](media/image16.png)
 
-20. Utwórz archiwum z pomocą gzipa plików man\* zastosuj najgorszy
+1. Utwórz archiwum z pomocą gzipa plików man\* zastosuj najgorszy
     stopień kompresji
 
-![](media/image17.png)
+   ![image17](media/image17.png)
 
-21. Porównaj rozmiary powstałych plików
+1. Porównaj rozmiary powstałych plików
 
-![](media/image18.png)
+   ![image18](media/image18.png)
 
-22. Rozpakuj wybrane dwa pliki \*.gz w katalogu gzip i gzip2
+1. Rozpakuj wybrane dwa pliki \*.gz w katalogu gzip i gzip2
 
-![](media/image19.png)
+   ![image19](media/image19.png)
 
-![](media/image20.png)
+   ![image20](media/image20.png)
 
-23. Utwórz archiwum z pomocą bzipa plików man\*
+1. Utwórz archiwum z pomocą bzipa plików man\*
 
-![](media/image21.png)
+   ![image21](media/image21.png)
 
-24. Sprawdź zawartość utworzonego archiwum
+1. Sprawdź zawartość utworzonego archiwum
 
-![](media/image22.png)
+   ![image22](media/image22.png)
 
-25. Utwórz archiwum z pomocą bzipa plików man\* zastosuj najlepszy
+1. Utwórz archiwum z pomocą bzipa plików man\* zastosuj najlepszy
     stopień kompresji
 
-![](media/image23.png)
+   ![image23](media/image23.png)
 
-26. Utwórz archiwum z pomocą bzipa plików man\* zastosuj najgorszy
+1. Utwórz archiwum z pomocą bzipa plików man\* zastosuj najgorszy
     stopień kompresji
 
-![](media/image24.png)
+   ![image24](media/image24.png)
 
-27. Porównaj rozmiary powstałych plików
+1. Porównaj rozmiary powstałych plików
 
-![](media/image25.png)
+   ![image25](media/image25.png)
 
-28. Rozpakuj wybrane dwa pliki \*.bz2 w katalogu bzip i bzip2
+1. Rozpakuj wybrane dwa pliki \*.bz2 w katalogu bzip i bzip2
 
-![](media/image26.png)
+   ![image26](media/image26.png)
 
-29. Sprawdź poprawność rozpakowania.
+1. Sprawdź poprawność rozpakowania.
 
-31. Dodatkowe zadania:
+1. Dodatkowe zadania:
 
----
+   - wyodrębnij tylko pliki z rozszerzeniem conf
 
-a)  Wyodrębnij tylko pliki z rozszerzeniem
-    conf
+     ![image27](media/image27.png)
 
-![](media/image27.png)
+   - sprawdź spójność archiwum bzip2, gzip, tar, 7z
 
----
+     ![image28](media/image28.png)
 
-b)  Sprawdź spójność archiwum bzip2, gzip,
-    tar, 7z
+   - wypisz informacje na temat skompresowanego pliku archiwum bzip2, gzip, tar, 7z
 
-![](media/image28.png)
+     ![image29](media/image29.png)
 
-c)  Wypisz informacje na temat
-    skompresowanego pliku archiwum bzip2, gzip, tar, 7z
+   - porównaj czas wykonania archiwum tar, gzip i bzip2
 
-![](media/image29.png)
+     ![image30](media/image30.png)
 
-d)  Porównaj czas wykonania archiwum tar, gzip i bzip2
+1. Na koniec zajęć:
 
-![](media/image30.png)
-
-32. Na koniec zajęć:
 ```bash
  sudo shutdown now 
 ```
