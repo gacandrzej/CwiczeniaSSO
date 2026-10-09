@@ -165,82 +165,133 @@ dokumentację )
     z hasłem `ZAQ!2wsx` ( w poniższych marek)
 
 1. Udostępnij zasób anonimowy na końcu pliku smb.conf o nazwie
-    \[zas_ano\] dla użytkownika nobody
+    `\[zas_ano\]` dla użytkownika nobody
 
-> Dodaj wpis guest ok = yes w zasobie
->
-> ![image14](media/image14.png)
+   Dodaj wpis guest ok = yes w zasobie
 
-1) Przetestuj mapowanie zasobu na stacji windows i ubuntu desktop.
-![image15](media/image15.png)
-2) Utwórz w nim katalog lub plik
-![image16](media/image16.png)
-3) Zawartość na serwerze, zwróć uwagę na właściciela i grupę
+   ![image14](media/image14.png)
+
+1. Przetestuj mapowanie zasobu na stacji windows i ubuntu desktop.
+
+   ![image15](media/image15.png)
+
+1. Utwórz w nim katalog lub plik
+
+   ![image16](media/image16.png)
+
+1. Zawartość na serwerze, zwróć uwagę na właściciela i grupę
     utworzonych plików, katalogów:
-![image17](media/image17.png)
-4) Udostępnij zasób, nie anonimowy na końcu pliku smb.conf:
-![image18](media/image18.png)
-5) Przetestuj mapowanie zasobu na stacji windows i ubuntu desktop.
-![image19](media/image19.png)
-6) Utwórz w nim katalog lub plik
-![image20](media/image20.png)
-7) Zawartość na serwerze, zwróć uwagę na właściciela i grupę
+
+   ![image17](media/image17.png)
+
+1. Udostępnij zasób, nie anonimowy na końcu pliku smb.conf:
+
+   ![image18](media/image18.png)
+
+1. Przetestuj mapowanie zasobu na stacji windows i ubuntu desktop.
+
+   ![image19](media/image19.png)
+
+1. Utwórz w nim katalog lub plik
+
+   ![image20](media/image20.png)
+
+1. Zawartość na serwerze, zwróć uwagę na właściciela i grupę
     utworzonych plików, katalogów:
-![image21](media/image21.png)
-8) Udostępnij zasób tylko dla siebie oraz wszystkich w grupie smbusers
-![image22](media/image22.png)
-9) Dodaj dwa konta
-![image23](media/image23.png)
-10) Przetestuj mapowanie zasobu na stacji windows i ubuntu desktop.
-(po lewej brak możliwości zalogowania się spoza grupy smbusers, po
+
+   ![image21](media/image21.png)
+
+1. Udostępnij zasób tylko dla siebie oraz wszystkich w grupie smbusers
+
+   ![image22](media/image22.png)
+
+1. Dodaj dwa konta
+
+   ![image23](media/image23.png)
+
+1. Przetestuj mapowanie zasobu na stacji windows i ubuntu desktop.
+(po prawej lewej brak możliwości zalogowania się spoza grupy smbusers, po
 prawej konto marka )
-![image24](media/image24.png)
-![image25](media/image25.png)
-11) Zawartość na serwerze, zwróć uwagę na właściciela i grupę
+
+   ![image24](media/image24.png)
+
+   ![image25](media/image25.png)
+
+1. Zawartość na serwerze, zwróć uwagę na właściciela i grupę
     utworzonych plików, katalogów:
-![image26](media/image26.png)
-12) Sprawdź czy zasób jest widoczny
-![image27](media/image27.png)
-13) Na stacji windows zamapuj zasob pod literę M:
-![image28](media/image28.png)
-14) Efekt końcowy:
-![image29](media/image29.png)
-15) Dodaj na stacji do zasobu plik i katalog:
-![image30](media/image30.png)
-16) Sprawdź zawartość zasobu na serwerze:
-![image31](media/image31.png)
-17) Dla powyższego zawartość sekcji \[global\]:
-![image32](media/image32.png)
-18) Na kliencie ubuntu desktop wydaj komendę: smbclient
-![image33](media/image33.png)
-19) Na kliencie ubuntu desktop uruchom przeglądarkę plików i sprawdź
+
+   ![image26](media/image26.png)
+
+1. Sprawdź czy zasób jest widoczny
+
+   ![image27](media/image27.png)
+
+1. Na stacji windows zamapuj zasob pod literę M:
+
+   ![image28](media/image28.png)
+
+1. Efekt końcowy:
+
+   ![image29](media/image29.png)
+
+1. Dodaj na stacji do zasobu plik i katalog:
+
+   ![image30](media/image30.png)
+
+1. Sprawdź zawartość zasobu na serwerze:
+
+   ![image31](media/image31.png)
+
+1. Dla powyższego zawartość sekcji \[global\]:
+
+   ![image32](media/image32.png)
+
+1. Na kliencie ubuntu desktop wydaj komendę: smbclient
+
+   ![image33](media/image33.png)
+
+1. Na kliencie ubuntu desktop uruchom przeglądarkę plików i sprawdź
     zasób:
-![image34](media/image34.png)
-I klikamy w zasób
-![image35](media/image35.png)
-20) Sprawdź połączenia:
-![image36](media/image36.png)
-21) Dodaj zasób 3
-![image37](media/image37.png)
-22) Test z konta monika:
-![image38](media/image38.png)
-![image39](media/image39.png)
-23) Test z konta marek:
-![image40](media/image40.png)
-24) Dodatkowe zadania:
-<!-- -->
-a)  Zezwól na korzystanie z samby tylko z jednego ip, przetestuj
+
+   ![image34](media/image34.png)
+
+   i klikamy w zasób
+
+   ![image35](media/image35.png)
+
+1. Sprawdź połączenia:
+
+   ![image36](media/image36.png)
+
+1. Dodaj zasób 3
+
+   ![image37](media/image37.png)
+
+1. Test z konta monika:
+
+   ![image38](media/image38.png)
+
+   ![image39](media/image39.png)
+
+1. Test z konta marek:
+
+   ![image40](media/image40.png)
+
+1. Dodatkowe zadania:
+
+   - zezwól na korzystanie z samby tylko z jednego ip, przetestuj
     działanie
-b)  Zezwól na korzystanie z samby dla danej sieci z wyłączeniem jednego
+   - zezwól na korzystanie z samby dla danej sieci z wyłączeniem jednego
     ip, przetestuj działanie
-c)  Zarchiwizuj plik smb.conf 7-zipem w zasobie3
-d)  Zarchiwizuj katalog /usr/share/doc
-> ![image41](media/image41.png)
-e)  Ukryj w zasobie drugim pliki z rozszerzeniem txt
-f)  Pokaż w zasobie drugim pliki ukryte ( rozpoczynające się od .)
-g)  zmień porty na których słucha serwer samba lub wpisz jawnie 445 i
-    139
-h)  utwórz różne pliki konfiguracyjne dla dwóch komputerów
-<!-- -->
-1) Przywrócić konfigurację netplan na dhcp.
-2) Koniec.
+   - zarchiwizuj plik smb.conf 7-zipem w zasobie3
+   - zarchiwizuj katalog /usr/share/doc
+
+      ![image41](media/image41.png)
+
+   - ukryj w zasobie drugim pliki z rozszerzeniem txt
+   - pokaż w zasobie drugim pliki ukryte ( rozpoczynające się od .)
+   - zmień porty na których słucha serwer samba lub wpisz jawnie 445 i 139
+   - utwórz różne pliki konfiguracyjne dla dwóch komputerów
+
+1. Przywrócić konfigurację netplan na dhcp.
+1. Koniec. 🔚
