@@ -118,33 +118,33 @@
     - http,
     - https
 
-   ![image21](media/image21.png)
+    ![image21](media/image21.png)
 
 1. Zapisz ustawienia w pliku _*/home/twoje_konto/iptables_rules_ddmmrrrr_hh:mm*_
 
-2. Zbuduj nat źródłowy dla sieci **10.11.12.0/24**
+1. Zbuduj nat źródłowy dla sieci **10.11.12.0/24**
 
    ![image22](media/image22.png)
 
    ![image23](media/image23.png)
 
-3. Włącz forwardowanie pakietów tak, aby działało tylko do najbliższego restartu.
+1. Włącz forwardowanie pakietów tak, aby działało tylko do najbliższego restartu.
 
    ![image24](media/image24.png)
 
-4. Wyczyścić wszystkie reguły w tablicy filter
+1. Wyczyścić wszystkie reguły w tablicy filter
 
    ![image25](media/image25.png)
 
-5. Przywróć reguły z pliku:
+1. Przywróć reguły z pliku:
 
    ![image26](media/image26.png)
 
-6. Sprawdzenie:
+1. Sprawdzenie:
 
    ![image27](media/image27.png)
 
-7. Zablokować ruch do Rosji i Chin. Zainstaluj pakiet dla whois.
+1. Zablokować ruch do Rosji i Chin. Zainstaluj pakiet dla whois.
 
    Sprawdź działanie:
 
@@ -152,12 +152,12 @@
 
    ![image29](media/image29.png)
 
-8. Monitorować ruch narzędziem tcpdump. ( W drugim terminalu uruchomić
+1. Monitorować ruch narzędziem tcpdump. ( W drugim terminalu uruchomić
     ping do dowolnej strony)
 
    ![image30](media/image30.png)
 
-9. Monitorować ruch narzędziem wireshark na stacji ubuntu-desktop dla
+1. Monitorować ruch narzędziem wireshark na stacji ubuntu-desktop dla
     karty dolnej.
 
    Instalacja:
@@ -176,20 +176,20 @@
 
    ![image34](media/image34.png)
 
-10. Monitorować ruch narzędziem zen-map z poziomu stacji windows.  
+1. Monitorować ruch narzędziem zen-map z poziomu stacji windows.  
 
    ![image35](media/image35.png)
 
-11. Sprawdzić otwarte porty na maszynie z
+1. Sprawdzić otwarte porty na maszynie z
     pomocą narzędzia nmap np. port 22 dla ssh.
 
    ![image36](media/image36.png)
 
-12. Sprawdzić otwarte porty na maszynie z pomocą narzędzia netcat.
+1. Sprawdzić otwarte porty na maszynie z pomocą narzędzia netcat.
    Na stacji ubuntu:
 
    ![image37](media/image37.png)
 
-13. Sprawdź pozostałe otwarte porty na swoim serwerze.
+1. Sprawdź pozostałe otwarte porty na swoim serwerze.
 
-14. KONIEC. 🔚
+2. KONIEC. 🔚
