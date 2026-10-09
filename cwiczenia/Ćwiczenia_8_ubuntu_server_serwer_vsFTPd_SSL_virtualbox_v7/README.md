@@ -63,64 +63,106 @@
 
 1. Sprawdź czy istnieje konto ftp ( można
     sudo apt install vsftpd)
+
    ![image9](media/image9.png)
 
-1. ![image10](media/image10.png)
-    Ustaw prawa:
-1. ![image11](media/image11.png)
-    Uruchom serwer komendą:
+   ![image10](media/image10.png)
+1. Ustaw prawa:
+
+1. Uruchom serwer komendą:
+
+   ![image11](media/image11.png)
+
 1. Zaloguj się na serwerze i załóż katalog /usr/share/empty
-![image12](media/image12.png)
+
+   ![image12](media/image12.png)
+
 1. Sprawdź czy istnieje proces dla serwera komendą: ps aux \| grep
     vsftpd
-![image13](media/image13.png)
+
+   ![image13](media/image13.png)
+
 1. Utwórz plik:
-![image14](media/image14.png)
+
+   ![image14](media/image14.png)
+
 1. Ściągnij plik
-![image15](media/image15.png)
+
+   ![image15](media/image15.png)
+
 1. Sprawdź działanie serwera ftp, wyślij na serwer plik:
-![image16](media/image16.png)
-1. ![image17](media/image17.png)
-    Sprawdź log, tail -f
+
+   ![image16](media/image16.png)
+
+1. Sprawdź log, tail -f
     /var/log/vsftpd.log:
-1. ![image18](media/image18.png)
-    Ustaw banner ftp dla serwera na min.
-    30 znaków:
-1. ![image19](media/image19.png)
-    Sprawdź logi:
-1. ![image20](media/image20.png)
-    Przestaw logi na swoją lokalizację
+
+   ![image17](media/image17.png)
+
+1. Ustaw banner ftp dla serwera na min. 30 znaków:
+
+    ![image18](media/image18.png)
+
+1. Sprawdź logi:
+
+   ![image19](media/image19.png)
+
+1. Przestaw logi na swoją lokalizację
     \~/vsftpd/log, utwórz dual log w oparciu o notatki z wykładu:
-1. ![image21](media/image21.png)
-    Sprawdź aktywne połączenia ze swoim
-    serwerem komendą: netstat lub ss -anp \| grep 21
+
+   ![image20](media/image20.png)
+
+1. Sprawdź aktywne połączenia ze swoim serwerem komendą:
+
+   ```bash
+   netstat 
+   lub 
+   ss -anp | grep 21
+   ```
+
+   ![image21](media/image21.png)
+
 1. Zezwól na logowanie się użytkowników systemowych, następnie wykonaj
     powyższe zadania dla swojego konta.
+
 1. Stwórz konfigurację serwera dla obsługi SSL ( następna strona ).
-1. Utwórz katalog \~/vsftpd_ssl/download
+
+1. Utwórz katalog ~/vsftpd_ssl/download
+
 1. Skopiuj do niego plik vsftpd-3.0.5.tar.gz
-1. ![image22](media/image22.png)
-    Rozpakuj plik jak wcześniej:
+
+   ![image22](media/image22.png)
+
+1. Rozpakuj plik jak wcześniej:
+
 1. Edycja pliku:
 
-> ![image23](media/image23.png)
+   ![image23](media/image23.png)
 
-1. ![image24](media/image24.png)
-    Zmodyfikuj plik Makefile tak, aby
+   ![image24](media/image24.png)
+
+1. Zmodyfikuj plik Makefile tak, aby
     (dopisz Wno):
 
-> ![image25](media/image25.png)
+   ![image25](media/image25.png)
 
 1. Wydaj komendę make.
-2. ![image26](media/image26.png)
-    Jeśli wystąpią błędy to zainstaluj
+
+1. Jeśli wystąpią błędy to zainstaluj
     pakiet libssl-dev.
-3. Wydaj komendę make.
-4. Wygeneruj certyfikat tak jak dla apache ( sudo openssl ....).
-5. Reszta jak na wykładzie.
-![image27](media/image27.png)
-6. Przetestuj działanie serwera po ssl.
 
-> ![image28](media/image28.png)
+   ![image26](media/image26.png)
 
-1. KONIEC
+1. Wydaj komendę make.
+
+1. Wygeneruj certyfikat tak jak dla apache ( sudo openssl ....).
+
+1. Reszta jak na wykładzie.
+
+   ![image27](media/image27.png)
+
+1. Przetestuj działanie serwera po ssl.
+
+   ![image28](media/image28.png)
+
+1. KONIEC. 🔚
