@@ -1,185 +1,195 @@
 # Ćwiczenia 11 -- firewall, budowa i konfiguracja
+
  <img src="media/image1.png" width="5%" /> </p>
 
-1.  Zaloguj się na swoje konto.
-2.  Na pierwszym terminalu:
-    ![](media/image2.png)
-3.  Na 5 terminalu : 
+1. Zaloguj się na swoje konto.
+1. Na pierwszym terminalu:
+
+   ![image2](media/image2.png)
+
+1. Na 5 terminalu :
+
  ```bash
     man iptables
  ```
-4.  Wyczyścić wszystkie reguły w tablicy filter i nat oraz mangle
 
-5. ![](media/image3.png)
+1. Wyczyścić wszystkie reguły w tablicy filter i nat oraz mangle
 
-5.  Sprawdź stan zapory.
+   ![image3](media/image3.png)
 
-![](media/image4.png)
+1. Sprawdź stan zapory.
 
-6.  Ustawić dolne karty i ping do sąsiada. (Powinien działać)
+   ![image4](media/image4.png)
 
-7.  Ustaw politykę na DROP w tablicy filter dla łańcuchów `INPUT` i
+1. Ustawić dolne karty i ping do sąsiada. (Powinien działać)
+
+1. Ustaw politykę na DROP w tablicy filter dla łańcuchów `INPUT` i
     `FORWARD`
 
- ![](media/image5.png)
+   ![image5](media/image5.png)
 
-8.  Ustaw politykę na `ACCEPT` w tablicy filter dla łańcucha `OUTPUT`
+1. Ustaw politykę na `ACCEPT` w tablicy filter dla łańcucha `OUTPUT`
 
-![](media/image6.png)
+   ![image6](media/image6.png)
 
-Sprawdzenie:    
+   Sprawdzenie:
 
-![](media/image7.png)
+   ![image7](media/image7.png)
 
-9.  Dopuścić połączenia związane i
+1. Dopuścić połączenia związane i
     ustanowione. Dopuścić ruch dla aplikacji działających na maszynie
     lokalnej. (loopback lo)
 
-![](media/image8.png)
+   ![image8](media/image8.png)
 
-10. Otworzyć możliwość sprawdzenia
+1. Otworzyć możliwość sprawdzenia
     poleceniem ping (icmp echo reply request , kody 0 i 8) dla adresów z
     podsieci lokalnej.
 
-    ![](media/image9.png)
-    ![](media/image10.png)
+    ![image9](media/image9.png)
+    ![image10](media/image10.png)
 
-11. Sprawdź połączenie ssh:
+1. Sprawdź połączenie ssh:
 
-    ![](media/image11.png)
+    ![image11](media/image11.png)
 
-12. Na serwerze musi być zainstalowany
+1. Na serwerze musi być zainstalowany
     pakiet openssh-server. Sprawdź działanie usługi ssh:
- ```bash
- sudo apt install openssh-server -y
- ```
-![](media/image12.png)
 
-13. Otwórz port 22, na którym ma słuchać serwer ssh.
+    ```bash
+    sudo apt install openssh-server -y
+    ```
 
- ```bash
- sudo iptables -A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
- ```
-![](media/image13.png)
+   ![image12](media/image12.png)
 
-14. Sprawdź połączenie na tym porcie z komputera sąsiada.
+1. Otwórz port 22, na którym ma słuchać serwer ssh.
 
-![](media/image14.png)
+    ```bash
+    sudo iptables -A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
+    ```
 
-15. Zapisz ustawienia w pliku
+   ![image13](media/image13.png)
+
+1. Sprawdź połączenie na tym porcie z komputera sąsiada.
+
+   ![image14](media/image14.png)
+
+1. Zapisz ustawienia w pliku
     _*/home/twoje_konto/iptables_rules_ddmmrrrr_hh:mm*_
 
-![](media/image15.png)
+   ![image15](media/image15.png)
 
-16. Ruch wychodzący do portu 80 i 443 TCP ma być zablokowany.
+1. Ruch wychodzący do portu 80 i 443 TCP ma być zablokowany.
 
-![](media/image16.png)
+   ![image16](media/image16.png)
 
-17. Test w przeglądarce: lynx zsmeie.torun.pl (strona nie powinna się
+1. Test w przeglądarce: lynx zsmeie.torun.pl (strona nie powinna się
     ładować)
 
-18. Przywrócić ruch wychodzący po portach 80, 443.
+1. Przywrócić ruch wychodzący po portach 80, 443.
 
- ![](media/image17.png)
+   ![image17](media/image17.png)
 
-19. Test w przeglądarce: lynx zsmeie.torun.pl (strona powinna się
+1. Test w przeglądarce: lynx zsmeie.torun.pl (strona powinna się
     ładować)
-20. Dopuścić ruch dla serwerów DNS dla cloudflare.  
-Dla iptables:  
 
-![](media/image18.png)  
+1. Dopuścić ruch dla serwerów DNS dla cloudflare.  
+   Dla iptables:  
 
-Sprawdzenie:  
+   ![image18](media/image18.png)  
 
-![](media/image19.png)
+   Sprawdzenie:  
 
-21. Zapisz ustawienia w pliku  _*/home/twoje_konto/iptables_rules_ddmmrrrr_hh:mm*_
+   ![image19](media/image19.png)
 
-![](media/image20.png)
+1. Zapisz ustawienia w pliku  _*/home/twoje_konto/iptables_rules_ddmmrrrr_hh:mm*_
 
-22. Otworzyć port dla pracy serwera:
- - ftp-data, 
- - ftp, 
- - tftp, 
- - mysql, 
- - postfix(4 porty), 
- - dhcp 
- - dhcpv6, 
- - http, 
- - https
+   ![image20](media/image20.png)
 
- ![](media/image21.png)
+1. Otworzyć port dla pracy serwera:
 
-23. Zapisz ustawienia w pliku _*/home/twoje_konto/iptables_rules_ddmmrrrr_hh:mm*_
+    - ftp-data,
+    - ftp,
+    - tftp,
+    - mysql,
+    - postfix(4 porty),
+    - dhcp
+    - dhcpv6,
+    - http,
+    - https
 
-24. Zbuduj nat źródłowy dla sieci **10.11.12.0/24**
+   ![image21](media/image21.png)
 
- ![](media/image22.png)
+1. Zapisz ustawienia w pliku _*/home/twoje_konto/iptables_rules_ddmmrrrr_hh:mm*_
 
- ![](media/image23.png)
+2. Zbuduj nat źródłowy dla sieci **10.11.12.0/24**
 
-25. Włącz forwardowanie pakietów tak, aby działało tylko do najbliższego restartu.
+   ![image22](media/image22.png)
 
-![](media/image24.png)
+   ![image23](media/image23.png)
 
-26. Wyczyścić wszystkie reguły w tablicy filter
+3. Włącz forwardowanie pakietów tak, aby działało tylko do najbliższego restartu.
 
- ![](media/image25.png)
+   ![image24](media/image24.png)
 
-27. Przywróć reguły z pliku:
+4. Wyczyścić wszystkie reguły w tablicy filter
 
-![](media/image26.png)
+   ![image25](media/image25.png)
 
-28. Sprawdzenie:
+5. Przywróć reguły z pliku:
 
-![](media/image27.png)
+   ![image26](media/image26.png)
 
-29. Zablokować ruch do Rosji i Chin. Zainstaluj pakiet dla whois.
+6. Sprawdzenie:
 
- Sprawdź działanie:
+   ![image27](media/image27.png)
 
- ![](media/image28.png)  
+7. Zablokować ruch do Rosji i Chin. Zainstaluj pakiet dla whois.
 
- ![](media/image29.png) 
+   Sprawdź działanie:
 
-30. Monitorować ruch narzędziem tcpdump. ( W drugim terminalu uruchomić
+   ![image28](media/image28.png)  
+
+   ![image29](media/image29.png)
+
+8. Monitorować ruch narzędziem tcpdump. ( W drugim terminalu uruchomić
     ping do dowolnej strony)
 
-![](media/image30.png)
+   ![image30](media/image30.png)
 
-31. Monitorować ruch narzędziem wireshark na stacji ubuntu-desktop dla
+9. Monitorować ruch narzędziem wireshark na stacji ubuntu-desktop dla
     karty dolnej.
 
- Instalacja:
+   Instalacja:
 
- ![](media/image31.png)  
+   ![image31](media/image31.png)  
 
- Uruchomienie na stacji:  
+   Uruchomienie na stacji:  
 
- ![](media/image32.png)  
+   ![image32](media/image32.png)  
 
- Niebieska płetwa:  
+   Niebieska płetwa:  
 
- ![](media/image33.png)  
+   ![image33](media/image33.png)  
 
- Zapisz ruchu do pliku o nazwie test.pcapng.  
+   Zapisz ruchu do pliku o nazwie test.pcapng.  
 
- ![](media/image34.png)
+   ![image34](media/image34.png)
 
-32. Monitorować ruch narzędziem zen-map z poziomu stacji windows.  
+10. Monitorować ruch narzędziem zen-map z poziomu stacji windows.  
 
-![](media/image35.png)
+   ![image35](media/image35.png)
 
-33. Sprawdzić otwarte porty na maszynie z
+11. Sprawdzić otwarte porty na maszynie z
     pomocą narzędzia nmap np. port 22 dla ssh.
 
-![](media/image36.png)
+   ![image36](media/image36.png)
 
-34. Sprawdzić otwarte porty na maszynie z pomocą narzędzia netcat.
-Na stacji ubuntu:
+12. Sprawdzić otwarte porty na maszynie z pomocą narzędzia netcat.
+   Na stacji ubuntu:
 
-![](media/image37.png)
+   ![image37](media/image37.png)
 
-35. Sprawdź pozostałe otwarte porty na swoim serwerze.
+13. Sprawdź pozostałe otwarte porty na swoim serwerze.
 
-36. KONIEC. 🔚
+14. KONIEC. 🔚
