@@ -78,4 +78,6 @@
 
 1. Wykonaj kopię z wykluczeniem wszystkich plików z rozszerzeniem txt.
 
+   ![wykluczenia](../../media/2026-10-13-13-37-46.png)
+
 1. KONIEC.🔚
