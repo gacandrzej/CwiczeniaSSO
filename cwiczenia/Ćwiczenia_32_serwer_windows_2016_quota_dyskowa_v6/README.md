@@ -105,4 +105,6 @@
     dla wybranego konta.
 1. Na klonie stacji windows w virtualbox wykonaj przydziały dyskowe lokalnie.
 
+   ![stacja_quota](../../media/2026-10-13-14-14-23.png)
+
 1. Koniec. 🔚
