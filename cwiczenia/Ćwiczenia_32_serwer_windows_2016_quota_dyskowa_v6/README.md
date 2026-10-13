@@ -99,12 +99,30 @@
 1. Powtórz poprzednie punkty, ale dla **przydziału elastycznego**,
     zmień próg ostrzeżeń na 75%.
 
-1. Napisz skrypt, który wyświetli aktualne przydziały w systemie.
-
-1. Napisz skrypt i sprawdź jego działanie, który ustawi limit na 100MB
     dla wybranego konta.
 1. Na klonie stacji windows w virtualbox wykonaj przydziały dyskowe lokalnie.
 
    ![stacja_quota](../../media/2026-10-13-14-14-23.png)
+
+1. Na klonie stacji w virtualbox, napisz skrypt i sprawdź jego działanie, który ustawi limit na 100MB
+
+   ```bash
+   fsutil quota modify j: 100000000 100000000 "imie" & echo O.K. & pause
+   ```
+
+1. Na klonie stacji  w virtualbox, napisz skrypt, który wyświetli aktualne przydziały w systemie.
+
+   ```bash
+   fsutil quota query j:
+   pause
+   ```
+
+1. Polecenia na stacji w virtualbox:
+
+   ```bash
+   # Włączenie quoty na dysku D: oraz wymuszenie blokady po przekroczeniu limitu, wartości w bajtach, czyli w przykładzie 10GB
+   fsutil quota track D:
+   fsutil quota modify D: 10737418240 10737418240 "NazwaUżytkownika"
+   ```
 
 1. Koniec. 🔚
