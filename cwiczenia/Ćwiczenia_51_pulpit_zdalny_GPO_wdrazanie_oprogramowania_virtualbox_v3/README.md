@@ -198,6 +198,5 @@ Wykaz zadań egzaminacyjnych dla wdrażania oprogramowanie:
 | rok  | miesiąc  | nr. zadania | program |
 |:----:|:--------:|:-----------:|:-------:|
 | 2026 | czerwiec | 9           | 7-zip     |
-| 2023 | styczeń  | 4           | www     |
 
 ---

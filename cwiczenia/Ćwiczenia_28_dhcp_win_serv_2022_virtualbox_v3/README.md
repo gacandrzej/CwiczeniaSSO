@@ -158,5 +158,8 @@
 1. Usuń zakres.
 
 1. Nie usuwaj roli DHCP server.
+1. Dodaj drugi zakres, następnie przetestuj na stacji poprawej i lewej:
+
+   ![dwa_zakresy](../../media/2026-10-28-08-53-05.png)
 
 1. KONIEC.🔚
