@@ -159,16 +159,18 @@ sudo usermod twoje_konto -G sudo
 1. Przywrócić domyślne ustawienia na kartach na stacjach linux i
     windows.
 
-1. \*( tylko dla chętnych ) Konfiguracja stacji ubuntu za pomocą nmcli.
+1. Na serwerze ubuntu na pracowni pozostawić konfigurację:
 
-1. \*( tylko dla chętnych ) Zmiana nazwy połączenia (np. Można ustawić
-    graficznie w zakładce tożsamość lub
-   nmcli i goto connection, set id nowa nazwa )
-
-1. Na serwerze ubuntu pozostawić konfigurację, uwaga karta enp0s3 na
-    pracowni to eno1:
-
-   ![image8](media/image8.png)
+   ```yaml
+   network:
+     ethernets:
+       eno1:
+         dhcp4: true
+         optional: true
+       enp4s0:
+         dhcp4: true
+         optional: true
+   ```
 
 1. Start serwera powinien wykonać się bez opóźnień.
 
