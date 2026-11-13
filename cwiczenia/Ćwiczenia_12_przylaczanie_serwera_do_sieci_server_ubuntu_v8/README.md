@@ -93,7 +93,7 @@ sudo usermod twoje_konto -G sudo
 
 1. Dodaj bramkę:
 
-  ```bash
+   ```bash
    sudo netplan set ethernets.enp0s8.gateway4=10.20.30.182
    sudo netplan apply
    ```
