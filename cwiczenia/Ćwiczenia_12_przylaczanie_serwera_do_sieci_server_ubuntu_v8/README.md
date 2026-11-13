@@ -109,9 +109,37 @@ sudo usermod twoje_konto -G sudo
 
    ![image5](media/image5.png)
 
+    ```yaml
+      network:
+        ethernets:
+          enp0s8:
+            addresses: [10.20.30.177/29]
+            dhcp4: false
+            gateway4: 10.20.30.182
+            nameservers:
+              addresses: [1.1.1.1,8.8.8.8]
+              search: [example.net]
+      ```
+
    lub po nowemu bramka:
 
    ![image6](media/image6.png)
+
+    ```yaml
+          network:
+            ethernets:
+              enp0s8:
+                addresses: [10.20.30.177/29]
+                dhcp4: false
+                routes: 
+                  - to: default
+                    via: 10.20.30.182
+                nameservers:
+                  addresses: [1.1.1.1,8.8.8.8]
+                  search: [example.net]
+          ```
+
+
 
 1. Dodaj pozycję dla karty sieciowej enp4s0 (górna karta) z opcją
     dhcp4: true
