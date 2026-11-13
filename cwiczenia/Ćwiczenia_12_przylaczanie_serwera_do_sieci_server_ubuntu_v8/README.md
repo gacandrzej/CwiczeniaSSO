@@ -172,6 +172,15 @@ sudo usermod twoje_konto -G sudo
          optional: true
    ```
 
+   Wydaj polecenia:
+
+   ```bash
+   sudo netplan apply
+   sudo dhclient
+   ```
+
+   Druga komenda pobiera ustawienia z serwera dhcp.
+
 1. Start serwera powinien wykonać się bez opóźnień.
 
 1. Wykonaj po restarcie testowy ping do adresu `zsmeie.torun.pl`
