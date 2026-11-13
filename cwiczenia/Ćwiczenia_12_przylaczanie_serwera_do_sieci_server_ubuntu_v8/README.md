@@ -34,9 +34,17 @@ sudo usermod twoje_konto -G sudo
 
 1. W drugim terminalu sprawdzaj ustawienia sieci poleceniami:
 
-    a) ```bash ip -c a``` -- do sprawdzenia nazw kart i ich konfiguracji
+    - do sprawdzenia nazw kart i ich konfiguracji
 
-    b)  ```bash ip -c r``` -- do sprawdzenia bramki (via)
+      ```bash
+      ip -c a
+      ```
+
+    - do sprawdzenia bramki (via)
+
+      ```bash
+      ip -c r
+      ```
 
 1. Zapoznaj się z poleceniem netplan:
 
