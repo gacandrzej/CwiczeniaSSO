@@ -69,21 +69,49 @@ sudo usermod twoje_konto -G sudo
 1. Pierwszy sposób: dodaj adres ip i maskę dla
    dolnej karty, sąsiad na drugi komputerze podaje ip 178
 
-   ![image1](media/image1.png)
+   ```bash
+   sudo netplan set ethernets.enp0s8.addresses=[10.20.30.177/29]
+   sudo netplan apply
+   ```
 
-1. Powinien powstać plik 70-netplan-set.yaml
+1. Powinien powstać plik **70-netplan-set.yaml**
+
+   ```bash
+   sudo cat /etc/netplan/70-netplan-set.yaml 
+   ```
 
 1. Dodaj dwa serwery dns:
 
-   ![image2](media/image2.png)
+   ```bash
+   sudo netplan set ethernets.enp0s8.nameservers.addresses=[1.1.1.1,8.8.8.8]
+   sudo netplan apply
+   ```
+
+   ```bash
+   sudo cat /etc/netplan/70-netplan-set.yaml 
+   ```
 
 1. Dodaj bramkę:
 
-   ![image3](media/image3.png)
+  ```bash
+   sudo netplan set ethernets.enp0s8.gateway4=10.20.30.182
+   sudo netplan apply
+   ```
+
+   ```bash
+   sudo cat /etc/netplan/70-netplan-set.yaml 
+   ```
 
 1. Dodać domenę:
 
-   ![image4](media/image4.png)
+   ```bash
+   sudo netplan set ethernets.enp0s8.nameservers.search=[example.net]
+   sudo netplan apply
+   ```
+
+   ```bash
+   sudo cat /etc/netplan/70-netplan-set.yaml 
+   ```
 
 1. Zatrzymaj usługę sieci systemd-networkd:
 
