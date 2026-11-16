@@ -219,7 +219,7 @@
 1. Zabroń dostępu do ftp dla użytkowników z pomocą:
 
    ```text
-    userlist_file=/home/twoje_konto/...
+    userlist_file=/etc/vsftpd.userlist 
     userlist_enable
     userlist_deny=YES | NO
    ```
@@ -296,6 +296,14 @@
 
 1. Zmień porty ftp serwera na `24`. Sprawdź logowanie się do serwera ze
     stacji.
+
+1. Szukanie kluczy w man:
+
+   ```bash
+   man vsftpd.conf 
+   ```
+
+   potem `&szukane_słowo`
 
 1. Zmień port ftp-data na `23`. Sprawdź logowanie się do serwera ze
     stacji.
