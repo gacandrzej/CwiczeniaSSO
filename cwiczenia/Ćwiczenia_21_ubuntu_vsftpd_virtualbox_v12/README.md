@@ -130,6 +130,18 @@
 
    ![image6](media/image6.png)
 
+1. Do celów diagnostycznych, gdy w logach jest:
+
+   ```text
+   vsftpd.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+   ```
+
+   Użyj polecenia do znalezienia błędu:
+
+   ```bash
+   sudo vsftpd -olisten=NO /etc/vsftpd.conf
+   ```
+
 1. Przetestuj działanie serwera logując się do niego anonimowo ze
     stacji Windows w eksploratorze
 
