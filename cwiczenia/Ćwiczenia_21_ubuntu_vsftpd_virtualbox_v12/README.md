@@ -199,7 +199,13 @@
 1. Zezwól na logowanie się tylko wybranym użytkownikom systemowym,
     **nie pozwól** im wyjść poza swój katalog domowy.
 
-   ![image17](media/image17.png)
+   ```bash
+   userlist_deny=NO
+   chroot_local_user=NO
+   allow_writeable_chroot=YES
+   chroot_list_enable=YES
+   chroot_list_file=/etc/vsftpd.chroot_list
+   ```
 
 1. Przetestuj działanie serwera logując się na konto z listy oraz swoje
     konto systemowe: [ftp 172.17.20.x]
