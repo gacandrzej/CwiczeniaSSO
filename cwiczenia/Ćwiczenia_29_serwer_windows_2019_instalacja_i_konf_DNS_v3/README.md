@@ -109,3 +109,10 @@
 ---
 
 Zadania egzaminacyjne dla DNS:
+
+| rok  | miesiąc  | nr. zadania | witryna |
+|:----:|:--------:|:-----------:|:-------:|
+| 2022 | czerwiec | 2           | ???     |
+| 2025 | styczeń  | 9           | record www     |
+
+---
